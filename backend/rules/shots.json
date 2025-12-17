@@ -1,0 +1,167 @@
+{
+    "FORWARD_DEFENCE": {
+      "name": "Forward Defence",
+      "level": "Beginner",
+      "played_to_length": "Full to good length",
+      "description": "A defensive shot used to safely stop the ball by stepping forward and presenting a straight bat",
+  
+      "technique": {
+        "steps": [
+          "Watch the ball closely and judge the length early",
+          "Step forward with the front foot towards the pitch of the ball",
+          "Keep your head and eyes over the front knee",
+          "Bring the bat down vertically close to the pad",
+          "Meet the ball under your eyes with soft hands",
+          "Let the ball drop near your feet"
+        ],
+        "key_points": [
+          "Straight bat",
+          "Soft hands",
+          "Balanced body position"
+        ],
+        "common_mistakes": [
+          "Hard hands",
+          "Bat angled across the line",
+          "Playing away from the body",
+          "Over-stretching the front foot"
+        ]
+      },
+  
+      "drills": [
+        {
+          "name": "Shadow Forward Defence",
+          "how_to": [
+            "Stand in batting stance without a ball",
+            "Step forward and simulate a straight bat defence",
+            "Focus on head position and balance",
+            "Repeat slowly with perfect technique"
+          ],
+          "reps_sets": "3 sets × 12 repetitions",
+          "progression": "Add a mirror or video to self-check technique",
+          "safety": "No ball used, safe for all ages"
+        },
+        {
+          "name": "Drop Ball Defence Drill",
+          "how_to": [
+            "Partner stands 4–5 meters away",
+            "Partner drops the ball underarm",
+            "Step forward and defend with a straight bat",
+            "Let the ball fall near your feet"
+          ],
+          "reps_sets": "4 sets × 8 balls",
+          "progression": "Increase drop speed gradually",
+          "safety": "Use soft or tennis ball only"
+        }
+      ]
+    },
+  
+    "CUT_SHOT": {
+      "name": "Cut Shot",
+      "level": "Intermediate",
+      "played_to_length": "Short and wide outside off stump",
+      "description": "An attacking back-foot shot played to short and wide balls through the off side",
+  
+      "technique": {
+        "steps": [
+          "Identify the short and wide delivery early",
+          "Move the back foot quickly back and across",
+          "Transfer weight onto the back foot",
+          "Keep the head still and eyes on the ball",
+          "Swing the bat horizontally using the hands",
+          "Guide the ball late through point or backward point"
+        ],
+        "key_points": [
+          "Quick foot movement",
+          "Late contact",
+          "Use the top hand for control"
+        ],
+        "common_mistakes": [
+          "Reaching for the ball",
+          "Falling backwards",
+          "Hard hands",
+          "Poor foot movement"
+        ]
+      },
+  
+      "drills": [
+        {
+          "name": "Shadow Cut Shot",
+          "how_to": [
+            "Coach calls out 'short'",
+            "Move back and across without a ball",
+            "Simulate a controlled cut shot",
+            "Focus on foot movement and balance"
+          ],
+          "reps_sets": "3 sets × 12 repetitions",
+          "progression": "Increase speed of movement",
+          "safety": "Safe drill with no ball"
+        },
+        {
+          "name": "Soft Ball Cut Drill",
+          "how_to": [
+            "Coach throws soft balls short and wide",
+            "Move back quickly and play the cut shot",
+            "Keep the ball along the ground"
+          ],
+          "reps_sets": "4 sets × 8 balls",
+          "progression": "Introduce tennis ball feeds",
+          "safety": "Wear protective gloves if needed"
+        }
+      ]
+    },
+  
+    "PULL_SHOT": {
+      "name": "Pull Shot",
+      "level": "Intermediate",
+      "played_to_length": "Short or short-of-length on leg side",
+      "description": "An attacking shot played to short balls using back-foot movement and horizontal bat swing",
+  
+      "technique": {
+        "steps": [
+          "Recognize the short delivery early",
+          "Move back and across onto the back foot",
+          "Rotate hips slightly towards leg side",
+          "Keep head still and eyes on the ball",
+          "Swing the bat horizontally at waist height",
+          "Follow through in a controlled manner"
+        ],
+        "key_points": [
+          "Head control",
+          "Balance on back foot",
+          "Timing over power"
+        ],
+        "common_mistakes": [
+          "Early swing",
+          "Losing balance",
+          "Over-hitting",
+          "Poor shot selection"
+        ]
+      },
+  
+      "drills": [
+        {
+          "name": "Shadow Pull Shot",
+          "how_to": [
+            "Stand in batting stance",
+            "Move back and simulate pull shot motion",
+            "Focus on hip rotation and balance"
+          ],
+          "reps_sets": "3 sets × 10 repetitions",
+          "progression": "Add speed gradually",
+          "safety": "No ball used"
+        },
+        {
+          "name": "Tennis Ball Pull Drill",
+          "how_to": [
+            "Coach throws tennis ball short on leg side",
+            "Move back and pull along the ground",
+            "Focus on timing rather than power"
+          ],
+          "reps_sets": "4 sets × 6 balls",
+          "progression": "Introduce controlled hard-ball feeds",
+          "safety": "Helmet and pads recommended"
+        }
+      ]
+    }
+  }
+  
