@@ -1,0 +1,170 @@
+{
+    "BASIC_BATTING_FUNDAMENTALS": {
+      "goal_id": 0,
+      "title": "Basic Batting and Bowling Fundamentals",
+      "description": "Foundational cricket skills for absolute beginners based on standard international coaching principles",
+      "learning_path": "BASICS",
+  
+      "required_inputs": ["age"],
+  
+      "optional_inputs": [
+        "batting_hand",
+        "bowling_hand",
+        "equipment_access",
+        "practice_location"
+      ],
+  
+      "followup_questions": [
+        {
+          "if_missing": "equipment_access",
+          "question": "Do you have access to a cricket bat and a soft ball?",
+          "options": ["Yes", "No"]
+        },
+        {
+          "if_missing": "practice_location",
+          "question": "Where do you usually practice cricket?",
+          "options": ["Home", "Ground", "Net practice"]
+        }
+      ],
+  
+      "batting_drills": [
+        {
+          "name": "Bat Grip (V-Grip)",
+          "what": "The correct way to hold the cricket bat using both hands",
+          "how_to": [
+            "Hold the bat vertically in front of you",
+            "Place your top hand on the handle",
+            "Your thumb and index finger should form a 'V'",
+            "The 'V' should point towards the inside edge of the bat",
+            "Place the bottom hand lightly below the top hand"
+          ],
+          "common_mistakes": [
+            "Holding the bat too tightly",
+            "V pointing towards the outside edge",
+            "Using too much bottom hand power"
+          ],
+          "why_it_matters": "A correct grip gives better control, improves timing, and reduces injury risk"
+        },
+        {
+          "name": "Batting Stance",
+          "what": "The starting position of a batter before the ball is bowled",
+          "how_to": [
+            "Stand side-on to the bowler",
+            "Keep feet shoulder-width apart",
+            "Bend knees slightly for balance",
+            "Keep head level and eyes facing the bowler",
+            "Rest the bat behind the back foot"
+          ],
+          "common_mistakes": [
+            "Standing too open",
+            "Feet too close together",
+            "Leaning backward"
+          ],
+          "why_it_matters": "A good stance provides balance and helps play straight shots"
+        },
+        {
+          "name": "Backlift",
+          "what": "The movement of lifting the bat before playing a shot",
+          "how_to": [
+            "Lift the bat smoothly as the bowler approaches",
+            "Keep hands relaxed",
+            "Bat face slightly open",
+            "Avoid jerky or rushed movements"
+          ],
+          "common_mistakes": [
+            "Very low backlift",
+            "Bat too far behind the body",
+            "Tense hands"
+          ],
+          "why_it_matters": "A relaxed backlift improves timing and shot control"
+        },
+        {
+          "name": "Defensive Block Shot",
+          "what": "A basic shot used to stop the ball safely",
+          "how_to": [
+            "Step forward towards the ball",
+            "Keep the bat straight",
+            "Meet the ball under the eyes",
+            "Soft hands to drop the ball near your feet"
+          ],
+          "common_mistakes": [
+            "Hard hands",
+            "Bat angled",
+            "Playing away from the body"
+          ],
+          "why_it_matters": "Teaches control and builds confidence against bowling"
+        },
+        {
+          "name": "Straight Drive",
+          "what": "A front-foot shot played along the ground",
+          "how_to": [
+            "Step forward with the front foot",
+            "Keep head over the ball",
+            "Swing the bat straight down",
+            "Finish with the bat pointing towards the bowler"
+          ],
+          "common_mistakes": [
+            "Bat coming across the line",
+            "Over-hitting",
+            "Falling over"
+          ],
+          "why_it_matters": "Develops timing, balance, and straight bat technique"
+        }
+      ],
+  
+      "bowling_drills": [
+        {
+          "name": "Basic Bowling Grip",
+          "what": "Correct way to hold the cricket ball for overarm bowling",
+          "how_to": [
+            "Place index and middle fingers on top of the seam",
+            "Thumb rests lightly underneath the ball",
+            "Do not squeeze the ball tightly"
+          ],
+          "common_mistakes": [
+            "Gripping the ball too hard",
+            "Incorrect finger placement"
+          ],
+          "why_it_matters": "Correct grip allows better control and smooth release"
+        },
+        {
+          "name": "Short Run-Up Bowling",
+          "what": "A safe and controlled way to begin bowling",
+          "how_to": [
+            "Use a short run-up of 4 to 6 steps",
+            "Start with walking or gentle jogging",
+            "Focus on smooth movement, not speed"
+          ],
+          "common_mistakes": [
+            "Running too fast",
+            "Long run-up for beginners"
+          ],
+          "why_it_matters": "Helps beginners learn action safely without injury risk"
+        },
+        {
+          "name": "Basic Overarm Action",
+          "what": "Fundamental bowling action for beginners",
+          "how_to": [
+            "Raise the front arm towards the target",
+            "Rotate shoulders smoothly",
+            "Release the ball in front of the body",
+            "Follow through naturally"
+          ],
+          "common_mistakes": [
+            "Side-arm action",
+            "No follow-through"
+          ],
+          "why_it_matters": "Builds correct bowling mechanics and prevents injuries"
+        }
+      ],
+  
+      "safety_rules": [
+        "Use only a soft ball for beginners",
+        "Limit sessions to 20–30 minutes",
+        "Avoid fast or long bowling spells",
+        "Focus on technique rather than power",
+        "Stop training if pain or discomfort occurs"
+      ]
+    }
+  }
+  
