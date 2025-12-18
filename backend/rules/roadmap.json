@@ -1,0 +1,43 @@
+{
+    "roadmap_beginner": {
+      "trigger_keywords": [
+        "beginner",
+        "roadmap",
+        "start cricket",
+        "learn cricket",
+        "new to cricket",
+        "teach me cricket",
+        "starting cricket",
+        "from zero",
+        "from start",
+         "where to start" 
+      ],
+  
+      "batting": [
+        "Batting Grip",
+        "Batting Stance",
+        "Backlift Mechanics",
+        "Footwork Basics",
+        "Front Foot Defence"
+      ],
+  
+      "bowling": [
+        "Bowling Grip",
+        "Short Run Up",
+        "Basic Overarm Action"
+      ],
+  
+      "fielding": [
+        "Catching Basics",
+        "Throwing Technique",
+        "Ground Fielding Basics"
+      ],
+  
+      "fitness": [
+        "Warm-up Stretching Routine",
+        "Agility Ladder",
+        "Balance Training"
+      ]
+    }
+  }
+  

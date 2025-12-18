@@ -1,6 +1,10 @@
 from flask import Flask, request, jsonify
+from agent.inference import CricketInferenceEngine
 
 app = Flask(__name__)
+
+# Load inference engine once
+engine = CricketInferenceEngine()
 
 @app.route("/", methods=["GET"])
 def home():
@@ -8,7 +12,6 @@ def home():
         "status": "running",
         "message": "Crickmate AI Agent backend is live"
     })
-
 
 @app.route("/api/recommend-training", methods=["POST"])
 def recommend_training():
@@ -29,6 +32,20 @@ def recommend_training():
         ]
     })
 
+@app.route("/api/ask", methods=["POST"])
+def ask_agent():
+    data = request.get_json()
+
+    if not data or "message" not in data:
+        return jsonify({"error": "Missing message field"}), 400
+
+    user_query = data["message"]
+    response = engine.process_query(user_query)
+
+    return jsonify({
+        "user_input": user_query,
+        "agent_response": response
+    }), 200
 
 if __name__ == "__main__":
     app.run(debug=True)

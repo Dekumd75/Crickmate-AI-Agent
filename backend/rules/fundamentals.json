@@ -1,0 +1,130 @@
+{
+    "batting_grip": {
+      "title": "Batting Grip (V–Grip)",
+      "what": "The method of holding the cricket bat using both hands for maximum control and swing efficiency.",
+      "how_to": [
+        "Stand the bat upright in front of your body.",
+        "Place your top hand high on the handle with fingers wrapped — not palm.",
+        "Form a 'V' shape between the thumb and index finger.",
+        "Ensure the top-hand 'V' points between splice and inside edge.",
+        "Place bottom hand lightly below the top hand — controlling direction, not power.",
+        "Check both hands working together — not independently."
+      ],
+      "why_it_matters": "Correct grip improves control, timing, bat face alignment, ability to play straight, reduces wrist rigidity and prevents injury.",
+      "mistakes": [
+        "Holding bat with palm instead of fingers.",
+        "Bottom hand controlling power.",
+        "Over-tight grip restricting swing.",
+        "V pointing outside edge — leading to slicing shots."
+      ],
+      "drills": [
+        "Shadow batting 100 repetitions daily.",
+        "Closed-eye bat pick-up alignment drill.",
+        "Bottom-hand looseness practice using towel wrap."
+      ],
+      "keywords": ["grip", "hold bat", "v-grip", "how to hold bat"]
+    },
+  
+    "batting_stance": {
+      "title": "Batting Stance",
+      "what": "The foundation body position before ball release.",
+      "how_to": [
+        "Stand side-on to bowler.",
+        "Feet shoulder-width apart, parallel.",
+        "Knees slightly flexed.",
+        "Weight evenly distributed on balls of feet.",
+        "Head still, eyes level facing bowler.",
+        "Bat resting behind back foot.",
+        "Elbows relaxed.",
+        "Front shoulder pointing towards bowler."
+      ],
+      "why_it_matters": "Correct stance improves balance, shot selection, speed of footwork and reduces movement errors.",
+      "mistakes": [
+        "Standing open to bowler.",
+        "Feet too narrow or too wide.",
+        "Head falling outside off stump.",
+        "Leaning back at release point."
+      ],
+      "drills": [
+        "Set stance mirror alignment drill",
+        "Head balance golf–ball hold exercise",
+        "Stance hold time practice 3 x 30 seconds"
+      ],
+      "keywords": ["stance", "batting stance", "stand while batting"]
+    },
+  
+    "backlift": {
+      "title": "Backlift",
+      "what": "Raising the bat in preparation for playing a shot.",
+      "how_to": [
+        "Lift the bat as the bowler loads into action.",
+        "Lift with relaxed wrists.",
+        "Backlift angle slightly open to slip region.",
+        "Keep bat weight controlled — not heavy.",
+        "Keep hands close to body, not away.",
+        "Lead shoulder must turn slightly inward."
+      ],
+      "why_it_matters": "Improves swing path, timing, control, shot power, and prevents late bat movements.",
+      "mistakes": [
+        "No backlift — bat stays grounded.",
+        "Bat lifted behind head — delayed downswing.",
+        "Tight wrists blocking swing."
+      ],
+      "drills": [
+        "Mirror backlift shape practice",
+        "Soft-ball backlift timing feed",
+        "Trigger + backlift single motion practice"
+      ],
+      "keywords": ["backlift", "bat lift", "lift bat", "swing preparation"]
+    },
+  
+    "trigger_movement": {
+      "title": "Trigger Movement",
+      "what": "Initial movement before ball release to help timing.",
+      "how_to": [
+        "Start movement as bowler plants front foot.",
+        "Small step back or across — not large.",
+        "Maintain balance through centre.",
+        "Keep head still while feet initiate.",
+        "Repeat same trigger every ball."
+      ],
+      "why_it_matters": "A trigger movement activates muscles, improves reaction speed and shot timing.",
+      "mistakes": [
+        "Over–large movement losing balance.",
+        "Head movement with feet.",
+        "Changing trigger method every ball."
+      ],
+      "drills": [
+        "Trigger shadow practice over 100 balls",
+        "Cue–sound trigger synchronisation drill",
+        "Front foot marker drill"
+      ],
+      "keywords": ["trigger", "pre movement", "initial foot movement"]
+    },
+  
+    "footwork": {
+      "title": "Footwork Basics",
+      "what": "Movement of feet for shot execution — forward, backward, lateral.",
+      "how_to": [
+        "Push weight from hips not knees.",
+        "Move first, swing later.",
+        "Front foot towards pitch of ball.",
+        "Back foot movement for short length.",
+        "Stay light on balls of feet.",
+        "Low centre of gravity on movement."
+      ],
+      "why_it_matters": "Footwork generates balance, timing, control and increases shot selection range.",
+      "mistakes": [
+        "Moving after ball bounce.",
+        "Feet locked to crease.",
+        "Using knee push instead of hip drive."
+      ],
+      "drills": [
+        "Ladder footwork",
+        "Marker step drills",
+        "30 forward–back repetitions"
+      ],
+      "keywords": ["footwork", "front foot", "back foot", "movement"]
+    }
+  }
+  
