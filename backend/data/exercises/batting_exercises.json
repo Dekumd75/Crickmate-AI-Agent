@@ -1,0 +1,820 @@
+{
+    "batting_exercises": [
+      {
+        "exercise_id": "BAT001",
+        "name": "Rotational Medicine Ball Throws",
+        "type": "Power Hitting Strength",
+        "role_priority": [
+          "top order batsman",
+          "middle order batsman",
+          "finisher",
+          "all rounder"
+        ],
+        "equipment": "Medicine ball or slightly weighted ball",
+        "how_to": [
+          "Stand sideways to a wall or partner, feet shoulder-width apart.",
+          "Hold the ball at hip height with both hands.",
+          "Rotate your hips and trunk explosively and throw the ball into the wall or to a partner.",
+          "Catch or retrieve the ball, reset your stance and repeat on the same side, then switch sides."
+        ],
+        "benefits": [
+          "Increases bat swing speed by improving hip and core rotation.",
+          "Builds explosive power used in lofted and power hitting shots."
+        ],
+        "age_limit_min": 13,
+        "prescriptions": [
+          {
+            "age_group": "U15",
+            "bmi_groups": ["Underweight", "Athletic Ideal"],
+            "sets": 2,
+            "reps": "6 throws each side",
+            "rest_seconds": 90,
+            "notes": "Use a very light ball. Focus on smooth rotation and technique, not maximum power."
+          },
+          {
+            "age_group": "U17",
+            "bmi_groups": ["Athletic Ideal"],
+            "sets": 3,
+            "reps": "6–8 throws each side",
+            "rest_seconds": 75,
+            "notes": "Moderate intensity. Quality of each throw more important than speed."
+          },
+          {
+            "age_group": "U19",
+            "bmi_groups": ["Athletic Ideal", "Overweight"],
+            "sets": 3,
+            "reps": "8 throws each side",
+            "rest_seconds": 60,
+            "notes": "Explosive intent. Overweight players should stop if any back or knee discomfort appears."
+          },
+          {
+            "age_group": "Adult",
+            "bmi_groups": ["Athletic Ideal"],
+            "sets": 4,
+            "reps": "8–10 throws each side",
+            "rest_seconds": 60,
+            "notes": "High-intensity power work. Only for experienced and conditioned players."
+          },
+          {
+            "age_group": "Adult",
+            "bmi_groups": ["Overweight", "Obese"],
+            "sets": 2,
+            "reps": "6 throws each side",
+            "rest_seconds": 90,
+            "notes": "Lower volume to protect joints and back. Focus on controlled movement."
+          }
+        ],
+        "safety_notes": [
+          "Always perform after a full-body warm-up.",
+          "Avoid aggressive twisting if there is any lower back pain.",
+          "Use lighter balls for younger or weaker players."
+        ]
+      },
+      {
+        "exercise_id": "BAT002",
+        "name": "Bat Swing Overload Training",
+        "type": "Bat Swing Power",
+        "role_priority": [
+          "finisher",
+          "middle order batsman",
+          "all rounder"
+        ],
+        "equipment": "Weighted bat, bat with resistance bands, or slightly heavier training bat",
+        "how_to": [
+          "Stand in your normal batting stance without a ball.",
+          "Use a slightly heavier bat or attach light resistance to your normal bat.",
+          "Play a full aggressive swing as if hitting a six, keeping your head still and balance strong.",
+          "Control the follow-through and avoid over-rotating or losing balance.",
+          "Rest briefly between swings and between sets."
+        ],
+        "benefits": [
+          "Develops swing-specific strength for power hitting.",
+          "Improves ability to clear the boundary with less effort."
+        ],
+        "age_limit_min": 15,
+        "prescriptions": [
+          {
+            "age_group": "U17",
+            "bmi_groups": ["Athletic Ideal"],
+            "sets": 2,
+            "reps": "6–8 full swings",
+            "rest_seconds": 75,
+            "notes": "Use only a slightly heavier bat. Never sacrifice technique."
+          },
+          {
+            "age_group": "U19",
+            "bmi_groups": ["Athletic Ideal"],
+            "sets": 3,
+            "reps": "8–10 full swings",
+            "rest_seconds": 60,
+            "notes": "Moderate to high intensity. Great for developing finishing power."
+          },
+          {
+            "age_group": "Adult",
+            "bmi_groups": ["Athletic Ideal"],
+            "sets": 3,
+            "reps": "10–12 full swings",
+            "rest_seconds": 60,
+            "notes": "High workload. Only for players with good shoulder and back health."
+          },
+          {
+            "age_group": "U19",
+            "bmi_groups": ["Overweight"],
+            "sets": 2,
+            "reps": "6–8 swings",
+            "rest_seconds": 90,
+            "notes": "Lower volume to reduce fatigue and joint stress."
+          },
+          {
+            "age_group": "Adult",
+            "bmi_groups": ["Overweight", "Obese"],
+            "sets": 2,
+            "reps": "6 swings",
+            "rest_seconds": 90,
+            "notes": "Focus on slow, controlled swing path rather than maximum power."
+          }
+        ],
+        "safety_notes": [
+          "Do not use a bat that is too heavy – small overload is enough.",
+          "Stop if you feel sharp pain in shoulder, elbow or lower back.",
+          "Younger players should first master normal bat swing mechanics."
+        ]
+      },
+      {
+        "exercise_id": "BAT003",
+        "name": "Core Plank Variations",
+        "type": "Core Stability",
+        "role_priority": [
+          "top order batsman",
+          "middle order batsman",
+          "finisher",
+          "wicket keeper batsman",
+          "all rounder"
+        ],
+        "equipment": "Exercise mat (optional)",
+        "how_to": [
+          "Hold a front plank position on elbows or hands, keeping body in a straight line.",
+          "For side planks, lie on your side and support your body on one elbow and the side of one foot.",
+          "Maintain controlled breathing and avoid letting hips sag or rise."
+        ],
+        "benefits": [
+          "Improves trunk stability for controlled shot-making.",
+          "Supports lower back during long innings and high-intensity training."
+        ],
+        "age_limit_min": 11,
+        "prescriptions": [
+          {
+            "age_group": "U13",
+            "bmi_groups": ["Underweight", "Athletic Ideal"],
+            "sets": 2,
+            "reps": "20–25 seconds front plank, 10–15 seconds side plank each side",
+            "rest_seconds": 45,
+            "notes": "Younger players should focus on holding good shape rather than maximum time."
+          },
+          {
+            "age_group": "U15",
+            "bmi_groups": ["All"],
+            "sets": 3,
+            "reps": "25–30 seconds front plank, 15–20 seconds side plank each side",
+            "rest_seconds": 45,
+            "notes": "Can mix front and side planks within each set."
+          },
+          {
+            "age_group": "U17",
+            "bmi_groups": ["Athletic Ideal"],
+            "sets": 3,
+            "reps": "30–40 seconds front plank, 20–25 seconds side plank each side",
+            "rest_seconds": 45,
+            "notes": "Solid base-building for senior cricket workload."
+          },
+          {
+            "age_group": "Adult",
+            "bmi_groups": ["Athletic Ideal"],
+            "sets": 3,
+            "reps": "40–45 seconds front plank, 25–30 seconds side plank each side",
+            "rest_seconds": 45,
+            "notes": "Can add small variations (leg lifts, arm lifts) if control is excellent."
+          },
+          {
+            "age_group": "Adult",
+            "bmi_groups": ["Overweight", "Obese"],
+            "sets": 2,
+            "reps": "15–25 seconds front plank, 10–15 seconds side plank each side",
+            "rest_seconds": 60,
+            "notes": "Shorter holds, longer rest to protect lower back and shoulders."
+          }
+        ],
+        "safety_notes": [
+          "Maintain neutral spine – do not let the lower back arch excessively.",
+          "If unable to hold full plank, start from knees or incline (hands on bench or wall)."
+        ]
+      },
+      {
+        "exercise_id": "BAT004",
+        "name": "Sprint Shuttle Runs (20 m)",
+        "type": "Speed & Conditioning",
+        "role_priority": [
+          "top order batsman",
+          "middle order batsman",
+          "finisher",
+          "wicket keeper batsman",
+          "all rounder"
+        ],
+        "equipment": "Two cones or markers 20 metres apart",
+        "how_to": [
+          "Place two cones or marks on the ground around 20 metres apart.",
+          "Sprint from one cone to the other at a strong but controlled pace.",
+          "Walk slowly back to the start as active recovery.",
+          "Maintain good running form: slight forward lean, relaxed shoulders, high knee drive."
+        ],
+        "benefits": [
+          "Improves running between wickets (quick singles and turning for second runs).",
+          "Builds cricket-specific aerobic and anaerobic conditioning."
+        ],
+        "age_limit_min": 11,
+        "prescriptions": [
+          {
+            "age_group": "U13",
+            "bmi_groups": ["Underweight", "Athletic Ideal"],
+            "sets": 1,
+            "reps": "4–5 sprints",
+            "rest_seconds": 60,
+            "notes": "Keep intensity at about 70–80%, focus on rhythm and safe turning."
+          },
+          {
+            "age_group": "U15",
+            "bmi_groups": ["Athletic Ideal"],
+            "sets": 2,
+            "reps": "5–6 sprints per set",
+            "rest_seconds": 60,
+            "notes": "Match the kind of effort needed for match running between wickets."
+          },
+          {
+            "age_group": "U17",
+            "bmi_groups": ["Athletic Ideal"],
+            "sets": 2,
+            "reps": "6–8 sprints per set",
+            "rest_seconds": 45,
+            "notes": "High-quality efforts, good for building repeat sprint ability."
+          },
+          {
+            "age_group": "U19",
+            "bmi_groups": ["Athletic Ideal"],
+            "sets": 3,
+            "reps": "6–8 sprints per set",
+            "rest_seconds": 45,
+            "notes": "Match-intensity simulation. Not for beginners in fitness."
+          },
+          {
+            "age_group": "Adult",
+            "bmi_groups": ["Athletic Ideal"],
+            "sets": 3,
+            "reps": "6–10 sprints per set",
+            "rest_seconds": 45,
+            "notes": "Advanced conditioning. Use cautiously in-season to avoid overload."
+          },
+          {
+            "age_group": "U15",
+            "bmi_groups": ["Overweight", "Obese"],
+            "sets": 1,
+            "reps": "3–4 sprints",
+            "rest_seconds": 75,
+            "notes": "Shorter volume, prioritise safe movement and controlled pace."
+          },
+          {
+            "age_group": "Adult",
+            "bmi_groups": ["Overweight", "Obese"],
+            "sets": 1,
+            "reps": "4–5 sprints",
+            "rest_seconds": 90,
+            "notes": "Use as a gentle conditioning tool, not maximum intensity."
+          }
+        ],
+        "safety_notes": [
+          "Avoid doing sprints on very hard, uneven or slippery surfaces.",
+          "Warm up hamstrings and calves thoroughly beforehand.",
+          "Stop if there is any sharp pain in hamstring, calf, knee or Achilles."
+        ]
+      },
+      {
+        "exercise_id": "BAT005",
+        "name": "Grip & Forearm Strength Holds",
+        "type": "Bat Control Strength",
+        "role_priority": [
+          "top order batsman",
+          "middle order batsman",
+          "finisher",
+          "all rounder",
+          "wicket keeper batsman"
+        ],
+        "equipment": "Hand gripper / light dumbbell / towel hold",
+        "how_to": [
+          "Hold gripper or light dumbbell in batting hand.",
+          "Squeeze and maintain a firm hold without shaking.",
+          "Alternate between both hands for equal strength development."
+        ],
+        "benefits": [
+          "Improves bat face control and reduces late-shot error.",
+          "Strengthens wrists for placement and 360° scoring."
+        ],
+        "age_limit_min": 13,
+        "prescriptions": [
+          {
+            "age_group": "U13",
+            "bmi_groups": ["All"],
+            "sets": 2,
+            "reps": "15–20 seconds per hold",
+            "rest_seconds": 60,
+            "notes": "Use very light grip tension, avoid full contraction."
+          },
+          {
+            "age_group": "U15",
+            "bmi_groups": ["Underweight", "Athletic Ideal"],
+            "sets": 3,
+            "reps": "20–25 seconds",
+            "rest_seconds": 50,
+            "notes": "Focus on quality endurance, not maximum force."
+          },
+          {
+            "age_group": "U17",
+            "bmi_groups": ["Athletic Ideal"],
+            "sets": 3,
+            "reps": "25–30 seconds",
+            "rest_seconds": 45,
+            "notes": "Should feel controlled muscular fatigue."
+          },
+          {
+            "age_group": "Adult",
+            "bmi_groups": ["Athletic Ideal"],
+            "sets": 3,
+            "reps": "30–40 seconds",
+            "rest_seconds": 45,
+            "notes": "Grow forearm endurance for long batting innings."
+          },
+          {
+            "age_group": "Adult",
+            "bmi_groups": ["Overweight", "Obese"],
+            "sets": 2,
+            "reps": "20 seconds",
+            "rest_seconds": 75,
+            "notes": "Too long holds may stress elbow joints."
+          }
+        ],
+        "safety_notes": [
+          "Avoid gripping too hard causing joint strain.",
+          "Stop if tingling in fingers occurs (nerve compression sign)."
+        ]
+      },
+
+      {
+        "exercise_id": "BAT006",
+        "name": "Bodyweight Squats and Reverse Lunges",
+        "type": "Lower Body Strength & Stability",
+        "role_priority": [
+          "all rounder",
+          "top order batsman",
+          "middle order batsman",
+          "finisher",
+          "wicket keeper batsman"
+        ],
+        "equipment": "None",
+        "how_to": [
+          "Stand with feet shoulder-width apart.",
+          "Perform squats keeping chest up and knees aligned.",
+          "Reverse lunges: step one leg back, lower hips, return to start."
+        ],
+        "benefits": [
+          "Improves balance and stability for front-foot batting.",
+          "Builds quad & glute strength for power transfer."
+        ],
+        "age_limit_min": 11,
+        "prescriptions": [
+          {
+            "age_group": "U11",
+            "bmi_groups": ["All"],
+            "sets": 1,
+            "reps": "6 squats + 4 lunges each leg",
+            "rest_seconds": 90,
+            "notes": "Very slow tempo, technique priority."
+          },
+          {
+            "age_group": "U15",
+            "bmi_groups": ["Athletic Ideal"],
+            "sets": 2,
+            "reps": "10 squats + 6 lunges each leg",
+            "rest_seconds": 60,
+            "notes": "Control knee alignment and foot stability."
+          },
+          {
+            "age_group": "U17",
+            "bmi_groups": ["Athletic Ideal", "Overweight"],
+            "sets": 3,
+            "reps": "12 squats + 8 lunges each leg",
+            "rest_seconds": 60,
+            "notes": "Intermediate strength volume."
+          },
+          {
+            "age_group": "Adult",
+            "bmi_groups": ["Athletic Ideal"],
+            "sets": 3,
+            "reps": "15 squats + 10 lunges each leg",
+            "rest_seconds": 45,
+            "notes": "High volume lower-body conditioning."
+          },
+          {
+            "age_group": "Adult",
+            "bmi_groups": ["Overweight", "Obese"],
+            "sets": 2,
+            "reps": "8 squats + 6 lunges",
+            "rest_seconds": 90,
+            "notes": "Avoid knee valgus → go slow."
+          }
+        ],
+        "safety_notes": [
+          "Keep knees from collapsing inward.",
+          "Stop if knee pain or hip clicking occurs."
+        ]
+      },
+
+      {
+        "exercise_id": "BAT007",
+        "name": "Skipping Rope Footwork Conditioning",
+        "type": "Footwork & Conditioning",
+        "role_priority": [
+          "top order batsman",
+          "middle order batsman",
+          "all rounder",
+          "wicket keeper batsman"
+        ],
+        "equipment": "Skipping rope",
+        "how_to": [
+          "Jump lightly on balls of feet.",
+          "Keep jumps small and rhythmic.",
+          "Land softly to protect joints."
+        ],
+        "benefits": [
+          "Improves fast footwork for spin & pace.",
+          "Strengthens ankle mobility and calf elasticity."
+        ],
+        "age_limit_min": 11,
+        "prescriptions": [
+          {
+            "age_group": "U11",
+            "bmi_groups": ["Underweight", "Athletic Ideal"],
+            "sets": 1,
+            "reps": "30 seconds jumping",
+            "rest_seconds": 60,
+            "notes": "Keep landings soft."
+          },
+          {
+            "age_group": "U15",
+            "bmi_groups": ["Athletic Ideal"],
+            "sets": 2,
+            "reps": "40 seconds",
+            "rest_seconds": 45
+          },
+          {
+            "age_group": "U17",
+            "bmi_groups": ["Athletic Ideal"],
+            "sets": 3,
+            "reps": "45 seconds",
+            "rest_seconds": 45
+          },
+          {
+            "age_group": "Adult",
+            "bmi_groups": ["Athletic Ideal"],
+            "sets": 3,
+            "reps": "60 seconds",
+            "rest_seconds": 45
+          },
+          {
+            "age_group": "All",
+            "bmi_groups": ["Overweight", "Obese"],
+            "sets": 1,
+            "reps": "20–30 seconds",
+            "rest_seconds": 90,
+            "notes": "Avoid high bounce; knee stress risk."
+          }
+        ],
+        "safety_notes": [
+          "Not recommended for knee pain or achilles injury.",
+          "Use cushioning shoes."
+        ]
+      },
+
+      {
+        "exercise_id": "BAT008",
+        "name": "Agility Ladder In–Out & Lateral Footwork",
+        "type": "Agility & Lateral Movement",
+        "role_priority": [
+          "top order batsman",
+          "middle order batsman",
+          "all rounder",
+          "wicket keeper batsman"
+        ],
+        "equipment": "Agility ladder or tape grid",
+        "how_to": [
+          "Perform in–out steps rhythmically.",
+          "Maintain low center of gravity.",
+          "Use short, fast steps."
+        ],
+        "benefits": [
+          "Improves movement to pitch of ball.",
+          "Develops lateral stability & batting stance reaction."
+        ],
+        "age_limit_min": 11,
+        "prescriptions": [
+          {
+            "age_group": "U11",
+            "bmi_groups": ["All"],
+            "sets": 1,
+            "reps": "2 ladder runs",
+            "rest_seconds": 75,
+            "notes": "Technique before speed."
+          },
+          {
+            "age_group": "U15",
+            "bmi_groups": ["Athletic Ideal"],
+            "sets": 2,
+            "reps": "3 ladder runs",
+            "rest_seconds": 60
+          },
+          {
+            "age_group": "U17",
+            "bmi_groups": ["Athletic Ideal"],
+            "sets": 3,
+            "reps": "4 ladder runs",
+            "rest_seconds": 60
+          },
+          {
+            "age_group": "Adult",
+            "bmi_groups": ["Athletic Ideal"],
+            "sets": 3,
+            "reps": "5 ladder runs",
+            "rest_seconds": 45
+          },
+          {
+            "age_group": "All",
+            "bmi_groups": ["Overweight"],
+            "sets": 1,
+            "reps": "2 slow runs",
+            "rest_seconds": 90,
+            "notes": "Control joints."
+          }
+        ],
+        "safety_notes": [
+          "Keep ladder stable.",
+          "Do not sprint blindly."
+        ]
+      },
+
+      {
+        "exercise_id": "BAT009",
+        "name": "Pallof Press Anti-Rotation Core",
+        "type": "Core Anti-Rotation Strength",
+        "role_priority": [
+          "all rounder",
+          "finisher",
+          "middle order batsman",
+          "top order batsman"
+        ],
+        "equipment": "Resistance band",
+        "how_to": [
+          "Stand side-on to band anchor.",
+          "Press band forward resisting rotation."
+        ],
+        "benefits": [
+          "Improves trunk stability during power swings.",
+          "Reduces collapse during leg-side shots."
+        ],
+        "age_limit_min": 15,
+        "prescriptions": [
+          {
+            "age_group": "U17",
+            "bmi_groups": ["Athletic Ideal"],
+            "sets": 2,
+            "reps": "8 each side",
+            "rest_seconds": 75
+          },
+          {
+            "age_group": "U19",
+            "bmi_groups": ["Athletic Ideal"],
+            "sets": 3,
+            "reps": "8–10 each side",
+            "rest_seconds": 60
+          },
+          {
+            "age_group": "Adult",
+            "bmi_groups": ["Athletic Ideal"],
+            "sets": 3,
+            "reps": "10–12 each side",
+            "rest_seconds": 60
+          },
+          {
+            "age_group": "U19",
+            "bmi_groups": ["Overweight"],
+            "sets": 2,
+            "reps": "6 each side",
+            "rest_seconds": 90,
+            "notes": "Avoid trunk strain."
+          }
+        ],
+        "safety_notes": [
+          "Keep rib cage down.",
+          "Avoid leaning backwards."
+        ]
+      },
+
+      {
+        "exercise_id": "BAT010",
+        "name": "Push-Up Progression Strength",
+        "type": "Upper Body Strength",
+        "role_priority": [
+          "all rounder",
+          "top order batsman",
+          "middle order batsman",
+          "finisher",
+          "wicket keeper batsman"
+        ],
+        "equipment": "None",
+        "how_to": [
+          "Maintain straight body line.",
+          "Elbows 45° to torso.",
+          "Lower chest slowly, push explosively."
+        ],
+        "benefits": [
+          "Shoulder & tricep strength for bat speed.",
+          "Scapular control reduces injury."
+        ],
+        "age_limit_min": 11,
+        "prescriptions": [
+          {
+            "age_group": "U11",
+            "bmi_groups": ["All"],
+            "sets": 1,
+            "reps": "5–6",
+            "rest_seconds": 90,
+            "notes": "Can do from knees."
+          },
+          {
+            "age_group": "U15",
+            "bmi_groups": ["Athletic Ideal"],
+            "sets": 2,
+            "reps": "10–12",
+            "rest_seconds": 60
+          },
+          {
+            "age_group": "U17",
+            "bmi_groups": ["Athletic Ideal"],
+            "sets": 3,
+            "reps": "12–15",
+            "rest_seconds": 60
+          },
+          {
+            "age_group": "Adult",
+            "bmi_groups": ["Athletic Ideal"],
+            "sets": 3,
+            "reps": "15–20",
+            "rest_seconds": 45
+          },
+          {
+            "age_group": "Adult",
+            "bmi_groups": ["Overweight", "Obese"],
+            "sets": 1,
+            "reps": "5–8",
+            "rest_seconds": 75,
+            "notes": "Wall push-ups recommended until strong."
+          }
+        ],
+        "safety_notes": [
+          "Avoid elbow flare.",
+          "Stop if wrist pain occurs."
+        ]
+      },
+
+      {
+        "exercise_id": "BAT011",
+        "name": "Single-Leg Balance & Reach",
+        "type": "Balance Control",
+        "role_priority": [
+          "top order batsman",
+          "middle order batsman",
+          "all rounder",
+          "wicket keeper batsman"
+        ],
+        "equipment": "None",
+        "how_to": [
+          "Stand on one foot.",
+          "Reach forward slowly keeping balance.",
+          "Switch legs after reps."
+        ],
+        "benefits": [
+          "Improves weight transfer in shots.",
+          "Strengthens stabilizers for late adjustments."
+        ],
+        "age_limit_min": 11,
+        "prescriptions": [
+          {
+            "age_group": "U11",
+            "bmi_groups": ["All"],
+            "sets": 1,
+            "reps": "6 each leg",
+            "rest_seconds": 75
+          },
+          {
+            "age_group": "U15",
+            "bmi_groups": ["Athletic Ideal"],
+            "sets": 2,
+            "reps": "8 each leg",
+            "rest_seconds": 60
+          },
+          {
+            "age_group": "Adult",
+            "bmi_groups": ["Athletic Ideal"],
+            "sets": 3,
+            "reps": "10 each leg",
+            "rest_seconds": 45
+          }
+        ],
+        "safety_notes": [
+          "Wall support allowed for kids.",
+          "Avoid twisting knee inward."
+        ]
+      },
+
+      {
+        "exercise_id": "BAT012",
+        "name": "Dynamic Batting Warm-Up Circuit",
+        "type": "Movement Preparation",
+        "role_priority": [
+          "all rounder",
+          "top order batsman",
+          "middle order batsman",
+          "finisher",
+          "wicket keeper batsman"
+        ],
+        "equipment": "Bat",
+        "how_to": [
+          "Arm circles.",
+          "Hip circles.",
+          "Shadow batting swings.",
+          "T-spine trunk rotations."
+        ],
+        "benefits": [
+          "Warms joints & improves range of motion.",
+          "Prevents muscle strain in batting."
+        ],
+        "age_limit_min": 6,
+        "prescriptions": [
+          {
+            "age_group": "U11",
+            "bmi_groups": ["All"],
+            "sets": 1,
+            "reps": "3-4 minutes total",
+            "rest_seconds": 0
+          },
+          {
+            "age_group": "U17",
+            "bmi_groups": ["Athletic Ideal"],
+            "sets": 1,
+            "reps": "5-7 minutes",
+            "rest_seconds": 0
+          },
+          {
+            "age_group": "Adult",
+            "bmi_groups": ["All"],
+            "sets": 1,
+            "reps": "6-8 minutes",
+            "rest_seconds": 0
+          }
+        ],
+        "safety_notes": [
+          "Never skip warm-up.",
+          "Keep shoulder movements smooth, not jerky."
+        ]
+      }
+      
+      
+
+
+      
+      
+
+
+      
+      
+
+
+
+      
+
+
+      
+
+
+      
+
+
+    ]
+  }
+  
