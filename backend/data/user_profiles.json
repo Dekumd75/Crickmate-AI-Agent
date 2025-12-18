@@ -1,0 +1,64 @@
+{
+    "users": [
+        {
+            "user_id": "USER0001",
+            "age": 13,
+            "height_cm": 158,
+            "weight_kg": 43,
+            "age_group": "U15",
+            "bmi": 17.22,
+            "bmi_group": "Underweight",
+            "skill_level": "beginner",
+            "playing_role": "top order batsman",
+            "weekly_days": null
+        },
+        {
+            "user_id": "USER0002",
+            "age": 13,
+            "height_cm": 158,
+            "weight_kg": 43,
+            "age_group": "U15",
+            "bmi": 17.22,
+            "bmi_group": "Athletic Ideal",
+            "skill_level": "beginner",
+            "playing_role": "top order batsman",
+            "weekly_days": null
+        },
+        {
+            "user_id": "USER0003",
+            "age": 13,
+            "height_cm": 158,
+            "weight_kg": 43,
+            "age_group": "U15",
+            "bmi": 17.22,
+            "bmi_group": "Athletic Ideal",
+            "skill_level": "beginner",
+            "playing_role": "top order batsman",
+            "weekly_days": null
+        },
+        {
+            "user_id": "USER0004",
+            "age": 13,
+            "height_cm": 158,
+            "weight_kg": 43,
+            "age_group": "U15",
+            "bmi": 17.22,
+            "bmi_group": "Athletic Ideal",
+            "skill_level": "beginner",
+            "playing_role": "top order batsman",
+            "weekly_days": null
+        },
+        {
+            "user_id": "USER0005",
+            "age": 13,
+            "height_cm": 158,
+            "weight_kg": 43,
+            "age_group": "U15",
+            "bmi": 17.22,
+            "bmi_group": "Athletic Ideal",
+            "skill_level": "beginner",
+            "playing_role": "top order batsman",
+            "weekly_days": null
+        }
+    ]
+}

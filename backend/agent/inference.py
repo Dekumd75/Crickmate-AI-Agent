@@ -68,20 +68,31 @@ class CricketInferenceEngine:
         return "FULL_EXPLANATION"
 
     def _detect_shot(self, query: str):
-        shot_keywords = {
-            "forward defence": "FORWARD_DEFENCE",
-            "forward defense": "FORWARD_DEFENCE",
-            "cut": "CUT_SHOT",
-            "cut shot": "CUT_SHOT",
-            "pull": "PULL_SHOT",
-            "pull shot": "PULL_SHOT"
-        }
 
-        for keyword, shot_key in shot_keywords.items():
-            if keyword in query:
+     q = query.lower()
+
+    # 1️⃣ direct match with exact key
+     for shot_key, info in self.shots_data.items():
+        if shot_key.lower() in q:
+              return shot_key
+
+    # 2️⃣ match if full shot name appears 
+     for shot_key, info in self.shots_data.items():
+        if info["name"].lower() in q:
+            return shot_key
+
+    # 3️⃣ partial word match (pull, sweep, drive...)
+     for shot_key, info in self.shots_data.items():
+
+        words = info["name"].lower().split()
+
+        for w in words:
+            # ignore tiny words (like "of", "the")
+            if len(w) > 2 and w in q:
                 return shot_key
 
         return None
+
 
     def _detect_fundamental(self, query: str):
         for key, info in self.fundamentals.items():

@@ -162,6 +162,319 @@
           "safety": "Helmet and pads recommended"
         }
       ]
+    },
+
+      "STRAIGHT_DRIVE": {
+        "name": "Straight Drive",
+        "level": "Intermediate",
+        "played_to_length": "Full to overpitched deliveries",
+        "description": "Elegant attacking shot played down the ground by presenting full face of the bat",
+    
+        "technique": {
+          "steps": [
+            "Step forward towards the line of the ball",
+            "Head over front knee at contact",
+            "Keep front elbow high",
+            "Present the full face of the bat",
+            "Drive through the line, finishing high"
+          ],
+          "key_points": [
+            "Vertical bat",
+            "Front elbow up",
+            "Head aligned over ball"
+          ],
+          "common_mistakes": [
+            "Falling over",
+            "Closed bat face",
+            "Playing too early",
+            "Not reaching the pitch of the ball"
+          ]
+        },
+    
+        "drills": [
+          {
+            "name": "Shadow Straight Drive",
+            "how_to": [
+              "Practice front foot stride",
+              "Simulate vertical bat swing",
+              "Focus on body alignment"
+            ],
+            "reps_sets": "3 × 12",
+            "progression": "Add mirror training",
+            "safety": "No ball used"
+          },
+          {
+            "name": "Drop & Drive Drill",
+            "how_to": [
+              "Coach drops ball in front",
+              "Player shapes up and drives straight"
+            ],
+            "reps_sets": "4 × 8 balls",
+            "progression": "Hard ball feeds",
+            "safety": "Pad + gloves needed"
+          }
+        ]
+      },
+    
+      "COVER_DRIVE": {
+        "name": "Cover Drive",
+        "level": "Advanced",
+        "played_to_length": "Full and overpitched outside off",
+        "description": "Attacking front-foot shot played through cover region",
+    
+        "technique": {
+          "steps": [
+            "Front foot stride towards off stump",
+            "Front shoulder pointing to cover",
+            "Head towards ball",
+            "High front elbow",
+            "Full bat followthrough"
+          ],
+          "key_points": [
+            "High elbow",
+            "Soft hands",
+            "Precise foot placement"
+          ],
+          "common_mistakes": [
+            "Reaching for ball",
+            "Closed bat face",
+            "Losing balance"
+          ]
+        },
+    
+        "drills": [
+          {
+            "name": "Shadow Cover Drive",
+            "how_to": [
+              "Practice step → elbow shape",
+              "Shadow swing with wide balls"
+            ],
+            "reps_sets": "3 × 15",
+            "progression": "Add foot markers",
+            "safety": "No injuries risk"
+          },
+          {
+            "name": "Throwdown Cover Drill",
+            "how_to": [
+              "Coach throws full outside-off",
+              "Player drives along ground"
+            ],
+            "reps_sets": "5 × 6 balls",
+            "progression": "Increase pace",
+            "safety": "Helmet recommended"
+          }
+        ]
+      },
+    
+      "ON_DRIVE": {
+        "name": "On Drive",
+        "level": "Advanced",
+        "played_to_length": "Full pitching middle-leg",
+        "description": "Front-foot shot played through mid-on",
+    
+        "technique": {
+          "steps": [
+            "Front foot across to middle stump",
+            "Head leading movement",
+            "Bat swing vertical",
+            "Roll wrists late"
+          ],
+          "key_points": [
+            "Balance",
+            "Vertical swing"
+          ],
+          "common_mistakes": [
+            "Overclosing stance",
+            "Falling over front side"
+          ]
+        },
+    
+        "drills": [
+          {
+            "name": "Line Marker On-Drive",
+            "how_to": [
+              "Place cones mid-on line",
+              "Shadow bat into zone"
+            ],
+            "reps_sets": "3 × 15",
+            "progression": "Add ball feeds",
+            "safety": "Safe"
+          }
+        ]
+      },
+    
+      "LEG_GLANCE": {
+        "name": "Leg Glance",
+        "level": "Beginner",
+        "played_to_length": "Good length onto pads",
+        "description": "Soft redirect shot to fine leg or square leg",
+    
+        "technique": {
+          "steps": [
+            "Stay side-on",
+            "Open face angling ball fine",
+            "Roll wrists",
+            "Balance on front foot"
+          ],
+          "key_points": [
+            "Soft hands",
+            "Late contact"
+          ],
+          "common_mistakes": [
+            "Hard hands",
+            "Losing shape"
+          ]
+        },
+    
+        "drills": [
+          {
+            "name": "Pad Contact Drill",
+            "how_to": [
+              "Underarm feeds to pads",
+              "Glance along ground"
+            ],
+            "reps_sets": "3 × 10",
+            "progression": "Hard ball",
+            "safety": "Pads needed"
+          }
+        ]
+      },
+    
+      "SWEEP_SHOT": {
+        "name": "Sweep Shot",
+        "level": "Advanced",
+        "played_to_length": "Full length from spinners",
+        "description": "Horizontal-bat shot sweeping ball to leg side",
+    
+        "technique": {
+          "steps": [
+            "Get low with bent front knee",
+            "Front foot outside off",
+            "Bat horizontal",
+            "Roll wrists at contact"
+          ],
+          "key_points": [
+            "Balance",
+            "Low body"
+          ],
+          "common_mistakes": [
+            "High bat path",
+            "Late head movement"
+          ]
+        },
+    
+        "drills": [
+          {
+            "name": "Soft Ball Sweep",
+            "how_to": [
+              "Coach feeds from 6m",
+              "Sweep along ground"
+            ],
+            "reps_sets": "3 × 8",
+            "progression": "Facing spinner",
+            "safety": "Helmet needed"
+          }
+        ]
+      },
+    
+      "SQUARE_DRIVE": {
+        "name": "Square Drive",
+        "level": "Advanced",
+        "played_to_length": "Full and wide",
+        "description": "Front-foot aggressive shot square of wicket",
+    
+        "technique": {
+          "steps": [
+            "Front foot outside line",
+            "Vertical bat",
+            "Chin over ball"
+          ],
+          "key_points": [
+            "Precise footwork"
+          ],
+          "common_mistakes": [
+            "Reaching"
+          ]
+        },
+    
+        "drills": [
+          {
+            "name": "Wide Throwdowns",
+            "how_to": [
+              "Balls placed wide",
+              "Drive square"
+            ],
+            "reps_sets": "3 × 10",
+            "safety": "Pads + helmet"
+          }
+        ]
+      },
+    
+      "BACK_FOOT_PUNCH": {
+        "name": "Back Foot Punch",
+        "level": "Intermediate",
+        "played_to_length": "Short of length",
+        "description": "Back-foot controlled punch through off side",
+    
+        "technique": {
+          "steps": [
+            "Back foot across",
+            "Bat swing short + firm",
+            "Late contact"
+          ],
+          "key_points": [
+            "Hand control"
+          ],
+          "common_mistakes": [
+            "Hard swing"
+          ]
+        },
+    
+        "drills": [
+          {
+            "name": "Wall Punch Drill",
+            "how_to": [
+              "Underarm off side",
+              "Punch through covers"
+            ],
+            "reps_sets": "3 × 10"
+          }
+        ]
+      },
+    
+      "LOFTED_STRAIGHT_HIT": {
+        "name": "Lofted Straight Hit",
+        "level": "Advanced",
+        "played_to_length": "Full deliveries bowled in arc",
+        "description": "Attacking lofted shot over bowler’s head",
+    
+        "technique": {
+          "steps": [
+            "Long stride",
+            "Bat swing upward",
+            "Use wrists"
+          ],
+          "key_points": [
+            "Clean swing path"
+          ],
+          "common_mistakes": [
+            "Overhit",
+            "Bottom hand dominance"
+          ]
+        },
+    
+        "drills": [
+          {
+            "name": "Golf Ball Tee Drill",
+            "how_to": [
+              "Ball on tee → loft cleanly"
+            ],
+            "reps_sets": "3 × 8",
+            "safety": "Spacing required"
+          }
+        ]
+      }
     }
-  }
+    
+  
   

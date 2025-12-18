@@ -34,7 +34,10 @@ class UserProfile:
             return None
 
     def _compute_bmi_group(self):
-        if self.bmi < 18.5:
+
+    # Adult logic stays same
+        if self.age >= 19:
+          if self.bmi < 18.5:
             return "Underweight"
         elif self.bmi < 25:
             return "Athletic Ideal"
@@ -42,6 +45,50 @@ class UserProfile:
             return "Overweight"
         else:
             return "Obese"
+
+    # children & youth logic (6–18)
+    # Age group safe ranges
+        if self.age <= 12:
+          if self.bmi < 14.5:
+            return "Underweight"
+        elif self.bmi <= 21.5:
+            return "Athletic Ideal"
+        elif self.bmi <= 24:
+            return "Overweight"
+        else:
+            return "Obese"
+
+        if self.age <= 14:
+          if self.bmi < 15.5:
+            return "Underweight"
+        elif self.bmi <= 22.5:
+            return "Athletic Ideal"
+        elif self.bmi <= 25:
+            return "Overweight"
+        else:
+            return "Obese"
+
+        if self.age <= 16:
+          if self.bmi < 17:
+            return "Underweight"
+        elif self.bmi <= 23.5:
+            return "Athletic Ideal"
+        elif self.bmi <= 26:
+            return "Overweight"
+        else:
+            return "Obese"
+
+    # U19
+        if self.age <= 18:
+          if self.bmi < 18:
+            return "Underweight"
+        elif self.bmi <= 24:
+            return "Athletic Ideal"
+        elif self.bmi <= 27:
+            return "Overweight"
+        else:
+            return "Obese"
+
 
     @staticmethod
     def validate_inputs(user_data):

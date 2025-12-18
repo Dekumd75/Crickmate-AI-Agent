@@ -1,0 +1,2125 @@
+{
+    "technical_categories": [
+      {
+        "category_id": "A",
+        "category_name": "Ball Reading & Decision-Making",
+        "areas": [
+          {
+            "area_id": "A1",
+            "name": "Reading Length Early",
+            "role_priority": {
+              "top order batsman": "core",
+              "middle order batsman": "core",
+              "finisher": "important",
+              "all rounder": "core"
+            },
+            "description": "Ability to judge the length early determines shot selection and reduces dismissal chances.",
+            "why_it_matters": [
+              "Improves reaction time",
+              "Builds confidence against pace",
+              "Essential for shot selection control"
+            ],
+            "drills": [
+              {
+                "name": "Bounce Spot Recognition",
+                "how_to": [
+                  "Coach drops balls from shoulder height",
+                  "Batter calls 'full', 'length', or 'short' before contact"
+                ],
+                "reps_sets": "4 sets × 10 balls",
+                "difficulty": "Beginner",
+                "equipment": "Tennis ball",
+                "coaching_points": [
+                  "Head should remain still",
+                  "Do not pre-decide shot"
+                ],
+                "mistakes": [
+                  "Calling after bounce",
+                  "Guessing instead of reading"
+                ],
+                "safety": "Indoor safe – no pads required"
+              },
+              {
+                "name": "Visual Reaction Tape Drill",
+                "how_to": [
+                  "Pitch is marked with 3 coloured zones",
+                  "Coach bowls slowly through zones",
+                  "Batter shouts colour instantly"
+                ],
+                "reps_sets": "3 sets × 12 balls",
+                "difficulty": "Intermediate",
+                "equipment": "Chalk/markers",
+                "coaching_points": [
+                  "Track ball from release",
+                  "Move early, not late"
+                ],
+                "mistakes": [
+                  "Watching bounce instead of flight"
+                ],
+                "safety": "Wear pads for protection"
+              }
+            ]
+          },
+  
+          {
+            "area_id": "A2",
+            "name": "Line Reading & Off-Stump Awareness",
+            "role_priority": {
+              "top order batsman": "core",
+              "middle order batsman": "core",
+              "finisher": "support",
+              "all rounder": "important"
+            },
+            "description": "Knowing where your off stump is improves leave judgement and reduces edges.",
+            "why_it_matters": [
+              "Reduces outside edge dismissals",
+              "Improves defensive technique",
+              "Controls scoring zones"
+            ],
+            "drills": [
+              {
+                "name": "Off-Stump Stick Drill",
+                "how_to": [
+                  "Place an extra stump outside off stump",
+                  "Batter must leave every ball outside stump",
+                  "Punish bat-pad contact"
+                ],
+                "reps_sets": "4 sets × 8 balls",
+                "difficulty": "Intermediate",
+                "equipment": "Extra stump",
+                "coaching_points": [
+                  "Head over off stump",
+                  "Soft hands if defending"
+                ],
+                "mistakes": [
+                  "Reaching for the ball",
+                  "Playing too early"
+                ],
+                "safety": "Helmet recommended"
+              },
+              {
+                "name": "Leave Decision Reaction Drill",
+                "how_to": [
+                  "Coach mixes balls on 5th stump channel",
+                  "Batter must leave 80% of them",
+                  "Call 'leave' loudly"
+                ],
+                "reps_sets": "3 sets × 12 balls",
+                "difficulty": "Advanced",
+                "equipment": "Hard ball",
+                "coaching_points": [
+                  "Judge length + line together"
+                ],
+                "mistakes": [
+                  "Following ball with hands",
+                  "Stepping across too much"
+                ],
+                "safety": "Full gear mandatory"
+              }
+            ]
+          },
+  
+          {
+            "area_id": "A3",
+            "name": "Shot Selection Discipline",
+            "role_priority": {
+              "top order batsman": "core",
+              "middle order batsman": "core",
+              "finisher": "important",
+              "all rounder": "important"
+            },
+            "description": "Knowing when to attack, defend or leave increases batting consistency and innings building.",
+            "why_it_matters": [
+              "Reduces rash shot dismissals",
+              "Improves strike rate control",
+              "Creates match awareness"
+            ],
+            "drills": [
+              {
+                "name": "Traffic Light Decision Drill",
+                "how_to": [
+                  "Coach calls red/yellow/green mid-delivery",
+                  "Green = attack",
+                  "Yellow = safe stroke",
+                  "Red = leave/defend"
+                ],
+                "reps_sets": "4 sets × 10 balls",
+                "difficulty": "Intermediate",
+                "equipment": "Coach call signals",
+                "coaching_points": [
+                  "Trust call instantly",
+                  "Avoid changing decision late"
+                ],
+                "mistakes": [
+                  "Changing plan mid shot"
+                ],
+                "safety": "No hard hitting indoors"
+              },
+              {
+                "name": "Game Scenario Shot Filter",
+                "how_to": [
+                  "Coach gives scenario (20/2 chasing 260)",
+                  "Batter selects correct shot for ball type",
+                  "Coach grades decision"
+                ],
+                "reps_sets": "3 sets × 8 scenarios",
+                "difficulty": "Advanced",
+                "equipment": "Whiteboard",
+                "coaching_points": [
+                  "Match plan thinking",
+                  "Read scoreboard pressure"
+                ],
+                "mistakes": [
+                  "Ignoring game situation"
+                ],
+                "safety": "No safety concern"
+              }
+            ]
+          }
+          
+
+        ]
+      },
+      {
+        "category_id": "B",
+        "category_name": "Timing & Contact Skills",
+        "areas": [
+          {
+            "area_id": "B1",
+            "name": "Timing & Rhythm",
+            "role_priority": {
+              "top order batsman": "core",
+              "middle order batsman": "core",
+              "finisher": "important",
+              "all rounder": "core"
+            },
+            "description": "Ability to sync hand speed, body rotation, and ball arrival to produce clean contact.",
+            "why_it_matters": [
+              "Improves consistency in stroke-making",
+              "Reduces edge chances",
+              "Builds flow and feel for batting"
+            ],
+            "drills": [
+              {
+                "name": "Drop Feed Timing Drill",
+                "how_to": [
+                  "Partner holds ball above eye level",
+                  "Drops ball vertically",
+                  "Batter taps ball softly forward",
+                  "Focus on late contact under eyes"
+                ],
+                "reps_sets": "4 sets × 10 balls",
+                "difficulty": "Beginner",
+                "equipment": "Tennis ball",
+                "coaching_points": [
+                  "Keep head still",
+                  "Minimal backlift"
+                ],
+                "mistakes": [
+                  "Swinging too early",
+                  "Too much force"
+                ],
+                "safety": "Indoor safe drill"
+              },
+              {
+                "name": "Single-Hand Batting Drill",
+                "how_to": [
+                  "Hold bat with top hand only",
+                  "Coach feeds soft balls",
+                  "Play controlled straight bat shots"
+                ],
+                "reps_sets": "3 sets × 12 balls",
+                "difficulty": "Intermediate",
+                "equipment": "Bat + tennis ball",
+                "coaching_points": [
+                  "Top hand controls bat face",
+                  "Keep elbow high"
+                ],
+                "mistakes": [
+                  "Bottom hand taking over"
+                ],
+                "safety": "Padding recommended"
+              }
+            ]
+          },
+      
+          {
+            "area_id": "B2",
+            "name": "Hand–Eye Coordination",
+            "role_priority": {
+              "top order batsman": "core",
+              "middle order batsman": "core",
+              "finisher": "core",
+              "all rounder": "core"
+            },
+            "description": "Coordination between eye focus and hand movement improves precision and middle contact.",
+            "why_it_matters": [
+              "Reduces mistimed shots",
+              "Increases boundary success",
+              "Helps against pace bowling"
+            ],
+            "drills": [
+              {
+                "name": "Small Ball Batting",
+                "how_to": [
+                  "Use mini balls or table tennis balls",
+                  "Batter plays soft shots inside a circle",
+                  "Focus on middle contact only"
+                ],
+                "reps_sets": "3 sets × 15 balls",
+                "difficulty": "Intermediate",
+                "equipment": "Table tennis balls",
+                "coaching_points": [
+                  "Soft hands",
+                  "Minimal follow through"
+                ],
+                "mistakes": [
+                  "Hard hitting",
+                  "Loose grip"
+                ],
+                "safety": "Eye protection recommended"
+              },
+              {
+                "name": "Wall Reaction Catch",
+                "how_to": [
+                  "Throw a ball against wall",
+                  "Catch with opposite hand",
+                  "Change distance + speed gradually"
+                ],
+                "reps_sets": "4 sets × 20 catches",
+                "difficulty": "Beginner",
+                "equipment": "Soft ball + wall",
+                "coaching_points": [
+                  "Use fingertips",
+                  "Eyes track bounce"
+                ],
+                "mistakes": [
+                  "Catching with palms"
+                ],
+                "safety": "Soft ball only indoors"
+              }
+            ]
+          },
+      
+          {
+            "area_id": "B3",
+            "name": "Playing the Ball Late",
+            "role_priority": {
+              "top order batsman": "core",
+              "middle order batsman": "important",
+              "finisher": "support",
+              "all rounder": "core"
+            },
+            "description": "Hitting the ball close to body improves control and reduces edges against seam and swing.",
+            "why_it_matters": [
+              "Improves safety against moving ball",
+              "Enhances placement accuracy",
+              "Supports defensive batting"
+            ],
+            "drills": [
+              {
+                "name": "Under-the-Eyes Batting Drill",
+                "how_to": [
+                  "Coach bowls slowly on off stump",
+                  "Batter blocks ball late",
+                  "Ball must land under feet"
+                ],
+                "reps_sets": "4 sets × 8 balls",
+                "difficulty": "Intermediate",
+                "equipment": "Bat + soft ball",
+                "coaching_points": [
+                  "Head over front knee",
+                  "Soft hands"
+                ],
+                "mistakes": [
+                  "Playing too early",
+                  "Reaching forward"
+                ],
+                "safety": "Helmet recommended"
+              },
+              {
+                "name": "Half Bat Face Drill",
+                "how_to": [
+                  "Paint a thin line on bat face",
+                  "Batter must strike using middle strip only",
+                  "Focus on deflections not force"
+                ],
+                "reps_sets": "3 sets × 10 balls",
+                "difficulty": "Advanced",
+                "equipment": "Tape or marker on bat",
+                "coaching_points": [
+                  "Minimal backlift",
+                  "Quiet hands"
+                ],
+                "mistakes": [
+                  "Trying to hit hard"
+                ],
+                "safety": "Not for beginners"
+              }
+            ]
+          }
+        ]
+      },
+
+      
+{
+  "category_id": "C",
+  "category_name": "Footwork & Balance",
+  "areas": [
+    {
+      "area_id": "C1",
+      "name": "Front-Foot Movement & Balance",
+      "role_priority": {
+        "top order batsman": "core",
+        "middle order batsman": "core",
+        "finisher": "important",
+        "all rounder": "core"
+      },
+      "description": "Ability to transfer weight forward with stability and head control, improving stroke quality to full length deliveries.",
+      "why_it_matters": [
+        "Improves control against full/pitched up balls",
+        "Reduces LBW and bowled risk",
+        "Strengthens front-foot drives and defence"
+      ],
+      "drills": [
+        {
+          "name": "Front-Foot Press Drill",
+          "how_to": [
+            "Stand in stance while coach calls 'press'",
+            "Press onto front foot with small stride",
+            "Play controlled soft drive without follow-through"
+          ],
+          "reps_sets": "4 sets × 10 balls",
+          "difficulty": "Beginner",
+          "equipment": "Tennis ball",
+          "coaching_points": [
+            "Head over front knee",
+            "Minimal stride"
+          ],
+          "mistakes": [
+            "Over striding",
+            "Leaning too far forward"
+          ],
+          "safety": "Indoor safe"
+        },
+        {
+          "name": "Front-Foot Drive Placeholder Drill",
+          "how_to": [
+            "Place cones for ideal stride placement",
+            "Coach feeds half volleys",
+            "Hit through cones with full face"
+          ],
+          "reps_sets": "3 sets × 12 balls",
+          "difficulty": "Intermediate",
+          "equipment": "Cones + soft balls",
+          "coaching_points": [
+            "Stay side-on to ball",
+            "Elbow high through contact"
+          ],
+          "mistakes": [
+            "Closing the bat face",
+            "Over-rotation"
+          ],
+          "safety": "Helmet recommended"
+        }
+      ]
+    },
+
+    {
+      "area_id": "C2",
+      "name": "Back-Foot Movement & Balance",
+      "role_priority": {
+        "top order batsman": "core",
+        "middle order batsman": "important",
+        "finisher": "important",
+        "all rounder": "core"
+      },
+      "description": "Back-foot speed and stability allow batters to play short and back-of-length bowling with confidence.",
+      "why_it_matters": [
+        "Improves shot control vs short balls",
+        "Enables effective cut and pull shots",
+        "Reduces being cramped by pace"
+      ],
+      "drills": [
+        {
+          "name": "Back & Across Shadow Drill",
+          "how_to": [
+            "Start in stance",
+            "Explode back-and-across to off stump",
+            "Shadow cut shot with balance"
+          ],
+          "reps_sets": "3 sets × 12 reps",
+          "difficulty": "Beginner",
+          "equipment": "None",
+          "coaching_points": [
+            "Stay balanced on back foot",
+            "Keep head still"
+          ],
+          "mistakes": [
+            "Falling backwards",
+            "Over-stepping across"
+          ],
+          "safety": "Indoor friendly"
+        },
+        {
+          "name": "Back-Foot Press & Hit Drill",
+          "how_to": [
+            "Coach bowls short tennis balls",
+            "Player moves back quickly to hit tap shots",
+            "Focus on timing not power"
+          ],
+          "reps_sets": "4 sets × 8 balls",
+          "difficulty": "Intermediate",
+          "equipment": "Tennis ball",
+          "coaching_points": [
+            "Transfer energy into contact",
+            "Keep bat path horizontal"
+          ],
+          "mistakes": [
+            "Late movement",
+            "Hard hands"
+          ],
+          "safety": "Helmet recommended"
+        }
+      ]
+    },
+
+    {
+      "area_id": "C3",
+      "name": "Trigger Movement & Setup",
+      "role_priority": {
+        "top order batsman": "core",
+        "middle order batsman": "core",
+        "finisher": "support",
+        "all rounder": "important"
+      },
+      "description": "Controlled pre-delivery movement helps achieve stable positions for all shot types.",
+      "why_it_matters": [
+        "Improves readiness to pace & swing",
+        "Reduces foot stuck-in-creasy errors",
+        "Improves balance at release"
+      ],
+      "drills": [
+        {
+          "name": "Trigger Pattern Rehearsal",
+          "how_to": [
+            "Mark ideal trigger position with tape",
+            "Shadow step to mark as ball is released",
+            "Hold balance for two seconds"
+          ],
+          "reps_sets": "3 sets × 10 reps",
+          "difficulty": "Beginner",
+          "equipment": "Tape",
+          "coaching_points": [
+            "Minimal movement",
+            "Avoid falling across"
+          ],
+          "mistakes": [
+            "Too big trigger",
+            "Feet lifting too high"
+          ],
+          "safety": "Indoor safe"
+        },
+        {
+          "name": "Live Feed Trigger Reaction Drill",
+          "how_to": [
+            "Coach bowls mixed lengths",
+            "Trigger must happen before stride",
+            "Player calls 'ready' each ball"
+          ],
+          "reps_sets": "4 sets × 8 balls",
+          "difficulty": "Advanced",
+          "equipment": "Ball + bat",
+          "coaching_points": [
+            "Consistent timing",
+            "Shoulders relaxed"
+          ],
+          "mistakes": [
+            "Trigger too late",
+            "Cross shuffle"
+          ],
+          "safety": "Full kit recommended"
+        }
+      ]
+    }
+  ]
+},
+
+
+{
+  "category_id": "D",
+  "category_name": "Playing Pace, Swing & Short Ball",
+  "areas": [
+    {
+      "area_id": "D1",
+      "name": "Playing Swing & Seam (New Ball)",
+      "role_priority": {
+        "top order batsman": "core",
+        "middle order batsman": "core",
+        "finisher": "support",
+        "all rounder": "important"
+      },
+      "description": "Skill to adjust to late swing and seam movement against the new ball.",
+      "why_it_matters": [
+        "Reduces edges behind",
+        "Improves defensive trust",
+        "Allows safe scoring start"
+      ],
+      "drills": [
+        {
+          "name": "Side-on Shadow Swing Drill",
+          "how_to": [
+            "Face the bowler in stance",
+            "Shadow defend balls without hitting",
+            "Focus on alignment and bat path"
+          ],
+          "reps_sets": "4 sets × 10 balls",
+          "difficulty": "Beginner",
+          "equipment": "None",
+          "coaching_points": [
+            "Bat close to body",
+            "Soft hands"
+          ],
+          "mistakes": [
+            "Chasing the ball",
+            "Loose hands"
+          ],
+          "safety": "Indoor safe"
+        },
+        {
+          "name": "Late Swing Feed Drill",
+          "how_to": [
+            "Coach throws inswing/outswing tennis balls",
+            "Batter must play under eyes",
+            "Focus on late decision"
+          ],
+          "reps_sets": "3 sets × 12 balls",
+          "difficulty": "Intermediate",
+          "equipment": "Tennis ball",
+          "coaching_points": [
+            "Play late",
+            "Minimal front movement"
+          ],
+          "mistakes": [
+            "Hard hands",
+            "Reaching forward"
+          ],
+          "safety": "Helmet recommended"
+        }
+      ]
+    },
+
+    {
+      "area_id": "D2",
+      "name": "Playing Short Ball Safely",
+      "role_priority": {
+        "top order batsman": "important",
+        "middle order batsman": "core",
+        "finisher": "core",
+        "all rounder": "important"
+      },
+      "description": "Teaches safe pull, sway, duck & control against short-pitched bowling.",
+      "why_it_matters": [
+        "Improves survival vs pace",
+        "Protects against bodyline",
+        "Creates scoring chances square"
+      ],
+      "drills": [
+        {
+          "name": "Short Ball Sway Reaction Drill",
+          "how_to": [
+            "Coach feeds shoulder balls",
+            "Batter practices sway/lean",
+            "No hitting allowed"
+          ],
+          "reps_sets": "4 sets × 10 balls",
+          "difficulty": "Beginner",
+          "equipment": "Tennis ball",
+          "coaching_points": [
+            "Head inside line",
+            "Stay tall"
+          ],
+          "mistakes": [
+            "Turning away",
+            "Closing eyes"
+          ],
+          "safety": "Helmet required"
+        },
+        {
+          "name": "Controlled Pull Tap Drill",
+          "how_to": [
+            "Coach bowls short tennis balls",
+            "Player taps ball along ground",
+            "Focus on body rotation"
+          ],
+          "reps_sets": "3 sets × 8 balls",
+          "difficulty": "Intermediate",
+          "equipment": "Bat + tennis ball",
+          "coaching_points": [
+            "Roll wrists",
+            "Stay balanced"
+          ],
+          "mistakes": [
+            "Hitting upward",
+            "Falling backward"
+          ],
+          "safety": "Wear gloves + helmet"
+        }
+      ]
+    },
+
+    {
+      "area_id": "D3",
+      "name": "Playing High Pace on Bouncy Pitches",
+      "role_priority": {
+        "top order batsman": "core",
+        "middle order batsman": "important",
+        "finisher": "important",
+        "all rounder": "core"
+      },
+      "description": "Helps batters remain stable and confident against extra bounce & rapid pace.",
+      "why_it_matters": [
+        "Better bat angle control",
+        "Avoids splicing balls",
+        "Confidence on fast tracks"
+      ],
+      "drills": [
+        {
+          "name": "Tennis Bounce Feed Drill",
+          "how_to": [
+            "Coach throws hard angled tennis balls",
+            "Player must play defensive shots",
+            "Focus on soft hands"
+          ],
+          "reps_sets": "3 sets × 12 balls",
+          "difficulty": "Beginner",
+          "equipment": "Tennis ball",
+          "coaching_points": [
+            "Stay side-on",
+            "Hands low"
+          ],
+          "mistakes": [
+            "Chasing bounce",
+            "Hard hands"
+          ],
+          "safety": "Helmet recommended"
+        },
+        {
+          "name": "Back Foot Punch on Bounce",
+          "how_to": [
+            "Coach feeds balls rising chest high",
+            "Player punches through point area",
+            "Focus on timing"
+          ],
+          "reps_sets": "4 sets × 8 balls",
+          "difficulty": "Intermediate",
+          "equipment": "Bat + balls",
+          "coaching_points": [
+            "Play under eyes",
+            "Stable back foot"
+          ],
+          "mistakes": [
+            "Poking at ball",
+            "Open face"
+          ],
+          "safety": "Pads + gloves mandatory"
+        }
+      ]
+    },
+
+    {
+      "area_id": "D4",
+      "name": "Playing Back-of-a-Length / Hard Length",
+      "role_priority": {
+        "top order batsman": "core",
+        "middle order batsman": "core",
+        "finisher": "important",
+        "all rounder": "important"
+      },
+      "description": "Improves judgement and technique versus difficult lengths that attack the top of off stump.",
+      "why_it_matters": [
+        "Reduces nicked edges",
+        "Improves run rotation",
+        "Builds control on tough pitches"
+      ],
+      "drills": [
+        {
+          "name": "Tap Down Drill",
+          "how_to": [
+            "Coach bowls back-of-length balls",
+            "Player taps ball into ground",
+            "Weight stays neutral"
+          ],
+          "reps_sets": "4 sets × 10 balls",
+          "difficulty": "Intermediate",
+          "equipment": "Bowling feed",
+          "coaching_points": [
+            "Keep hands close to body",
+            "Play late"
+          ],
+          "mistakes": [
+            "Hard hands",
+            "Opening bat face"
+          ],
+          "safety": "Helmet vital"
+        },
+        {
+          "name": "Back Foot Defence Line Drill",
+          "how_to": [
+            "Coach bowls on top of off stump",
+            "Player follows line with straight bat",
+            "No attacking shots allowed"
+          ],
+          "reps_sets": "3 sets × 12 balls",
+          "difficulty": "Advanced",
+          "equipment": "Hard ball",
+          "coaching_points": [
+            "Head still",
+            "Bat vertical"
+          ],
+          "mistakes": [
+            "Pushing away from body"
+          ],
+          "safety": "Full protective gear needed"
+        }
+      ]
+    }
+  ]
+},
+
+
+{
+  "category_id": "E",
+  "category_name": "Playing Spin",
+  "areas": [
+    {
+      "area_id": "E1",
+      "name": "Front Foot Footwork to Spin",
+      "role_priority": {
+        "top order batsman": "core",
+        "middle order batsman": "core",
+        "finisher": "important",
+        "all rounder": "core"
+      },
+      "description": "Ability to use feet to reach the pitch of the ball and smother spin.",
+      "why_it_matters": [
+        "Reduces getting beaten in flight",
+        "Improves confidence against turn",
+        "Creates scoring options along ground"
+      ],
+      "drills": [
+        {
+          "name": "Cone Footstep Path Drill",
+          "how_to": [
+            "Place cones 2–3 ft outside stance",
+            "Step forward to cones and shadow defend",
+            "Repeat smooth foot placement"
+          ],
+          "reps_sets": "3 sets × 12 reps",
+          "difficulty": "Beginner",
+          "equipment": "Cones",
+          "coaching_points": [
+            "Large stride",
+            "Commit to pitch"
+          ],
+          "mistakes": [
+            "Half-step",
+            "Hesitating before stride"
+          ],
+          "safety": "Safe indoor drill"
+        },
+        {
+          "name": "Feed to Pitch Drill",
+          "how_to": [
+            "Coach feeds slow spin balls",
+            "Batter reaches pitch and drives",
+            "Focus on bat behind pad"
+          ],
+          "reps_sets": "4 sets × 10 balls",
+          "difficulty": "Intermediate",
+          "equipment": "Soft ball",
+          "coaching_points": [
+            "Head forward",
+            "Big first step"
+          ],
+          "mistakes": [
+            "Reaching hands not feet"
+          ],
+          "safety": "Pads recommended"
+        },
+        {
+          "name": "Front Foot Charge Drill",
+          "how_to": [
+            "Coach bowls full spin deliveries",
+            "Player advances 2–3 steps then smothers",
+            "Hit ball along ground only"
+          ],
+          "reps_sets": "3 sets × 8 balls",
+          "difficulty": "Advanced",
+          "equipment": "Hard ball",
+          "coaching_points": [
+            "Quick first movement",
+            "Balance at contact"
+          ],
+          "mistakes": [
+            "Lifting ball in air",
+            "Late head movement"
+          ],
+          "safety": "Helmet required"
+        }
+      ]
+    },
+
+    {
+      "area_id": "E2",
+      "name": "Back Foot Play vs Spin (Using Crease Depth)",
+      "role_priority": {
+        "top order batsman": "important",
+        "middle order batsman": "core",
+        "finisher": "core",
+        "all rounder": "core"
+      },
+      "description": "Ability to use back foot depth to cut, pull, or defend against spin bounce.",
+      "why_it_matters": [
+        "Improves reading bounce",
+        "Creates scoring square options",
+        "Controls turning deliveries"
+      ],
+      "drills": [
+        {
+          "name": "Crease Depth Shadow Drill",
+          "how_to": [
+            "Batter moves from front to back crease line",
+            "Shadow defends imaginary ball",
+            "Focus on late hitting"
+          ],
+          "reps_sets": "3 sets × 15 reps",
+          "difficulty": "Beginner",
+          "equipment": "None",
+          "coaching_points": [
+            "Stay balanced on back foot",
+            "Head still"
+          ],
+          "mistakes": [
+            "Falling backwards"
+          ],
+          "safety": "No ball required"
+        },
+        {
+          "name": "Back Foot Cut Feed",
+          "how_to": [
+            "Coach throws spin balls wide",
+            "Player cuts late square",
+            "Focus on placement"
+          ],
+          "reps_sets": "4 sets × 8 balls",
+          "difficulty": "Intermediate",
+          "equipment": "Tennis ball",
+          "coaching_points": [
+            "Use top hand",
+            "Hit behind square"
+          ],
+          "mistakes": [
+            "Hard hands causing edges"
+          ],
+          "safety": "Helmet recommended"
+        },
+        {
+          "name": "Back Foot Punch vs Spin",
+          "how_to": [
+            "Coach bowls chest height spin balls",
+            "Player punches straight back past bowler",
+            "Compact movement required"
+          ],
+          "reps_sets": "4 sets × 6 balls",
+          "difficulty": "Advanced",
+          "equipment": "Hard ball",
+          "coaching_points": [
+            "Stay side-on",
+            "Middle of bat only"
+          ],
+          "mistakes": [
+            "Front leg collapsing"
+          ],
+          "safety": "Pads mandatory"
+        }
+      ]
+    },
+
+    {
+      "area_id": "E3",
+      "name": "Reading Spin (Air & Pitch)",
+      "role_priority": {
+        "top order batsman": "core",
+        "middle order batsman": "important",
+        "finisher": "important",
+        "all rounder": "core"
+      },
+      "description": "Skill to read turn direction, drift, dip, and seam rotation.",
+      "why_it_matters": [
+        "Improves shot selection",
+        "Predicts turn before bounce",
+        "Avoids blind swinging"
+      ],
+      "drills": [
+        {
+          "name": "Grip Reading Drill",
+          "how_to": [
+            "Coach shows ball grips",
+            "Batter calls out spin direction",
+            "Predicts turn verbally"
+          ],
+          "reps_sets": "3 sets × 10 calls",
+          "difficulty": "Beginner",
+          "equipment": "Spin balls",
+          "coaching_points": [
+            "Focus on wrist angle"
+          ],
+          "mistakes": [
+            "Guessing spins"
+          ],
+          "safety": "Safe indoor"
+        },
+        {
+          "name": "Visual Spin Track Drill",
+          "how_to": [
+            "Coach under-arms spinning throws",
+            "Batter tracks movement only",
+            "No hitting allowed"
+          ],
+          "reps_sets": "3 sets × 12 throws",
+          "difficulty": "Beginner",
+          "equipment": "Tennis ball",
+          "coaching_points": [
+            "Eyes follow seam"
+          ],
+          "mistakes": [
+            "Head movement"
+          ],
+          "safety": "Indoor safe"
+        },
+        {
+          "name": "Live Spin Decision Drill",
+          "how_to": [
+            "Coach bowls turning variations",
+            "Player calls shot selection",
+            "Then plays stroke"
+          ],
+          "reps_sets": "4 sets × 8 balls",
+          "difficulty": "Advanced",
+          "equipment": "Bowler/ball machine",
+          "coaching_points": [
+            "React to drift not bounce"
+          ],
+          "mistakes": [
+            "Late decisions"
+          ],
+          "safety": "Helmet required"
+        }
+      ]
+    },
+
+    {
+      "area_id": "E4",
+      "name": "Using Sweep Game (Normal, Slog, Reverse)",
+      "role_priority": {
+        "top order batsman": "support",
+        "middle order batsman": "core",
+        "finisher": "core",
+        "all rounder": "important"
+      },
+      "description": "Develops sweep variety for manipulating fielders and rotating strike.",
+      "why_it_matters": [
+        "Destroys spin field plans",
+        "Great on slow/tacky wickets",
+        "Boosts strike rotation"
+      ],
+      "drills": [
+        {
+          "name": "Normal Sweep Mat Drill",
+          "how_to": [
+            "Roll mat outside off stump",
+            "Player must sweep along ground",
+            "Focus on body angle"
+          ],
+          "reps_sets": "4 sets × 8 balls",
+          "difficulty": "Intermediate",
+          "equipment": "Mat + balls",
+          "coaching_points": [
+            "Front knee down",
+            "Hands under ball"
+          ],
+          "mistakes": [
+            "Hitting in air"
+          ],
+          "safety": "Pad knees"
+        },
+        {
+          "name": "Reverse Sweep Contact Drill",
+          "how_to": [
+            "Coach feeds slow spin balls",
+            "Player reverse sweeps late",
+            "Focus on bat angle"
+          ],
+          "reps_sets": "3 sets × 10 balls",
+          "difficulty": "Advanced",
+          "equipment": "Soft ball",
+          "coaching_points": [
+            "Hands ahead",
+            "Late contact"
+          ],
+          "mistakes": [
+            "High trajectory shots"
+          ],
+          "safety": "Helmet required"
+        },
+        {
+          "name": "Power Slog Sweep Drill",
+          "how_to": [
+            "Coach bowls full spin",
+            "Player slog sweeps to cow corner",
+            "Focus on rotation"
+          ],
+          "reps_sets": "3 sets × 8 balls",
+          "difficulty": "Advanced",
+          "equipment": "Hard ball",
+          "coaching_points": [
+            "Stable base",
+            "Roll wrists finish"
+          ],
+          "mistakes": [
+            "Over swinging"
+          ],
+          "safety": "Full pads required"
+        }
+      ]
+    }
+  ]
+},
+
+
+{
+  "category_id": "F",
+  "category_name": "Strike Rotation & Placement",
+  "areas": [
+
+    {
+      "area_id": "F1",
+      "name": "Strike Rotation – Drop & Run, Angle Manipulation",
+      "role_priority": {
+        "top order batsman": "core",
+        "middle order batsman": "core",
+        "finisher": "core",
+        "all rounder": "core"
+      },
+      "description": "Skill to find safe singles by dropping balls into gaps, manipulating angles, and keeping scoreboard moving.",
+      "why_it_matters": [
+        "Reduces dot ball pressure",
+        "Builds strike rate without risk",
+        "Controls game rhythm"
+      ],
+      "drills": [
+        {
+          "name": "Drop & Run Front Defence Drill",
+          "how_to": [
+            "Coach feeds straight balls",
+            "Player defends with soft hands",
+            "Ball must die inside 4 metres",
+            "Sprint single after contact"
+          ],
+          "reps_sets": "4 sets × 10 balls",
+          "difficulty": "Beginner",
+          "equipment": "Bat + Soft ball",
+          "coaching_points": [
+            "Front elbow high",
+            "Minimal bat face angle"
+          ],
+          "mistakes": [
+            "Hard hands",
+            "Ball travelling too far"
+          ],
+          "safety": "No aggressive running indoors"
+        },
+        {
+          "name": "Angle Glide Drill",
+          "how_to": [
+            "Coach bowls 4th/5th stump line",
+            "Batter guides ball behind point",
+            "Must time into side angle cones"
+          ],
+          "reps_sets": "3 sets × 12 balls",
+          "difficulty": "Intermediate",
+          "equipment": "Cones + coach feed",
+          "coaching_points": [
+            "Use wrists",
+            "Late contact"
+          ],
+          "mistakes": [
+            "Slashing at ball"
+          ],
+          "safety": "Helmet recommended"
+        },
+        {
+          "name": "Two-ball Rotation Decision Drill",
+          "how_to": [
+            "Coach mixes full & short feeds",
+            "Player must call single/no run",
+            "Scorecard pressure instructions"
+          ],
+          "reps_sets": "4 sets × 6 balls",
+          "difficulty": "Advanced",
+          "equipment": "Whiteboard + coach call",
+          "coaching_points": [
+            "Quick decision making",
+            "Respond to field placements"
+          ],
+          "mistakes": [
+            "Calling late",
+            "Ball watching"
+          ],
+          "safety": "Communication practice required"
+        }
+      ]
+    },
+
+
+    {
+      "area_id": "F2",
+      "name": "Gap Finding & Field Placement Reading",
+      "role_priority": {
+        "top order batsman": "core",
+        "middle order batsman": "core",
+        "finisher": "important",
+        "all rounder": "core"
+      },
+      "description": "Ability to scan field placements and hit ball into open defensive gaps rather than fielders.",
+      "why_it_matters": [
+        "Opens scoring pockets",
+        "Builds safe strike rate",
+        "Beats ring field pressure"
+      ],
+      "drills": [
+        {
+          "name": "Target Cone Placement Drill",
+          "how_to": [
+            "Cones placed through off/leg side",
+            "Batter must hit into chosen cone lane",
+            "Accuracy over power"
+          ],
+          "reps_sets": "4 sets × 8 balls",
+          "difficulty": "Beginner",
+          "equipment": "Cones + batting net",
+          "coaching_points": [
+            "Use open bat face",
+            "Placement > timing"
+          ],
+          "mistakes": [
+            "Swinging too hard"
+          ],
+          "safety": "No risks required"
+        },
+        {
+          "name": "Field Pattern Simulation",
+          "how_to": [
+            "Coach sets 6 cones as fielders",
+            "Player calls target zone before ball",
+            "Execute placement stroke"
+          ],
+          "reps_sets": "3 sets × 10 balls",
+          "difficulty": "Intermediate",
+          "equipment": "Cones",
+          "coaching_points": [
+            "Think ahead",
+            "Hit to gaps not fielders"
+          ],
+          "mistakes": [
+            "Ignoring field",
+            "Over hitting"
+          ],
+          "safety": "Safe practice floor"
+        },
+        {
+          "name": "Late Cut Placement Precision",
+          "how_to": [
+            "Feed slow off-spin",
+            "Play controlled late cuts",
+            "Target third man cone"
+          ],
+          "reps_sets": "3 sets × 8 balls",
+          "difficulty": "Advanced",
+          "equipment": "Spin feed",
+          "coaching_points": [
+            "Soft bottom hand",
+            "Use pace of ball"
+          ],
+          "mistakes": [
+            "Slashing edges"
+          ],
+          "safety": "Helmet recommended"
+        }
+      ]
+    },
+
+
+    {
+      "area_id": "F3",
+      "name": "Soft Hands Technique – Controlling Edges & Nudges",
+      "role_priority": {
+        "top order batsman": "core",
+        "middle order batsman": "core",
+        "finisher": "support",
+        "all rounder": "core"
+      },
+      "description": "Technique to reduce edge carry by absorbing impact with controlled hands.",
+      "why_it_matters": [
+        "Stops knicks carrying to slips",
+        "Improves controlled nudges",
+        "Helps working singles through off side"
+      ],
+      "drills": [
+        {
+          "name": "Bottom-Hand Loose Grip Drill",
+          "how_to": [
+            "Hold bat lightly with bottom hand",
+            "Coach feeds hard length",
+            "Defend softly downward"
+          ],
+          "reps_sets": "4 sets × 8 balls",
+          "difficulty": "Intermediate",
+          "equipment": "Bat + bowler",
+          "coaching_points": [
+            "Relaxed wrists",
+            "Bat close to pad"
+          ],
+          "mistakes": [
+            "Gripping tight",
+            "Bat waving"
+          ],
+          "safety": "Helmet & pads required"
+        },
+        {
+          "name": "Nudge to Mid-wicket Drill",
+          "how_to": [
+            "Feed middle stump balls",
+            "Player nudges into mid wicket cone",
+            "Focus on inside part of bat"
+          ],
+          "reps_sets": "3 sets × 12 balls",
+          "difficulty": "Beginner",
+          "equipment": "Cones + soft ball",
+          "coaching_points": [
+            "Use wrists",
+            "Minimal backlift"
+          ],
+          "mistakes": [
+            "Over-hitting"
+          ],
+          "safety": "Safe drill"
+        },
+        {
+          "name": "Slip Edge Drop Drill",
+          "how_to": [
+            "Coach bowls on good length",
+            "Player defends with low hands",
+            "Ball must die before wicket keeper"
+          ],
+          "reps_sets": "3 sets × 10 balls",
+          "difficulty": "Advanced",
+          "equipment": "Hard ball",
+          "coaching_points": [
+            "Hands close to body",
+            "Bat vertical"
+          ],
+          "mistakes": [
+            "Playing hands away"
+          ],
+          "safety": "Helmet mandatory"
+        }
+      ]
+    }
+
+  ]
+},
+
+
+{
+  "category_id": "G",
+  "category_name": "Running Between Wickets",
+  "areas": [
+
+    {
+      "area_id": "G1",
+      "name": "Running Technique – Speed, Turn Efficiency, Acceleration",
+      "role_priority": {
+        "top order batsman": "important",
+        "middle order batsman": "core",
+        "finisher": "core",
+        "all rounder": "core"
+      },
+      "description": "Technical running form improves short distance acceleration, reduces fatigue, and maximises scoring opportunities.",
+      "why_it_matters": [
+        "Increases single–double conversion",
+        "Reduces run-out risk",
+        "Supports long batting innings"
+      ],
+      "drills": [
+        {
+          "name": "20m Acceleration Sprint",
+          "how_to": [
+            "Player sprints 20m from batting stance start",
+            "Focus on first 5 step explosion",
+            "Walk back recovery"
+          ],
+          "reps_sets": "6 sets × 20m",
+          "difficulty": "Beginner",
+          "equipment": "Pitch markings",
+          "coaching_points": [
+            "Low body lean",
+            "Short fast steps"
+          ],
+          "mistakes": [
+            "Standing tall early"
+          ],
+          "safety": "Warm up required"
+        },
+        {
+          "name": "Bat Carry Sprint Drill",
+          "how_to": [
+            "Player runs carrying bat properly",
+            "Must run bat in right hand at first run",
+            "Second run with left hand"
+          ],
+          "reps_sets": "4 sets × 30m",
+          "difficulty": "Intermediate",
+          "equipment": "Bat",
+          "coaching_points": [
+            "Switch bat hands at crease",
+            "Keep bat low"
+          ],
+          "mistakes": [
+            "Holding bat mid-handle"
+          ],
+          "safety": "Avoid slippery surface"
+        },
+        {
+          "name": "Crease Turn Technique Drill",
+          "how_to": [
+            "Mark crease lines",
+            "Player runs to crease, touches ground with bat",
+            "Turns smoothly without stopping"
+          ],
+          "reps_sets": "6 × 2 runs",
+          "difficulty": "Advanced",
+          "equipment": "Markers + bat",
+          "coaching_points": [
+            "Stay low when turning",
+            "Eyes forward"
+          ],
+          "mistakes": [
+            "Stopping fully before turning"
+          ],
+          "safety": "Check ground traction"
+        }
+      ]
+    },
+
+
+    {
+      "area_id": "G2",
+      "name": "Calling, Communication & Decision Making",
+      "role_priority": {
+        "top order batsman": "core",
+        "middle order batsman": "core",
+        "finisher": "core",
+        "all rounder": "core"
+      },
+      "description": "Communication prevents confusion, eliminates run outs, and builds batting partnerships.",
+      "why_it_matters": [
+        "Reduces misunderstandings",
+        "Improves risk control",
+        "Builds strong partnerships"
+      ],
+      "drills": [
+        {
+          "name": "Yes–No–Wait Call Drill",
+          "how_to": [
+            "Coach feeds random balls",
+            "Striker must call instantly",
+            "Partner reacts without hesitation"
+          ],
+          "reps_sets": "5 sets × 10 balls",
+          "difficulty": "Beginner",
+          "equipment": "Bowling feed",
+          "coaching_points": [
+            "Loud calls",
+            "Partner watches ball"
+          ],
+          "mistakes": [
+            "Silent communication",
+            "Late calls"
+          ],
+          "safety": "Clear running lanes"
+        },
+        {
+          "name": "Blind Calling Simulation",
+          "how_to": [
+            "Non-striker looks away from ball",
+            "Striker makes call based on contact",
+            "Non-striker reacts instantly"
+          ],
+          "reps_sets": "3 sets × 12 runs",
+          "difficulty": "Intermediate",
+          "equipment": "Bat + ball",
+          "coaching_points": [
+            "Trust partner",
+            "Quick response"
+          ],
+          "mistakes": [
+            "Hesitation"
+          ],
+          "safety": "Walk first before running full pace"
+        },
+        {
+          "name": "Gap Awareness Running Drill",
+          "how_to": [
+            "Field cones placed",
+            "Player must choose single or no run",
+            "Decision based on fielder distance"
+          ],
+          "reps_sets": "3 sets × 14 balls",
+          "difficulty": "Advanced",
+          "equipment": "Cones",
+          "coaching_points": [
+            "Read field before delivery",
+            "Angle running lines"
+          ],
+          "mistakes": [
+            "Ignoring field setup"
+          ],
+          "safety": "Avoid collisions"
+        }
+      ]
+    },
+
+
+    {
+      "area_id": "G3",
+      "name": "Turning For Second Runs & Sliding/Diving Technique",
+      "role_priority": {
+        "top order batsman": "important",
+        "middle order batsman": "core",
+        "finisher": "core",
+        "all rounder": "core"
+      },
+      "description": "Efficient turning improves chance of doubles and prevents late run-out risks.",
+      "why_it_matters": [
+        "Improves boundary conversion pressure",
+        "Creates strike rotation under field spread",
+        "Finisher game advantage"
+      ],
+      "drills": [
+        {
+          "name": "Quick Turn Cone Drill",
+          "how_to": [
+            "Cones act as crease points",
+            "Player runs first run fast",
+            "Turns aggressively then re-accelerates"
+          ],
+          "reps_sets": "4 sets × 2 runs",
+          "difficulty": "Beginner",
+          "equipment": "Cones + bat",
+          "coaching_points": [
+            "Low body angle at turn"
+          ],
+          "mistakes": [
+            "Stopping feet"
+          ],
+          "safety": "Correct footwear required"
+        },
+        {
+          "name": "Sliding Ground Entry",
+          "how_to": [
+            "Player practices long reach bat slide",
+            "Feet stay outside crease",
+            "Body stays low"
+          ],
+          "reps_sets": "10 slide entries",
+          "difficulty": "Intermediate",
+          "equipment": "Bat + smooth grass",
+          "coaching_points": [
+            "Lead with bat, not leg",
+            "Use side entry"
+          ],
+          "mistakes": [
+            "Diving chest first"
+          ],
+          "safety": "Grass surface only"
+        },
+        {
+          "name": "Dive & Recover",
+          "how_to": [
+            "Player dives to crease",
+            "Immediate recovery to sprint back",
+            "Simulates real 2-run pressure"
+          ],
+          "reps_sets": "6 × 2 run cycles",
+          "difficulty": "Advanced",
+          "equipment": "Grass field",
+          "coaching_points": [
+            "Protect shoulder",
+            "Control landing"
+          ],
+          "mistakes": [
+            "Elbow-first landing"
+          ],
+          "safety": "Pads & gloves recommended"
+        }
+      ]
+    }
+
+  ]
+},
+
+{
+  "category_id": "H",
+  "category_name": "Power & Finishing Mechanics",
+  "areas": [
+
+    {
+      "area_id": "H1",
+      "name": "Power-Hitting Sequencing Mechanics",
+      "role_priority": {
+        "top order batsman": "support",
+        "middle order batsman": "important",
+        "finisher": "core",
+        "all rounder": "core"
+      },
+      "description": "Efficient bat swing sequencing between lower body, trunk rotation and bat path improves maximum ball striking power.",
+      "why_it_matters": [
+        "Boosts six-hitting ability",
+        "Improves bat speed without losing control",
+        "Reduces top hand collapse"
+      ],
+      "drills": [
+        {
+          "name": "Hip–Shoulder Separation Drill",
+          "how_to": [
+            "Hold bat still at stance",
+            "Coach rotates hips first then shoulders",
+            "Practice swinging using ground-up force"
+          ],
+          "reps_sets": "4 sets × 8 swings",
+          "difficulty": "Intermediate",
+          "equipment": "Bat only",
+          "coaching_points": [
+            "Lower body drives power",
+            "Avoid arm-only swings"
+          ],
+          "mistakes": [
+            "Upper body leading first"
+          ],
+          "safety": "Warm up lower back"
+        },
+        {
+          "name": "Step-In Power Hitting",
+          "how_to": [
+            "Take step into swing",
+            "Hit ball straight or leg side",
+            "Maintain body shape through contact"
+          ],
+          "reps_sets": "3 sets × 12 balls",
+          "difficulty": "Intermediate",
+          "equipment": "Bowling machine/throw downs",
+          "coaching_points": [
+            "Use weight transfer",
+            "Hit through line"
+          ],
+          "mistakes": [
+            "Off-balance finish"
+          ],
+          "safety": "Helmet mandatory"
+        },
+        {
+          "name": "Bottom-Hand Release",
+          "how_to": [
+            "Hit 10 balls with loose top hand",
+            "Focus on bottom hand acceleration"
+          ],
+          "reps_sets": "3 sets × 10 balls",
+          "difficulty": "Advanced",
+          "equipment": "Bat & balls",
+          "coaching_points": [
+            "Avoid full release early",
+            "Snap wrists late"
+          ],
+          "mistakes": [
+            "Early flick causing miscues"
+          ],
+          "safety": "Use soft balls first"
+        }
+      ]
+    },
+
+    {
+      "area_id": "H2",
+      "name": "Range Hitting to All Zones",
+      "role_priority": {
+        "top order batsman": "support",
+        "middle order batsman": "important",
+        "finisher": "core",
+        "all rounder": "core"
+      },
+      "description": "Ability to hit to multiple boundary zones prevents predictability and increases death overs success.",
+      "why_it_matters": [
+        "Removes leg-side dependency",
+        "Improves strike rate under pressure",
+        "Builds 360° hitting"
+      ],
+      "drills": [
+        {
+          "name": "Zone Target Map Drill",
+          "how_to": [
+            "Field divided into 6 hitting zones",
+            "Hit 3 shots per zone",
+            "Rotate zones every 3 balls"
+          ],
+          "reps_sets": "6 zones × 3 balls",
+          "difficulty": "Advanced",
+          "equipment": "Field cones",
+          "coaching_points": [
+            "Stable head",
+            "Shot selection based on field"
+          ],
+          "mistakes": [
+            "Over-swinging for distance"
+          ],
+          "safety": "Hard ball caution"
+        },
+        {
+          "name": "Inside-Out Loft Drill",
+          "how_to": [
+            "Throw downs wide outside off",
+            "Drive aerial over covers",
+            "Focus on extension and loft angle"
+          ],
+          "reps_sets": "4 sets × 8 balls",
+          "difficulty": "Advanced",
+          "equipment": "Throw downs",
+          "coaching_points": [
+            "Front shoulder alignment",
+            "High elbow finish"
+          ],
+          "mistakes": [
+            "Cutting across ball"
+          ],
+          "safety": "Pads required"
+        },
+        {
+          "name": "Reverse Power Switch",
+          "how_to": [
+            "Use sweeps and slogs both sides",
+            "Change stance midway",
+            "Hit in air safely"
+          ],
+          "reps_sets": "10 balls per side",
+          "difficulty": "Elite",
+          "equipment": "Bat only",
+          "coaching_points": [
+            "Balance before swing"
+          ],
+          "mistakes": [
+            "Wrong timing"
+          ],
+          "safety": "Senior players only"
+        }
+      ]
+    },
+
+    {
+      "area_id": "H3",
+      "name": "Playing Yorkers & Low Full Tosses",
+      "role_priority": {
+        "top order batsman": "support",
+        "middle order batsman": "important",
+        "finisher": "core",
+        "all rounder": "core"
+      },
+      "description": "Mastery of yorker ball striking prevents bowled/ lbw dismissal at death overs.",
+      "why_it_matters": [
+        "Reduces yorker dismissal rate",
+        "Improves boundary finishing",
+        "Develops scoop and jam-down technique"
+      ],
+      "drills": [
+        {
+          "name": "Marker Yorker Drill",
+          "how_to": [
+            "Place shoes at yorker zone",
+            "Bowler bowls full into zone",
+            "Player jams bat down vertically"
+          ],
+          "reps_sets": "5 sets × 6 balls",
+          "difficulty": "Intermediate",
+          "equipment": "Markers",
+          "coaching_points": [
+            "Keep bat face vertical",
+            "Minimal backlift"
+          ],
+          "mistakes": [
+            "Swinging cross bat"
+          ],
+          "Safety": "Guard toes"
+        },
+        {
+          "name": "Scoop Block Progression",
+          "how_to": [
+            "Start blocking yorker",
+            "Progress to scoop once control established"
+          ],
+          "reps_sets": "3 sets × 10 balls",
+          "difficulty": "Advanced",
+          "equipment": "Soft ball",
+          "coaching_points": [
+            "Back leg bend",
+            "Head still"
+          ],
+          "mistakes": [
+            "Premature scoop attempts"
+          ],
+          "safety": "Helmet required"
+        }
+      ]
+    },
+
+    {
+      "area_id": "H4",
+      "name": "Playing Slow Balls & Variations",
+      "role_priority": {
+        "top order batsman": "important",
+        "middle order batsman": "core",
+        "finisher": "core",
+        "all rounder": "core"
+      },
+      "description": "Recognising slower balls avoids mistimed aerial shots in T20 death overs.",
+      "why_it_matters": [
+        "Improves finishing consistency",
+        "Boosts match awareness",
+        "Protects wicket at death overs"
+      ],
+      "drills": [
+        {
+          "name": "Visual Pickup Drill",
+          "how_to": [
+            "Coach mixes faster/slower feeds",
+            "Player must call type early"
+          ],
+          "reps_sets": "4×12 balls",
+          "difficulty": "Intermediate"
+        },
+        {
+          "name": "Delay Swing Drill",
+          "how_to": [
+            "Slow feeds",
+            "Player holds back swing",
+            "Plays late under eyes"
+          ],
+          "reps_sets": "3×10 balls",
+          "difficulty": "Advanced"
+        }
+      ]
+    },
+
+    {
+      "area_id": "H5",
+      "name": "Boundary-to-Boundary Intent",
+      "role_priority": {
+        "top order batsman": "important",
+        "middle order batsman": "core",
+        "finisher": "core",
+        "all rounder": "core"
+      },
+      "description": "Mental readiness to attack from ball one improves strike rate during powerplay and death overs.",
+      "why_it_matters": [
+        "Raises run rates",
+        "Changes game pressure",
+        "Strengthens confidence"
+      ],
+      "drills": [
+        {
+          "name": "First Ball Intent Drill",
+          "how_to": [
+            "First ball must be boundary attempt",
+            "Coach sets target zones"
+          ],
+          "reps_sets": "20 balls",
+          "difficulty": "Intermediate"
+        },
+        {
+          "name": "6 Ball Over Simulation",
+          "how_to": [
+            "Clear boundary goal per over",
+            "Decide 2 boundary balls"
+          ],
+          "reps_sets": "6 overs",
+          "difficulty": "Advanced"
+        }
+      ]
+    }
+
+  ]
+}
+,
+{
+  "category_id": "I",
+  "category_name": "Game Awareness & Mental Skills",
+  "areas": [
+
+    {
+      "area_id": "I1",
+      "name": "Field Awareness & Scoring Plan",
+      "role_priority": {
+        "top order batsman": "core",
+        "middle order batsman": "core",
+        "finisher": "important",
+        "all rounder": "core"
+      },
+      "description": "Ability to read field placements and build scoring plans reduces dot balls and increases strike rotation.",
+      "why_it_matters": [
+        "Reduces pressure through singles",
+        "Builds predictable scoring zones",
+        "Increases ability to find gaps"
+      ],
+      "drills": [
+        {
+          "name": "Field Mapping Walkthrough",
+          "how_to": [
+            "Coach places cones for fielders",
+            "Player walks pitch visualizing scoring areas",
+            "Call out safe scoring zones"
+          ],
+          "reps_sets": "3 rounds",
+          "difficulty": "Beginner",
+          "equipment": "Cones + pitch map",
+          "coaching_points": [
+            "Look for deep square gaps",
+            "Understand danger zones"
+          ],
+          "mistakes": [
+            "Ignoring fine leg & third man",
+            "Always hitting to strength"
+          ],
+          "safety": "No batting required"
+        },
+        {
+          "name": "Gap Target Shot Drill",
+          "how_to": [
+            "Coach places cones as gaps",
+            "Player must score between them",
+            "Rotate targets each ball"
+          ],
+          "reps_sets": "4 sets × 10 balls",
+          "difficulty": "Intermediate",
+          "equipment": "Bat + soft balls",
+          "coaching_points": [
+            "Soft hands",
+            "Aim, don’t hit hard"
+          ],
+          "mistakes": [
+            "Straight to fielders",
+            "Over-hitting"
+          ],
+          "safety": "Helmet recommended"
+        },
+        {
+          "name": "Scenario Scoring Simulation",
+          "how_to": [
+            "Coach gives field + scoreboard scenario",
+            "Player picks scoring shot BEFORE bowler starts",
+            "Explain decision after each ball"
+          ],
+          "reps_sets": "2 sets × 8 scenarios",
+          "difficulty": "Advanced",
+          "equipment": "Whiteboard",
+          "coaching_points": [
+            "Pre-ball planning",
+            "Use bowler patterns"
+          ],
+          "mistakes": [
+            "No scoring plan",
+            "Blind aggression"
+          ],
+          "safety": "Regular game environment"
+        }
+      ]
+    },
+
+    {
+      "area_id": "I2",
+      "name": "Pressure Batting & Mental Control",
+      "role_priority": {
+        "top order batsman": "important",
+        "middle order batsman": "core",
+        "finisher": "core",
+        "all rounder": "important"
+      },
+      "description": "Ability to remain calm under scoreboard pressure determines performance in run chases and finals.",
+      "why_it_matters": [
+        "Improves decision quality under stress",
+        "Reduces rash shots",
+        "Develops emotional control"
+      ],
+      "drills": [
+        {
+          "name": "Heartbeat Tempo Drill",
+          "how_to": [
+            "Player performs 20 sprints",
+            "Then faces 6 balls",
+            "Objective: controlled shot selection"
+          ],
+          "reps_sets": "4 overs",
+          "difficulty": "Advanced",
+          "equipment": "Pitch + stopwatch",
+          "coaching_points": [
+            "Breathe before shot",
+            "Focus eyes on seam"
+          ],
+          "mistakes": [
+            "Swinging wildly",
+            "Over-aggression"
+          ],
+          "safety": "Warm-up mandatory"
+        },
+        {
+          "name": "Pressure Zone Bowling",
+          "how_to": [
+            "Coach gives impossible run target",
+            "Player must chase with boundary focus",
+            "Discuss mental process after over"
+          ],
+          "reps_sets": "3 overs",
+          "difficulty": "Elite",
+          "equipment": "Scoreboard targets",
+          "coaching_points": [
+            "Detach emotion",
+            "Pick bowler to target"
+          ],
+          "mistakes": [
+            "Forcing every ball",
+            "Ignoring match flow"
+          ],
+          "safety": "Coach control required"
+        },
+        {
+          "name": "Breathing & Visualization Routine",
+          "how_to": [
+            "Deep breaths before facing ball",
+            "Visualize contact point",
+            "Repeat between deliveries"
+          ],
+          "reps_sets": "10 cycles",
+          "difficulty": "Beginner",
+          "equipment": "None",
+          "coaching_points": [
+            "Focus attention inward",
+            "Slow heart rate"
+          ],
+          "mistakes": [
+            "Rushing routine"
+          ],
+          "safety": "Safe"
+        }
+      ]
+    },
+
+    {
+      "area_id": "I3",
+      "name": "Building an Innings",
+      "role_priority": {
+        "top order batsman": "core",
+        "middle order batsman": "core",
+        "finisher": "support",
+        "all rounder": "important"
+      },
+      "description": "Understanding early consolidation, strike rotation and acceleration patterns is key to long innings success.",
+      "why_it_matters": [
+        "Turns 20s into 80+ scores",
+        "Reduces silly dismissals",
+        "Improves run rate control"
+      ],
+      "drills": [
+        {
+          "name": "20→40→60 Run Build Drill",
+          "how_to": [
+            "Stage 1: Bat 20 balls strike rate 100",
+            "Stage 2: Next 20 balls; find 2 boundaries",
+            "Stage 3: Next 20 balls; accelerate"
+          ],
+          "reps_sets": "60 ball innings simulation",
+          "difficulty": "Advanced",
+          "equipment": "Bowling machine",
+          "coaching_points": [
+            "Target overs & bowlers",
+            "Respect good balls"
+          ],
+          "mistakes": [
+            "Attacking too early",
+            "Losing shape"
+          ],
+          "safety": "Helmet mandatory"
+        },
+        {
+          "name": "Dot Ball Reduction Drill",
+          "how_to": [
+            "Player loses points for dot balls",
+            "Reward soft singles & late cuts"
+          ],
+          "reps_sets": "4 sets × 12 balls",
+          "difficulty": "Intermediate",
+          "equipment": "Coach scoring sheet",
+          "coaching_points": [
+            "Play risk free singles",
+            "Rotate strike"
+          ],
+          "mistakes": [
+            "Only playing boundaries",
+            "No foot movement"
+          ],
+          "safety": "Normal play gear"
+        },
+        {
+          "name": "Start Safe Consolidation Routine",
+          "how_to": [
+            "First 10 balls: no big shots",
+            "Play under eyes",
+            "Only boundary on loose balls"
+          ],
+          "reps_sets": "First 10 ball routine",
+          "difficulty": "Beginner",
+          "equipment": "Bat only",
+          "coaching_points": [
+            "Watch seam early",
+            "Avoid rushing"
+          ],
+          "mistakes": [
+            "Trying to dominate early"
+          ],
+          "safety": "Safe drill"
+        }
+      ]
+    }
+
+  ]
+}
+
+
+
+
+
+
+
+
+
+      
+    ]
+  }
+  
