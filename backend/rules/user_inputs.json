@@ -1,0 +1,30 @@
+{
+    "required_fields": {
+      "age": { "type": "int", "min": 6, "max": 60 },
+      "height_cm": { "type": "int", "min": 90, "max": 230 },
+      "weight_kg": { "type": "int", "min": 15, "max": 160 },
+      "skill_level": {
+        "type": "choice",
+        "values": ["beginner", "intermediate", "advanced"]
+      },
+      "playing_role": {
+        "type": "choice",
+        "values": [
+          "top order batsman",
+          "middle order batsman",
+          "finisher",
+          "wicket keeper batsman",
+          "fast bowler",
+          "medium bowler",
+          "wrist spinner",
+          "finger spinner",
+          "all rounder"
+        ]
+      }
+    },
+  
+    "optional_fields": {
+      "weekly_training_days": { "type": "int", "min": 1, "max": 7 }
+    }
+  }
+  
