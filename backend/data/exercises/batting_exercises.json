@@ -3,6 +3,7 @@
       {
         "exercise_id": "BAT001",
         "name": "Rotational Medicine Ball Throws",
+        "goals": ["POWER_HITTING"],
         "type": "Power Hitting Strength",
         "role_priority": [
           "top order batsman",
@@ -73,6 +74,7 @@
       {
         "exercise_id": "BAT002",
         "name": "Bat Swing Overload Training",
+        "goals": ["POWER_HITTING"],
         "type": "Bat Swing Power",
         "role_priority": [
           "finisher",
@@ -143,6 +145,7 @@
       {
         "exercise_id": "BAT003",
         "name": "Core Plank Variations",
+        "goals": ["ENDURANCE_FITNESS", "POWER_HITTING"],
         "type": "Core Stability",
         "role_priority": [
           "top order batsman",
@@ -212,6 +215,8 @@
       {
         "exercise_id": "BAT004",
         "name": "Sprint Shuttle Runs (20 m)",
+        "goals": ["ENDURANCE_FITNESS"],
+
         "type": "Speed & Conditioning",
         "role_priority": [
           "top order batsman",
@@ -299,6 +304,7 @@
       {
         "exercise_id": "BAT005",
         "name": "Grip & Forearm Strength Holds",
+        "goals": ["TIMING_CONTROL"],
         "type": "Bat Control Strength",
         "role_priority": [
           "top order batsman",
@@ -369,6 +375,7 @@
       {
         "exercise_id": "BAT006",
         "name": "Bodyweight Squats and Reverse Lunges",
+        "goals": ["POWER_HITTING", "ENDURANCE_FITNESS"],
         "type": "Lower Body Strength & Stability",
         "role_priority": [
           "all rounder",
@@ -439,6 +446,7 @@
       {
         "exercise_id": "BAT007",
         "name": "Skipping Rope Footwork Conditioning",
+        "goals": ["FOOTWORK_AGILITY", "ENDURANCE_FITNESS"],
         "type": "Footwork & Conditioning",
         "role_priority": [
           "top order batsman",
@@ -505,6 +513,7 @@
       {
         "exercise_id": "BAT008",
         "name": "Agility Ladder In–Out & Lateral Footwork",
+        "goals": ["FOOTWORK_AGILITY"],
         "type": "Agility & Lateral Movement",
         "role_priority": [
           "top order batsman",
@@ -571,6 +580,7 @@
       {
         "exercise_id": "BAT009",
         "name": "Pallof Press Anti-Rotation Core",
+        "goals": ["POWER_HITTING", "TIMING_CONTROL"],
         "type": "Core Anti-Rotation Strength",
         "role_priority": [
           "all rounder",
@@ -628,6 +638,7 @@
       {
         "exercise_id": "BAT010",
         "name": "Push-Up Progression Strength",
+        "goals": ["POWER_HITTING", "ENDURANCE_FITNESS"],
         "type": "Upper Body Strength",
         "role_priority": [
           "all rounder",
@@ -695,6 +706,7 @@
       {
         "exercise_id": "BAT011",
         "name": "Single-Leg Balance & Reach",
+        "goals": ["TIMING_CONTROL", "FOOTWORK_AGILITY"],
         "type": "Balance Control",
         "role_priority": [
           "top order batsman",
@@ -745,6 +757,7 @@
       {
         "exercise_id": "BAT012",
         "name": "Dynamic Batting Warm-Up Circuit",
+        "goals": ["ALL"],
         "type": "Movement Preparation",
         "role_priority": [
           "all rounder",
@@ -793,27 +806,6 @@
           "Keep shoulder movements smooth, not jerky."
         ]
       }
-      
-      
-
-
-      
-      
-
-
-      
-      
-
-
-
-      
-
-
-      
-
-
-      
-
 
     ]
   }
