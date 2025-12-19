@@ -3,8 +3,29 @@ import os
 
 class ExerciseEngine:
 
+    GOAL_MAP = {
+        "power": "POWER_HITTING",
+        "strength": "POWER_HITTING",
+        "power hitting": "POWER_HITTING",
+        "batting power": "POWER_HITTING",
+
+        "endurance": "ENDURANCE_FITNESS",
+        "fitness": "ENDURANCE_FITNESS",
+        "stamina": "ENDURANCE_FITNESS",
+        "running": "ENDURANCE_FITNESS",
+
+        "timing": "TIMING_CONTROL",
+        "control": "TIMING_CONTROL",
+
+        "footwork": "FOOTWORK_AGILITY",
+        "agility": "FOOTWORK_AGILITY",
+        "speed": "FOOTWORK_AGILITY",
+    }
+
+
     def __init__(self):
         self.exercises = self._load_batting_exercises()
+
 
     def _load_batting_exercises(self):
         base_path = os.path.dirname(os.path.dirname(__file__))
@@ -14,80 +35,117 @@ class ExerciseEngine:
             data = json.load(file)
             return data["batting_exercises"]
 
-    # -------------------------------------------------------
-    # MAIN CALL
-    # -------------------------------------------------------
-    def get_batting_exercises(self, user, goal):
-        
-        goal = goal.upper().replace(" ", "_")
 
-        # Get all exercises matching goal
-        goal_matches = [ex for ex in self.exercises if goal in ex["goals"] or "ALL" in ex["goals"]]
+    # --------------------------------------------------------
+    # MAIN ENTRY
+    # --------------------------------------------------------
+    def get_batting_exercises(self, user, message_text):
 
-        if not goal_matches:
-            return {"error": "No exercises found for this goal."}
+        # 1️⃣ detect goal from message text
+        detected_goal = self._detect_goal(message_text)
 
-        # personalised first 3
-        personalised = self._personalised_section(user, goal_matches)
+        if not detected_goal:
+            return {
+                "error": True,
+                "message": "Goal not recognized. Try power / timing / endurance / footwork"
+            }
 
-        # remaining exercises as simple names
-        remaining = self._recommended_section(goal_matches, personalised)
+        # 2️⃣ get all matching exercises
+        matches = self._filter_by_goal(detected_goal)
 
-        # warnings
-        warning = self._warning(user, goal)
+        if not matches:
+            return {
+                "error": True,
+                "message": "No exercises exist for this goal."
+            }
+
+        # 3️⃣ personalise every exercise found
+        output = self._personalise_all(user, matches)
+
+        # 4️⃣ safety warning
+        warning = self._warning(user, detected_goal)
 
         return {
-            "goal": goal,
-            "top_recommendations": personalised,
-            "other_recommended_exercises": remaining,
-            "safety_warning": warning
+            "goal_detected": detected_goal,
+            "total_exercises_found": len(matches),
+            "warning": warning,
+            "exercises": output
         }
 
-    # -------------------------------------------------------
-    # 1️⃣ PERSONAL EXERCISE FILTER
-    # -------------------------------------------------------
-    def _personalised_section(self, user, exercises):
+
+
+    # --------------------------------------------------------
+    # GOAL EXTRACTION
+    # --------------------------------------------------------
+    def _detect_goal(self, text):
+
+        text = text.lower()
+
+        for key, goal in self.GOAL_MAP.items():
+            if key in text:
+                return goal
+
+        return "POWER_HITTING"  # safe default fallback
+
+
+
+    # --------------------------------------------------------
+    # GET EXERCISES BELONGING TO GOAL
+    # --------------------------------------------------------
+    def _filter_by_goal(self, goal):
 
         selected = []
 
-        for ex in exercises:
+        for ex in self.exercises:
+            if goal in ex["goals"] or "ALL" in ex["goals"]:
+                selected.append(ex)
 
-            if "age_limit_min" in ex and user.age < ex["age_limit_min"]:
-                continue
+        return selected
 
-            if user.playing_role not in ex["role_priority"]:
-                continue
 
-            p = self._find_prescription(user, ex)
-            if not p:
-                continue
 
-            selected.append({
+    # --------------------------------------------------------
+    # PERSONALISE EVERY EXERCISE FOUND
+    # --------------------------------------------------------
+    def _personalise_all(self, user, exercise_list):
+
+        output = []
+
+        for ex in exercise_list:
+
+            # pick right prescription
+            pres = self._find_prescription(user, ex)
+
+            entry = {
                 "exercise_name": ex["name"],
-                "how_to_do": ex["how_to"],
+                "exercise_type": ex["type"],
+                "equipment": ex["equipment"],
                 "benefits": ex["benefits"],
-                "sets": p["sets"],
-                "reps": p["reps"],
-                "rest_seconds": p["rest_seconds"],
-                "notes": p.get("notes", "")
-            })
+                "how_to_do": ex["how_to"],
+                "safety_notes": ex["safety_notes"],
+                "recommended_for_role": user.playing_role in ex["role_priority"]
+            }
 
-        return selected[:3] if selected else []
+            # attach dosage if found
+            if pres:
+                entry["sets"] = pres["sets"]
+                entry["reps"] = pres["reps"]
+                entry["rest_seconds"] = pres["rest_seconds"]
+                entry["notes"] = pres.get("notes", None)
+            else:
+                entry["dosage_warning"] = (
+                    "Exercise exists but no matching dosage for your age/BMI profile."
+                )
 
-    # -------------------------------------------------------
-    # 2️⃣ REMAINING EXERCISE NAMES
-    # -------------------------------------------------------
-    def _recommended_section(self, full_list, personalised):
+            output.append(entry)
 
-        used = [e["exercise_name"] for e in personalised]
+        return output
 
-        names = [ex["name"] for ex in full_list if ex["name"] not in used]
 
-        return names[:10]
 
-    # -------------------------------------------------------
-    # 3️⃣ PRESCRIPTION PICKER
-    # -------------------------------------------------------
+    # --------------------------------------------------------
+    # FIND USER SPECIFIC PRESCRIPTION
+    # --------------------------------------------------------
     def _find_prescription(self, user, ex):
 
         for p in ex["prescriptions"]:
@@ -103,50 +161,19 @@ class ExerciseEngine:
 
         return None
 
-    # -------------------------------------------------------
-    # 4️⃣ WARNINGS SECTION (ONLY WHEN NEEDED)
-    # -------------------------------------------------------
+
+
+    # --------------------------------------------------------
+    # BMI + SKILL WARNINGS
+    # --------------------------------------------------------
     def _warning(self, user, goal):
 
         if goal == "POWER_HITTING":
 
             if user.bmi_group == "Underweight":
-                return "You are underweight — avoid heavy resistance and focus on technique."
+                return "⚠️ You are underweight — avoid heavy overload training."
 
             if user.skill_level == "beginner":
-                return "You are a beginner — start with lighter controlled training."
+                return "⚠️ Start with controlled movement before heavy resistance."
 
         return ""
-    
-    def get_exercise_details(self, user, exercise_name):
-
-        # find exercise by name
-        ex = next((e for e in self.exercises if e["name"].lower() == exercise_name.lower()), None)
-
-        if not ex:
-            return {"error": "Exercise not found"}
-
-        # find correct prescription for user
-        prescription = self._find_prescription(user, ex)
-
-        details = {
-            "exercise_name": ex["name"],
-            "type": ex["type"],
-            "equipment": ex["equipment"],
-            "benefits": ex["benefits"],
-            "how_to": ex["how_to"],
-            "safety_notes": ex["safety_notes"],
-            "age_limit_min": ex.get("age_limit_min", None),
-            "role_recommended": user.playing_role in ex["role_priority"]
-        }
-
-        # add personalised dosage if possible
-        if prescription:
-            details["sets"] = prescription["sets"]
-            details["reps"] = prescription["reps"]
-            details["rest_seconds"] = prescription["rest_seconds"]
-            details["notes"] = prescription.get("notes", "")
-        else:
-            details["warning"] = "Exercise exists but no matching dosage for your profile."
-
-        return details

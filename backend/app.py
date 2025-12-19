@@ -6,6 +6,8 @@ from agent.user_manager import UserManager
 from agent.user_profile import UserProfile
 from agent.exercise_engine import ExerciseEngine
 from agent.tech_engine import TechEngine
+from agent.conversation_router import ConversationRouter
+
 # Flask app
 app = Flask(__name__)
 
@@ -14,6 +16,7 @@ engine = CricketInferenceEngine()
 user_manager = UserManager()
 exercise_engine = ExerciseEngine()
 tech_engine = TechEngine()
+router = ConversationRouter(engine, tech_engine, exercise_engine)
 
 @app.route("/", methods=["GET"])
 def home():
@@ -218,6 +221,30 @@ def ask_technical():
 
     return jsonify(result), 200
 
+@app.route("/api/chat", methods=["POST"])
+def chat():
+    data = request.get_json()
+
+    if "user_id" not in data or "message" not in data:
+        return jsonify({"error": "user_id & message required"}), 400
+
+    success, user_dict = user_manager.get_user(data["user_id"])
+
+    if not success:
+        return jsonify({"error": "User not found"}), 404
+
+    user = UserProfile(
+        age=user_dict["age"],
+        height_cm=user_dict["height_cm"],
+        weight_kg=user_dict["weight_kg"],
+        skill_level=user_dict["skill_level"],
+        playing_role=user_dict["playing_role"],
+    )
+
+    text = data["message"]
+    response = router.process(data["user_id"], user, text)
+
+    return jsonify(response), 200
 
 
 # END
