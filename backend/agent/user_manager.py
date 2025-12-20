@@ -36,6 +36,7 @@ class UserManager:
         # store user
         users["users"].append({
             "user_id": new_id,
+            "name": user.name, 
             "age": user.age,
             "height_cm": user.height_cm,
             "weight_kg": user.weight_kg,

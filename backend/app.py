@@ -234,6 +234,7 @@ def chat():
         return jsonify({"error": "User not found"}), 404
 
     user = UserProfile(
+        name=user_dict["name"],
         age=user_dict["age"],
         height_cm=user_dict["height_cm"],
         weight_kg=user_dict["weight_kg"],

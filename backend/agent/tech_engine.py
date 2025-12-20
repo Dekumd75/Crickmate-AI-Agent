@@ -6,6 +6,129 @@ class TechEngine:
     def __init__(self):
         self.categories = self._load_data()
 
+        # ===============================
+        # CATEGORY KEYWORD ROUTING MAP
+        # ===============================
+        self.keyword_map = {
+
+            # Category A – Decision & Ball Reading
+            "decision": "A",
+            "decision making": "A",
+            "shot selection": "A",
+            "innings building": "A",
+
+            # Category B – Timing & Contact
+            "timing": "B",
+            "hand eye": "B",
+            "late contact": "B",
+            "middle bat": "B",
+
+            # Category C – Footwork & Balance
+            "footwork": "C",
+            "front foot": "C",
+            "back foot": "C",
+            "trigger": "C",
+            "balance": "C",
+
+            # Category D – Pace / Swing / Short Ball
+            "pace": "D",
+            "fast bowling": "D",
+            "swing": "D",
+            "seam": "D",
+            "short ball": "D",
+            "bouncer": "D",
+
+            # Category E – Spin Playing
+            "spin": "E",
+            "sweep": "E",
+            "reverse sweep": "E",
+            "slog sweep": "E",
+            "offbreak": "E",
+            "legbreak": "E",
+
+            # Category F – Placement & Rotation
+            "placement": "F",
+            "rotation": "F",
+            "strike rotation": "F",
+            "singles": "F",
+
+            # Category G – Running Between Wickets
+            "running": "G",
+            "between wickets": "G",
+            "diving": "G",
+
+            # Category H – Power & Finishing (Technical)
+            "power hitting": "H",
+            "finishing": "H",
+            "death overs": "H",
+
+            # Category I – Mental & Awareness
+            "mental": "I",
+            "mind": "I",
+            "awareness": "I",
+            "pressure": "I",
+            "mindset": "I"
+        }
+            # ============================
+    # ROLE PRIORITY TABLE
+    # ============================
+
+    ROLE_PRIORITY_MAP = {
+
+        "top order batsman": {
+            "priority":   ["A", "B", "C", "D"],
+            "secondary":  ["F", "I"],
+            "low":        ["E", "H", "G"]
+        },
+
+        "middle order batsman": {
+            "priority":   ["E", "F", "I"],
+            "secondary":  ["C", "B", "H"],
+            "low":        ["A", "G", "D"]
+        },
+
+        "finisher": {
+            "priority":   ["H", "F", "I"],
+            "secondary":  ["B", "C"],
+            "low":        ["D", "A", "E", "G"]
+        },
+
+        "all rounder": {
+            "priority":   ["I", "B", "C"],
+            "secondary":  ["E", "D", "F"],
+            "low":        ["A", "H", "G"]
+        },
+
+        "wicket keeper batsman": {
+            "priority":   ["B", "E", "F"],
+            "secondary":  ["C", "I"],
+            "low":        ["A", "D", "G", "H"]
+        },
+
+        # TAIL ENDERS GROUP
+        "fast bowler": {
+            "priority":   ["B", "F", "D"],
+            "secondary":  ["C", "I"],
+            "low":        ["A", "E", "H", "G"]
+        },
+        "medium bowler": {
+            "priority":   ["B", "F", "D"],
+            "secondary":  ["C", "I"],
+            "low":        ["A", "E", "H", "G"]
+        },
+        "wrist spinner": {
+            "priority":   ["B", "F", "D"],
+            "secondary":  ["C", "I"],
+            "low":        ["A", "E", "H", "G"]
+        },
+        "finger spinner": {
+            "priority":   ["B", "F", "D"],
+            "secondary":  ["C", "I"],
+            "low":        ["A", "E", "H", "G"]
+        }
+    }
+
+
     def _load_data(self):
         base_path = os.path.dirname(os.path.dirname(__file__))
         path = os.path.join(base_path, "data", "technical", "technical_drills.json")
@@ -13,61 +136,60 @@ class TechEngine:
         with open(path, "r", encoding="utf-8") as f:
             return json.load(f)["technical_categories"]
 
+
+    # ---------------------------------------------------
+    # KEYWORD → category object mapping
+    # ---------------------------------------------------
+    def keyword_to_category(self, text):
+
+        text = text.lower()
+
+        for key, cat_id in self.keyword_map.items():
+            if key in text:
+                return next((c for c in self.categories if c["category_id"] == cat_id), None)
+
+        return None
+
+
     # ---------------------------------------------------
     # MAIN OUTPUT FUNCTION
     # ---------------------------------------------------
     def recommend_technical_areas(self, user):
 
-        flattened = []
+        role = user.playing_role.lower()
 
-        for cat in self.categories:
-            for area in cat["areas"]:
+        if role not in self.ROLE_PRIORITY_MAP:
+            return {
+                "priority": [],
+                "secondary": [],
+                "low": [],
+                "structured": False
+            }
 
-                role_score = self._score(user.playing_role, area["role_priority"])
+        role_map = self.ROLE_PRIORITY_MAP[role]
 
-                flattened.append({
-                    "area_id": area["area_id"],
-                    "area_name": area["name"],
-                    "category": cat["category_name"],
-                    "description": area["description"],
-                    "why_it_matters": area["why_it_matters"],
-                    "drills": area["drills"],
-                    "role_score": role_score
-                })
+        priority_ids   = role_map["priority"]
+        secondary_ids  = role_map["secondary"]
+        low_ids        = role_map["low"]
 
-        flattened.sort(key=lambda x: x["role_score"], reverse=True)
+        # helper function to build lists
+        def build(category_id_list):
+            output = []
 
-        top_three = []
-
-        for area in flattened[:3]:
-
-            full_drills = []
-
-            for d in area["drills"]:
-                full_drills.append({
-                    "drill_name": d["name"],
-                    "how_to": d["how_to"],
-                    "equipment": d.get("equipment", "None"),
-                    "coaching_points": d.get("coaching_points", []),
-                    "mistakes": d.get("mistakes", []),
-                    "reps_sets": d.get("reps_sets", ""),
-                    "difficulty": d.get("difficulty", ""),
-                    "safety": d.get("safety", "")
-                })
-
-            top_three.append({
-                "area_name": area["area_name"],
-                "category_name": area["category"],
-                "description": area["description"],
-                "why_it_matters": area["why_it_matters"],
-                "drills": full_drills
-            })
-
-        other_area_names = [a["area_name"] for a in flattened[3:]]
+            for cid in category_id_list:
+                for cat in self.categories:
+                    if cat["category_id"] == cid:
+                        output.append({
+                            "category_id": cid,
+                            "category_name": cat["category_name"]
+                        })
+            return output
 
         return {
-            "top_recommendations_full": top_three,
-            "other_area_names": other_area_names
+            "priority": build(priority_ids),
+            "secondary": build(secondary_ids),
+            "low": build(low_ids),
+            "structured": True
         }
 
     # ---------------------------------------------------
@@ -89,8 +211,9 @@ class TechEngine:
         else:
             return 1
 
+
     # ---------------------------------------------------
-    # NATURAL SEARCH ENGINE
+    # NATURAL SEARCH ENGINE (fallback)
     # ---------------------------------------------------
     def search_area_by_query(self, query: str):
 
@@ -98,7 +221,7 @@ class TechEngine:
 
         stopwords = {
             "how","to","improve","fix","help","teach","train","practice",
-            "get","the","my","in","on","for","batting","skills","area"
+            "get","the","my","in","on","for","batting","skills","area","i","want"
         }
 
         cleaned_words = [w for w in text.split() if w not in stopwords]
@@ -132,6 +255,7 @@ class TechEngine:
 
         return candidates[0]
 
+
     # ---------------------------------------------------
     # FIXED function - details lookup by name
     # ---------------------------------------------------
@@ -143,6 +267,7 @@ class TechEngine:
                     return self.format_area_output(area)
 
         return None
+
 
     # ---------------------------------------------------
     # FORMAT ALL DETAILS FROM JSON
@@ -172,29 +297,40 @@ class TechEngine:
         }
 
 
-        # ============================
-    # NEW: CATEGORY LOOKUP
+    # ============================
+    # CATEGORY LOOKUP
     # ============================
     def find_category_from_query(self, text):
 
         text = text.lower()
 
+        # 1️⃣ Keyword routing FIRST
+        mapped = self.keyword_to_category(text)
+        if mapped:
+            return mapped
+
+        # 2️⃣ Legacy text match
         for cat in self.categories:
 
-            # full match
             if cat["category_name"].lower() in text:
                 return cat
 
-            # partial match
             for word in cat["category_name"].lower().split():
                 if word in text:
                     return cat
 
         return None
+    
+    def get_category_by_id(self, cat_id):
+       for c in self.categories:
+          if c["category_id"] == cat_id:
+            return c
+       return None
+
 
 
     # ============================
-    # NEW: GET SUB AREAS BY CATEGORY
+    # GET SUB AREAS BY CATEGORY
     # ============================
     def get_sub_areas(self, category_name):
 
@@ -214,7 +350,7 @@ class TechEngine:
 
 
     # ============================
-    # NEW: GET DRILLS PAGINATED
+    # GET DRILLS PAGINATED
     # ============================
     def get_area_drills(self, area_id, start=0, count=2):
 

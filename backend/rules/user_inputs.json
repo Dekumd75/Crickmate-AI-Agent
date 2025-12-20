@@ -1,5 +1,6 @@
 {
     "required_fields": {
+      "name": { "type": "string" },
       "age": { "type": "int", "min": 6, "max": 60 },
       "height_cm": { "type": "int", "min": 90, "max": 230 },
       "weight_kg": { "type": "int", "min": 15, "max": 160 },

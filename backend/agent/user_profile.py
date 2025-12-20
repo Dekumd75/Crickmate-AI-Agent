@@ -2,7 +2,8 @@ import json
 import os
 
 class UserProfile:
-    def __init__(self, age, height_cm, weight_kg, skill_level, playing_role, weekly_days=None):
+    def __init__(self,name,age, height_cm, weight_kg, skill_level, playing_role, weekly_days=None):
+        self.name = name
         self.age = age
         self.height_cm = height_cm
         self.weight_kg = weight_kg

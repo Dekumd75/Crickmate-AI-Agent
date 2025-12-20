@@ -158,7 +158,31 @@ class ConversationRouter:
                     "sub_areas": sub_list
                 })
                 continue
+            
 
+            # CATEGORY LETTER ONLY SELECTION
+            if part.upper() in ["A","B","C","D","E","F","G","H","I"]:
+
+    # get category object
+               category = self.tech.get_category_by_id(part.upper())
+ 
+               if category:
+                  subareas = self.tech.get_sub_areas(category["category_name"])
+
+                  memory["tech_last_category"] = category["category_id"]
+                  memory["tech_last_area"] = None
+                  memory["tech_drill_index"] = 0
+
+                  ordered_output.append({
+                          "type": "technical_category",
+                          "category_id": category["category_id"],
+                         "category_name": category["category_name"],
+                        "instruction": "Choose sub-area ID (ex: A2)",
+                        "sub_areas": subareas
+                  })
+                  continue
+
+            
 
             # =====================================================
             # 4️⃣ SUB AREA → FIRST DRILLS
@@ -199,26 +223,33 @@ class ConversationRouter:
             # =====================================================
             # 6️⃣ GENERAL IMPROVE BATTING
             # =====================================================
-            if "improve" in part and "batting" in part:
 
-                result = self.tech.recommend_technical_areas(user)
 
-                ordered_output.append({
-                    "type": "batting_overview",
-                    "input": part,
-                    "result": {
-                        "top_recommendations": result["top_recommendations_full"],
-                        "other_areas": result["other_area_names"]
-                    }
-                })
-                continue
+            mapping = self.tech.recommend_technical_areas(user)
+           
+
+            if mapping["structured"]:
+               ordered_output.append({
+                   "type": "batting_role_priority",
+                    "chat": (
+                         f"Since you are a **{user.playing_role}**, "
+                          "your batting development priority structure is 👇"
+                  ),
+                  "priority": mapping["priority"],
+                  "secondary": mapping["secondary"],
+                  "low": mapping["low"],
+                  "instruction": "Choose a category ID to continue (ex: A)"
+            })
+            continue
+
 
 
             # =====================================================
             # 7️⃣ UNKNOWN
             # =====================================================
-            ordered_output.append({
+        ordered_output.append({
                 "type": "unknown",
+                
                 "input": part,
                 "result": (
                     "Try:\n"

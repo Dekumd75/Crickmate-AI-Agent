@@ -83,6 +83,19 @@
             "skill_level": "intermediate",
             "playing_role": "middle order batsman",
             "weekly_days": null
+        },
+        {
+            "user_id": "USER0008",
+            "name": "Nuwan Perera",
+            "age": 17,
+            "height_cm": 176,
+            "weight_kg": 61,
+            "age_group": "U19",
+            "bmi": 19.69,
+            "bmi_group": "Athletic Ideal",
+            "skill_level": "intermediate",
+            "playing_role": "middle order batsman",
+            "weekly_days": null
         }
     ]
 }
