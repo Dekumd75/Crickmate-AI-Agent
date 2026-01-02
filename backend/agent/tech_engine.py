@@ -221,7 +221,7 @@ class TechEngine:
 
         stopwords = {
             "how","to","improve","fix","help","teach","train","practice",
-            "get","the","my","in","on","for","batting","skills","area","i","want"
+            "get","the","my","in","on","for","batting","skills","area","i","want","is","am","are","were","and","or","me"
         }
 
         cleaned_words = [w for w in text.split() if w not in stopwords]

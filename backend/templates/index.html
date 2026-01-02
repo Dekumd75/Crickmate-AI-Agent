@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrickMate AI Coach</title>
+    <style>
+        :root { --primary: #1a5f35; --bg: #f4f4f9; --chat-bg: #ffffff; --bot-msg: #e9ecef; }
+        body { font-family: 'Segoe UI', sans-serif; background-color: var(--bg); display: flex; justify-content: center; height: 100vh; margin: 0; }
+        
+        /* Modal (Login Screen) Styles */
+        .modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); display: flex; justify-content: center; align-items: center; z-index: 1000; }
+        .modal-content { background: white; padding: 30px; border-radius: 15px; width: 350px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        .modal h2 { color: var(--primary); margin-top: 0; }
+        .form-group { margin-bottom: 15px; text-align: left; }
+        .form-group label { display: block; font-size: 14px; margin-bottom: 5px; color: #555; }
+        .form-group input, .form-group select { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; }
+        .start-btn { width: 100%; background: var(--primary); color: white; padding: 12px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; font-weight: bold; }
+        .start-btn:hover { background: #144526; }
+
+        /* Chat Styles */
+        .chat-container { width: 100%; max-width: 600px; background: var(--chat-bg); display: none; flex-direction: column; box-shadow: 0 0 20px rgba(0,0,0,0.1); height: 100%; }
+        .header { background: var(--primary); color: white; padding: 20px; text-align: center; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
+        .user-badge { font-size: 12px; background: rgba(255,255,255,0.2); padding: 5px 10px; border-radius: 15px; }
+        .chat-box { flex: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 15px; }
+        .message { max-width: 85%; padding: 12px 16px; border-radius: 15px; font-size: 15px; line-height: 1.5; }
+        .bot-message { background: var(--bot-msg); color: #333; align-self: flex-start; border-bottom-left-radius: 5px; }
+        .user-message { background: var(--primary); color: white; align-self: flex-end; border-bottom-right-radius: 5px; }
+        
+        /* Cards & Lists */
+        .drill-card { background: white; border: 1px solid #ddd; padding: 12px; margin-top: 8px; border-radius: 8px; }
+        h4 { margin: 5px 0; color: #1a5f35; border-bottom: 1px solid #eee; padding-bottom: 5px;}
+        ul { margin: 5px 0 5px 20px; padding: 0; }
+        li { margin-bottom: 8px; }
+        .label { font-weight: bold; color: #555; }
+        .highlight { color: #1a5f35; font-weight: bold; }
+        .more-hint { margin-top: 10px; padding-top: 10px; border-top: 1px dashed #ccc; font-style: italic; color: #1a5f35; font-size: 14px; }
+        
+        .input-area { padding: 20px; border-top: 1px solid #ddd; display: flex; gap: 10px; background: white; }
+        input.chat-input { flex: 1; padding: 12px; border: 1px solid #ddd; border-radius: 25px; outline: none; }
+        button.send-btn { background: var(--primary); color: white; border: none; padding: 12px 20px; border-radius: 25px; cursor: pointer; font-weight: bold; }
+        .typing { font-size: 12px; color: #888; margin-left: 10px; display: none; }
+    </style>
+</head>
+<body>
+
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <h2>🏏 Player Profile</h2>
+            <div class="form-group">
+                <input type="text" id="regName" placeholder="Your Name" value="Champ">
+            </div>
+            
+            <div class="form-group" style="display:flex; gap:10px;">
+                <input type="number" id="regAge" placeholder="Age" value="20">
+                <input type="number" id="regHeight" placeholder="Height (cm)" value="175">
+            </div>
+            <div class="form-group">
+                <input type="number" id="regWeight" placeholder="Weight (kg)" value="70">
+            </div>
+
+            <div class="form-group">
+                <label>Playing Role:</label>
+                <select id="regRole">
+                    <option value="top order batsman">Top Order Batsman</option>
+                    <option value="middle order batsman">Middle Order Batsman</option>
+                    <option value="finisher">Finisher</option>
+                    <option value="wicket keeper batsman">Wicket Keeper Batsman</option>
+                    <option value="fast bowler">Fast Bowler</option>
+                    <option value="medium bowler">Medium Bowler</option>
+                    <option value="wrist spinner">Wrist Spinner</option>
+                    <option value="finger spinner">Finger Spinner</option>
+                    <option value="all rounder">All Rounder</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Skill Level:</label>
+                <select id="regSkill">
+                    <option value="beginner">Beginner</option>
+                    <option value="intermediate">Intermediate</option>
+                    <option value="advanced">Advanced</option>
+                </select>
+            </div>
+            <button class="start-btn" onclick="registerUser()">Start Coaching</button>
+            <p id="regError" style="color:red; display:none; font-size:12px; margin-top:10px;"></p>
+        </div>
+    </div>
+
+    <div class="chat-container" id="chatContainer">
+        <div class="header">
+            <span>🏏 CrickMate AI</span>
+            <span class="user-badge" id="userBadge">Guest</span>
+        </div>
+        <div class="chat-box" id="chatBox">
+            <div class="message bot-message">
+                Hi! I'm your AI Coach. I see your profile. How can I help you improve today?
+            </div>
+        </div>
+        <div class="typing" id="typingIndicator">Coach is thinking...</div>
+        <div class="input-area">
+            <input type="text" id="userInput" class="chat-input" placeholder="Type here..." onkeypress="handleEnter(event)">
+            <button class="send-btn" onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = "/api";
+        let CURRENT_USER_ID = null;
+
+        // --- 1. REGISTRATION LOGIC ---
+        async function registerUser() {
+            const btn = document.querySelector('.start-btn');
+            const err = document.getElementById('regError');
+            
+            const userData = {
+                name: document.getElementById('regName').value,
+                age: parseInt(document.getElementById('regAge').value),
+                weight_kg: parseInt(document.getElementById('regWeight').value),
+                height_cm: parseInt(document.getElementById('regHeight').value),
+                playing_role: document.getElementById('regRole').value,
+                skill_level: document.getElementById('regSkill').value,
+                weekly_days: 3
+            };
+
+            btn.textContent = "Creating Profile...";
+            btn.disabled = true;
+            err.style.display = 'none';
+
+            try {
+                const response = await fetch(`${API_BASE}/register-user`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(userData)
+                });
+                const data = await response.json();
+
+                if (data.status === "success") {
+                    CURRENT_USER_ID = data.user_id;
+                    let displayRole = userData.playing_role.charAt(0).toUpperCase() + userData.playing_role.slice(1);
+                    document.getElementById('userBadge').textContent = `${userData.name} (${displayRole})`;
+                    document.getElementById('loginModal').style.display = 'none';
+                    document.getElementById('chatContainer').style.display = 'flex';
+                } else {
+                    err.textContent = "Error: " + data.message;
+                    err.style.display = 'block';
+                    btn.disabled = false;
+                    btn.textContent = "Start Coaching";
+                }
+            } catch (error) {
+                console.error(error);
+                err.textContent = "Server error. Is python app.py running?";
+                err.style.display = 'block';
+                btn.disabled = false;
+                btn.textContent = "Start Coaching";
+            }
+        }
+
+        // --- 2. CHAT LOGIC ---
+        function handleEnter(e) { if (e.key === 'Enter') sendMessage(); }
+
+        async function sendMessage() {
+            const inputField = document.getElementById("userInput");
+            const message = inputField.value.trim();
+            if (!message) return;
+
+            addMessage(message, 'user-message');
+            inputField.value = "";
+            document.getElementById("typingIndicator").style.display = "block";
+
+            try {
+                const response = await fetch(`${API_BASE}/chat`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ user_id: CURRENT_USER_ID, message: message })
+                });
+                const data = await response.json();
+                document.getElementById("typingIndicator").style.display = "none";
+
+                let botHTML = "";
+                
+                if (data.chat) botHTML += `<p>${data.chat.replace(/\n/g, "<br>")}</p>`;
+
+                // FIXED: CASE A - Direct Category Selection (e.g., Typing "A")
+                if (data.type === "technical_category" && data.sub_areas) {
+                    botHTML += `<div class="drill-card">`;
+                    if (data.category_name) botHTML += `<h4>📂 ${data.category_name}</h4>`;
+                    botHTML += `<strong>Options:</strong><ul>`;
+                    data.sub_areas.forEach(sub => botHTML += renderListItem(sub));
+                    botHTML += `</ul></div>`;
+                }
+
+                // CASE B: Shortcuts (Drills)
+                if (data.technical_drills && data.technical_drills.returned) {
+                    botHTML += `<div class="drill-card"><h4>🎯 Drills</h4><ul>`;
+                    data.technical_drills.returned.forEach(drill => botHTML += renderListItem(drill));
+                    botHTML += `</ul>`;
+                    if (data.technical_drills.remaining > 0) {
+                        botHTML += `<div class="more-hint">👇 ${data.technical_drills.remaining} more available. Type "more".</div>`;
+                    }
+                    botHTML += `</div>`;
+                }
+
+                // CASE C: Standard Lists (Priority, Drills, Plans)
+                if (data.ordered_responses && data.ordered_responses.length > 0) {
+                    data.ordered_responses.forEach(item => {
+                        botHTML += `<div class="drill-card">`;
+                        
+                        if (item.type === "batting_role_priority") {
+                             if(item.priority && item.priority.length > 0) {
+                                 botHTML += `<h4>🔥 High Priority</h4><ul>`;
+                                 item.priority.forEach(p => botHTML += renderListItem(p));
+                                 botHTML += `</ul>`;
+                             }
+                             if(item.secondary && item.secondary.length > 0) {
+                                 botHTML += `<h4>⚠️ Secondary Focus</h4><ul>`;
+                                 item.secondary.forEach(p => botHTML += renderListItem(p));
+                                 botHTML += `</ul>`;
+                             }
+                             if(item.low && item.low.length > 0) {
+                                 botHTML += `<h4>✅ Low Priority / Maintain</h4><ul>`;
+                                 item.low.forEach(p => botHTML += renderListItem(p));
+                                 botHTML += `</ul>`;
+                             }
+                        }
+                        else if (item.sub_areas) {
+                            botHTML += `<strong>Options:</strong><ul>`;
+                            item.sub_areas.forEach(sub => botHTML += renderListItem(sub));
+                            botHTML += `</ul>`;
+                        }
+                        else if (item.result && typeof item.result === 'object') {
+                            if (item.result.name) botHTML += `<h4>🎯 ${item.result.name}</h4>`;
+                            if (item.result.goal) botHTML += `<em>Goal: ${item.result.goal}</em><hr>`;
+
+                            Object.keys(item.result).forEach(key => {
+                                if (Array.isArray(item.result[key]) && item.result[key].length > 0) {
+                                    let title = key.charAt(0).toUpperCase() + key.slice(1).replace(/_/g, " ");
+                                    botHTML += `<strong>${title}:</strong><ul>`;
+                                    item.result[key].forEach(li => botHTML += renderListItem(li));
+                                    botHTML += `</ul>`;
+                                }
+                            });
+                        } 
+                        else if (typeof item.result === 'string') {
+                            botHTML += `<p>${item.result}</p>`;
+                        }
+                        botHTML += `</div>`;
+                    });
+                }
+
+                addMessage(botHTML, 'bot-message', true);
+
+            } catch (error) {
+                console.error(error);
+                document.getElementById("typingIndicator").style.display = "none";
+                addMessage(`System Error: ${error.message}`, 'message error-message');
+            }
+        }
+
+        // --- 3. SMART RENDERER ---
+        function renderListItem(item) {
+            // String (simple text)
+            if (typeof item === 'string') return `<li>${item}</li>`;
+            
+            // Object with ID/Name (Priority List & Sub Areas)
+            if (item.id && item.name) return `<li><span class="highlight">${item.id}:</span> ${item.name}</li>`;
+            
+            // Complex Object (Full Drill)
+            let html = `<li>`;
+            Object.keys(item).forEach(key => {
+                let val = item[key];
+                let label = key.replace(/_/g, " ").replace(/\b\w/g, l => l.toUpperCase());
+                html += `<span class="label">${label}:</span> ${val} <br>`; 
+            });
+            html += `</li>`;
+            return html;
+        }
+
+        function addMessage(text, className, isHTML = false) {
+            const chatBox = document.getElementById("chatBox");
+            const div = document.createElement("div");
+            div.className = `message ${className}`;
+            if (isHTML) div.innerHTML = text;
+            else div.textContent = text;
+            chatBox.appendChild(div);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+    </script>
+</body>
+</html>
