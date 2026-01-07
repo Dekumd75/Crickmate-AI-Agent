@@ -200,6 +200,19 @@
             "skill_level": "beginner",
             "playing_role": "finisher",
             "weekly_days": 3
+        },
+        {
+            "user_id": "USER0017",
+            "name": "oshada",
+            "age": 20,
+            "height_cm": 175,
+            "weight_kg": 70,
+            "age_group": "Adult",
+            "bmi": 22.86,
+            "bmi_group": "Overweight",
+            "skill_level": "beginner",
+            "playing_role": "top order batsman",
+            "weekly_days": 3
         }
     ]
 }
