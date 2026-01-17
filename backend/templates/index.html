@@ -234,11 +234,13 @@
             <button class="start-btn" onclick="registerUser()">Start Coaching</button>
             <p id="regError" style="color:red; display:none; font-size:12px; margin-top:10px;"></p>
         </div>
-
-    </div><div class="chat-container" id="chatContainer">
+    </div> <div class="chat-container" id="chatContainer">
         <div class="header">
-            <span>🏏 CrickMate AI</span>
-            <span class="user-badge" id="userBadge">Guest</span>
+            <span class="header-title">🏏 CrickMate AI</span>
+            <div style="display:flex; align-items:center; gap:10px;">
+                <span class="user-badge" id="userBadge">Guest</span>
+                <button onclick="logout()" style="background:rgba(0,0,0,0.2); border:none; color:white; cursor:pointer; font-size:11px; padding:5px 10px; border-radius:15px;">Logout</button>
+            </div>
         </div>
         <div class="chat-box" id="chatBox">
             <div class="message bot-message">
@@ -259,6 +261,26 @@
     <script>
         const API_BASE = "/api";
         let CURRENT_USER_ID = null;
+
+        // --- 0. AUTO-LOGIN ON LOAD ---
+        window.onload = function() {
+            const savedUID = localStorage.getItem("crickmate_uid");
+            const savedName = localStorage.getItem("crickmate_name");
+            const savedRole = localStorage.getItem("crickmate_role");
+
+            if (savedUID && savedName) {
+                console.log("Found saved user:", savedName);
+                CURRENT_USER_ID = savedUID;
+                
+                // Update UI immediately
+                let displayRole = savedRole ? savedRole.charAt(0).toUpperCase() + savedRole.slice(1) : "Player";
+                document.getElementById('userBadge').textContent = `${savedName} (${displayRole})`;
+                
+                // Hide Login, Show Chat
+                document.getElementById('loginModal').style.display = 'none';
+                document.getElementById('chatContainer').style.display = 'flex';
+            }
+        };
 
         // --- 1. REGISTRATION LOGIC ---
         async function registerUser() {
@@ -289,6 +311,12 @@
 
                 if (data.status === "success") {
                     CURRENT_USER_ID = data.user_id;
+                    
+                    // SAVE TO LOCAL STORAGE
+                    localStorage.setItem("crickmate_uid", data.user_id);
+                    localStorage.setItem("crickmate_name", userData.name);
+                    localStorage.setItem("crickmate_role", userData.playing_role);
+
                     let displayRole = userData.playing_role.charAt(0).toUpperCase() + userData.playing_role.slice(1);
                     document.getElementById('userBadge').textContent = `${userData.name} (${displayRole})`;
                     document.getElementById('loginModal').style.display = 'none';
@@ -308,7 +336,15 @@
             }
         }
 
-        // --- 2. CHAT LOGIC ---
+        // --- 2. LOGOUT LOGIC ---
+        function logout() {
+            if(confirm("Are you sure you want to log out? This will clear your chat history.")) {
+                localStorage.clear(); // Wipe the saved data
+                location.reload();    // Refresh the page to show Login Screen
+            }
+        }
+
+        // --- 3. CHAT LOGIC ---
         function handleEnter(e) { if (e.key === 'Enter') sendMessage(); }
 
         async function sendMessage() {
@@ -333,7 +369,7 @@
                 
                 if (data.chat) botHTML += `<p>${data.chat.replace(/\n/g, "<br>")}</p>`;
 
-                // FIXED: CASE A - Direct Category Selection (e.g., Typing "A")
+                // CASE A - Direct Category Selection
                 if (data.type === "technical_category" && data.sub_areas) {
                     botHTML += `<div class="drill-card">`;
                     if (data.category_name) botHTML += `<h4>📂 ${data.category_name}</h4>`;
@@ -353,11 +389,10 @@
                     botHTML += `</div>`;
                 }
 
-                // CASE C: Standard Lists (Priority, Drills, Plans)
+                // CASE C: Standard Lists
                 if (data.ordered_responses && data.ordered_responses.length > 0) {
                     data.ordered_responses.forEach(item => {
                         botHTML += `<div class="drill-card">`;
-                        
                         if (item.type === "batting_role_priority") {
                              if(item.priority && item.priority.length > 0) {
                                  botHTML += `<h4>🔥 High Priority</h4><ul>`;
@@ -383,7 +418,6 @@
                         else if (item.result && typeof item.result === 'object') {
                             if (item.result.name) botHTML += `<h4>🎯 ${item.result.name}</h4>`;
                             if (item.result.goal) botHTML += `<em>Goal: ${item.result.goal}</em><hr>`;
-
                             Object.keys(item.result).forEach(key => {
                                 if (Array.isArray(item.result[key]) && item.result[key].length > 0) {
                                     let title = key.charAt(0).toUpperCase() + key.slice(1).replace(/_/g, " ");
@@ -409,15 +443,10 @@
             }
         }
 
-        // --- 3. SMART RENDERER ---
+        // --- 4. SMART RENDERER ---
         function renderListItem(item) {
-            // String (simple text)
             if (typeof item === 'string') return `<li>${item}</li>`;
-            
-            // Object with ID/Name (Priority List & Sub Areas)
             if (item.id && item.name) return `<li><span class="highlight">${item.id}:</span> ${item.name}</li>`;
-            
-            // Complex Object (Full Drill)
             let html = `<li>`;
             Object.keys(item).forEach(key => {
                 let val = item[key];
