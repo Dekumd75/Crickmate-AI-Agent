@@ -5,179 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CrickMate AI Coach</title>
     <style>
-        :root { 
-            --primary: #008000; /* Cricket Green */
-            --primary-dark: #006400; 
-            --bg: #e5ddd5; /* WhatsApp-like background */
-            --chat-bg: #ffffff;
-            --user-msg-bg: #dcf8c6; /* Classic Chat App Green */
-            --bot-msg-bg: #ffffff;
-            --shadow: 0 1px 3px rgba(0,0,0,0.12);
-        }
-
-        body { 
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
-            background-color: #d1d7db; 
-            display: flex; 
-            justify-content: center; 
-            height: 100vh; 
-            margin: 0; 
-        }
-
-        /* --- MODERN MODAL (Login) --- */
+        :root { --primary: #008000; --primary-dark: #006400; --bg: #e5ddd5; --chat-bg: #ffffff; --user-msg-bg: #dcf8c6; --bot-msg-bg: #ffffff; --shadow: 0 1px 3px rgba(0,0,0,0.12); }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #d1d7db; display: flex; justify-content: center; height: 100vh; margin: 0; }
+        
+        /* Modal & Layout */
         .modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); display: flex; justify-content: center; align-items: center; z-index: 1000; backdrop-filter: blur(5px); }
         .modal-content { background: white; padding: 30px; border-radius: 20px; width: 90%; max-width: 400px; text-align: center; box-shadow: 0 20px 60px rgba(0,0,0,0.2); }
         .modal h2 { color: var(--primary); margin-top: 0; font-size: 24px; }
         .form-group { margin-bottom: 15px; text-align: left; }
         .form-group label { display: block; font-size: 13px; margin-bottom: 5px; color: #666; font-weight: 600; }
         .form-group input, .form-group select { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; font-size: 16px; transition: 0.3s; }
-        .form-group input:focus, .form-group select:focus { border-color: var(--primary); outline: none; }
         .start-btn { width: 100%; background: var(--primary); color: white; padding: 14px; border: none; border-radius: 10px; cursor: pointer; font-size: 16px; font-weight: bold; transition: 0.2s; }
         .start-btn:hover { background: var(--primary-dark); transform: translateY(-2px); }
 
-        /* --- MAIN CHAT CONTAINER --- */
-        .chat-container { 
-            width: 100%; 
-            max-width: 500px; 
-            background: #efe7dd; /* Chat Pattern Background color */
-            display: none; 
-            flex-direction: column; 
-            box-shadow: 0 0 20px rgba(0,0,0,0.1); 
-            height: 100%; 
-            position: relative;
-        }
+        .chat-container { width: 100%; max-width: 500px; background: #efe7dd; display: none; flex-direction: column; box-shadow: 0 0 20px rgba(0,0,0,0.1); height: 100%; position: relative; }
+        @media (min-width: 600px) { .chat-container { height: 95vh; margin-top: 2.5vh; border-radius: 20px; overflow: hidden; } }
 
-        @media (min-width: 600px) {
-            .chat-container { height: 95vh; margin-top: 2.5vh; border-radius: 20px; overflow: hidden; }
-        }
-
-        /* --- HEADER --- */
-        .header { 
-            background: #075e54; /* Professional Dark Green */
-            color: white; 
-            padding: 15px 20px; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            z-index: 10;
-        }
+        .header { background: #075e54; color: white; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.2); z-index: 10; }
         .header-title { font-weight: bold; font-size: 18px; display: flex; align-items: center; gap: 10px; }
         .user-badge { font-size: 11px; background: rgba(255,255,255,0.2); padding: 4px 8px; border-radius: 12px; }
 
-        /* --- CHAT AREA --- */
-        .chat-box { 
-            flex: 1; 
-            padding: 20px; 
-            overflow-y: auto; 
-            display: flex; 
-            flex-direction: column; 
-            gap: 10px; 
-            background-image: url("https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png"); /* WhatsApp Doodle Pattern */
-            background-blend-mode: soft-light;
-        }
+        .chat-box { flex: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; background-image: url("https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png"); background-blend-mode: soft-light; }
 
-        /* --- BUBBLES --- */
-        .message { 
-            max-width: 80%; 
-            padding: 10px 14px; 
-            border-radius: 8px; 
-            font-size: 15px; 
-            line-height: 1.4; 
-            position: relative; 
-            box-shadow: var(--shadow);
-            word-wrap: break-word;
-        }
+        .message { max-width: 80%; padding: 10px 14px; border-radius: 8px; font-size: 15px; line-height: 1.4; position: relative; box-shadow: var(--shadow); word-wrap: break-word; }
+        .bot-message { background: white; color: #333; align-self: flex-start; border-top-left-radius: 0; }
+        .bot-message::after { content: ""; position: absolute; left: -10px; top: 0; width: 0; height: 0; border: 10px solid transparent; border-top-color: white; border-right: 0; margin-top: 0; margin-right: -10px; }
+        .user-message { background: var(--user-msg-bg); color: #303030; align-self: flex-end; border-top-right-radius: 0; }
+        .user-message::after { content: ""; position: absolute; right: -10px; top: 0; width: 0; height: 0; border: 10px solid transparent; border-top-color: var(--user-msg-bg); border-left: 0; margin-top: 0; margin-left: -10px; }
 
-        /* Bot Bubble */
-        .bot-message { 
-            background: white; 
-            color: #333; 
-            align-self: flex-start; 
-            border-top-left-radius: 0; 
-        }
-        .bot-message::after {
-            content: ""; position: absolute; left: -10px; top: 0;
-            width: 0; height: 0;
-            border: 10px solid transparent; border-top-color: white; border-right: 0; margin-top: 0; margin-right: -10px;
-        }
-
-        /* User Bubble */
-        .user-message { 
-            background: var(--user-msg-bg); 
-            color: #303030; 
-            align-self: flex-end; 
-            border-top-right-radius: 0; 
-        }
-        .user-message::after {
-            content: ""; position: absolute; right: -10px; top: 0;
-            width: 0; height: 0;
-            border: 10px solid transparent; border-top-color: var(--user-msg-bg); border-left: 0; margin-top: 0; margin-left: -10px;
-        }
-
-        /* --- CARDS & LISTS INSIDE CHAT --- */
         .drill-card { background: rgba(0,0,0,0.03); padding: 10px; margin-top: 5px; border-radius: 5px; border-left: 4px solid var(--primary); }
         h4 { margin: 0 0 8px 0; color: #075e54; font-size: 14px; }
         ul { margin: 0; padding-left: 20px; }
         li { margin-bottom: 4px; font-size: 14px; }
         .highlight { color: #d32f2f; font-weight: bold; }
 
-        /* --- INPUT AREA --- */
-        .input-area { 
-            padding: 10px; 
-            background: #f0f0f0; 
-            display: flex; 
-            gap: 10px; 
-            align-items: center; 
-        }
-        input.chat-input { 
-            flex: 1; 
-            padding: 12px 15px; 
-            border: none; 
-            border-radius: 25px; 
-            outline: none; 
-            font-size: 16px; 
-            background: white;
-        }
-        button.send-btn { 
-            background: #075e54; 
-            color: white; 
-            border: none; 
-            width: 45px; height: 45px; 
-            border-radius: 50%; 
-            cursor: pointer; 
-            display: flex; justify-content: center; align-items: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            transition: 0.2s;
-        }
+        .input-area { padding: 10px; background: #f0f0f0; display: flex; gap: 10px; align-items: center; }
+        input.chat-input { flex: 1; padding: 12px 15px; border: none; border-radius: 25px; outline: none; font-size: 16px; background: white; }
+        
+        button.send-btn { background: #075e54; color: white; border: none; width: 45px; height: 45px; border-radius: 50%; cursor: pointer; display: flex; justify-content: center; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.2); transition: 0.2s; }
         button.send-btn:hover { background: #128c7e; transform: scale(1.05); }
+        
+        /* NEW: Camera Button */
+        button.icon-btn { background: none; border: none; font-size: 24px; cursor: pointer; color: #555; padding: 0 5px; transition: transform 0.2s; }
+        button.icon-btn:hover { transform: scale(1.2); color: #075e54; }
 
-        /* --- TYPING INDICATOR (Jumping Dots) --- */
-        .typing { 
-            align-self: flex-start; 
-            background: white; 
-            padding: 10px 15px; 
-            border-radius: 20px; 
-            border-bottom-left-radius: 0;
-            margin-bottom: 10px; 
-            display: none; 
-            width: fit-content;
-            box-shadow: var(--shadow);
-        }
-        .dot {
-            height: 8px; width: 8px; 
-            background-color: #bbb; 
-            border-radius: 50%; 
-            display: inline-block;
-            animation: bounce 1.4s infinite ease-in-out both;
-        }
+        .typing { align-self: flex-start; background: white; padding: 10px 15px; border-radius: 20px; border-bottom-left-radius: 0; margin-bottom: 10px; display: none; width: fit-content; box-shadow: var(--shadow); }
+        .dot { height: 8px; width: 8px; background-color: #bbb; border-radius: 50%; display: inline-block; animation: bounce 1.4s infinite ease-in-out both; }
         .dot:nth-child(1) { animation-delay: -0.32s; }
         .dot:nth-child(2) { animation-delay: -0.16s; }
-        
-        @keyframes bounce {
-            0%, 80%, 100% { transform: scale(0); }
-            40% { transform: scale(1); }
-        }
+        @keyframes bounce { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1); } }
     </style>
 </head>
 <body>
@@ -185,30 +61,13 @@
     <div id="loginModal" class="modal">
         <div class="modal-content">
             <h2>🏏 Player Profile</h2>
-            
-            <div class="form-group">
-                <label>Full Name</label>
-                <input type="text" id="regName" placeholder="Enter your name" value="Champ">
-            </div>
-            
+            <div class="form-group"><label>Full Name</label><input type="text" id="regName" placeholder="Enter your name" value="Champ"></div>
             <div class="form-group" style="display:flex; gap:15px;">
-                <div style="flex: 1;">
-                    <label>Age</label>
-                    <input type="number" id="regAge" placeholder="20" value="20">
-                </div>
-                <div style="flex: 1;">
-                    <label>Height (cm)</label>
-                    <input type="number" id="regHeight" placeholder="175" value="175">
-                </div>
+                <div style="flex: 1;"><label>Age</label><input type="number" id="regAge" placeholder="20" value="20"></div>
+                <div style="flex: 1;"><label>Height (cm)</label><input type="number" id="regHeight" placeholder="175" value="175"></div>
             </div>
-
-            <div class="form-group">
-                <label>Weight (kg)</label>
-                <input type="number" id="regWeight" placeholder="70" value="70">
-            </div>
-
-            <div class="form-group">
-                <label>Playing Role</label>
+            <div class="form-group"><label>Weight (kg)</label><input type="number" id="regWeight" placeholder="70" value="70"></div>
+            <div class="form-group"><label>Playing Role</label>
                 <select id="regRole">
                     <option value="top order batsman">Top Order Batsman</option>
                     <option value="middle order batsman">Middle Order Batsman</option>
@@ -221,20 +80,19 @@
                     <option value="all rounder">All Rounder</option>
                 </select>
             </div>
-
-            <div class="form-group">
-                <label>Current Skill Level</label>
+            <div class="form-group"><label>Current Skill Level</label>
                 <select id="regSkill">
                     <option value="beginner">Beginner</option>
                     <option value="intermediate">Intermediate</option>
                     <option value="advanced">Advanced</option>
                 </select>
             </div>
-
             <button class="start-btn" onclick="registerUser()">Start Coaching</button>
             <p id="regError" style="color:red; display:none; font-size:12px; margin-top:10px;"></p>
         </div>
-    </div> <div class="chat-container" id="chatContainer">
+    </div> 
+
+    <div class="chat-container" id="chatContainer">
         <div class="header">
             <span class="header-title">🏏 CrickMate AI</span>
             <div style="display:flex; align-items:center; gap:10px;">
@@ -243,16 +101,14 @@
             </div>
         </div>
         <div class="chat-box" id="chatBox">
-            <div class="message bot-message">
-                Hi! I'm your AI Coach. I see your profile. How can I help you improve today?
-            </div>
+            <div class="message bot-message">Hi! I'm your AI Coach. I see your profile. How can I help you improve today?</div>
         </div>
-        <div class="typing" id="typingIndicator">
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-        </div>
+        <div class="typing" id="typingIndicator"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+        
         <div class="input-area">
+            <input type="file" id="imageInput" accept="image/*" style="display: none;" onchange="sendImage()">
+            <button class="icon-btn" onclick="document.getElementById('imageInput').click()">📷</button>
+            
             <input type="text" id="userInput" class="chat-input" placeholder="Type here..." onkeypress="handleEnter(event)">
             <button class="send-btn" onclick="sendMessage()">➤</button>
         </div>
@@ -262,31 +118,22 @@
         const API_BASE = "/api";
         let CURRENT_USER_ID = null;
 
-        // --- 0. AUTO-LOGIN ON LOAD ---
         window.onload = function() {
             const savedUID = localStorage.getItem("crickmate_uid");
             const savedName = localStorage.getItem("crickmate_name");
             const savedRole = localStorage.getItem("crickmate_role");
-
             if (savedUID && savedName) {
-                console.log("Found saved user:", savedName);
                 CURRENT_USER_ID = savedUID;
-                
-                // Update UI immediately
                 let displayRole = savedRole ? savedRole.charAt(0).toUpperCase() + savedRole.slice(1) : "Player";
                 document.getElementById('userBadge').textContent = `${savedName} (${displayRole})`;
-                
-                // Hide Login, Show Chat
                 document.getElementById('loginModal').style.display = 'none';
                 document.getElementById('chatContainer').style.display = 'flex';
             }
         };
 
-        // --- 1. REGISTRATION LOGIC ---
         async function registerUser() {
             const btn = document.querySelector('.start-btn');
             const err = document.getElementById('regError');
-            
             const userData = {
                 name: document.getElementById('regName').value,
                 age: parseInt(document.getElementById('regAge').value),
@@ -296,11 +143,7 @@
                 skill_level: document.getElementById('regSkill').value,
                 weekly_days: 3
             };
-
-            btn.textContent = "Creating Profile...";
-            btn.disabled = true;
-            err.style.display = 'none';
-
+            btn.textContent = "Creating Profile..."; btn.disabled = true; err.style.display = 'none';
             try {
                 const response = await fetch(`${API_BASE}/register-user`, {
                     method: "POST",
@@ -308,54 +151,71 @@
                     body: JSON.stringify(userData)
                 });
                 const data = await response.json();
-
                 if (data.status === "success") {
                     CURRENT_USER_ID = data.user_id;
-                    
-                    // SAVE TO LOCAL STORAGE
                     localStorage.setItem("crickmate_uid", data.user_id);
                     localStorage.setItem("crickmate_name", userData.name);
                     localStorage.setItem("crickmate_role", userData.playing_role);
-
                     let displayRole = userData.playing_role.charAt(0).toUpperCase() + userData.playing_role.slice(1);
                     document.getElementById('userBadge').textContent = `${userData.name} (${displayRole})`;
                     document.getElementById('loginModal').style.display = 'none';
                     document.getElementById('chatContainer').style.display = 'flex';
                 } else {
-                    err.textContent = "Error: " + data.message;
-                    err.style.display = 'block';
-                    btn.disabled = false;
-                    btn.textContent = "Start Coaching";
+                    err.textContent = "Error: " + data.message; err.style.display = 'block'; btn.disabled = false; btn.textContent = "Start Coaching";
                 }
             } catch (error) {
-                console.error(error);
-                err.textContent = "Server error. Is python app.py running?";
-                err.style.display = 'block';
-                btn.disabled = false;
-                btn.textContent = "Start Coaching";
+                console.error(error); err.textContent = "Server error."; err.style.display = 'block'; btn.disabled = false; btn.textContent = "Start Coaching";
             }
         }
 
-        // --- 2. LOGOUT LOGIC ---
         function logout() {
-            if(confirm("Are you sure you want to log out? This will clear your chat history.")) {
-                localStorage.clear(); // Wipe the saved data
-                location.reload();    // Refresh the page to show Login Screen
-            }
+            if(confirm("Log out?")) { localStorage.clear(); location.reload(); }
         }
 
-        // --- 3. CHAT LOGIC ---
         function handleEnter(e) { if (e.key === 'Enter') sendMessage(); }
+
+        // --- NEW: SEND IMAGE FUNCTION ---
+        async function sendImage() {
+            const fileInput = document.getElementById('imageInput');
+            const file = fileInput.files[0];
+            if (!file) return;
+
+            addMessage("📷 Analyzing image...", 'user-message');
+            document.getElementById("typingIndicator").style.display = "block";
+
+            // Create Form Data for file upload
+            const formData = new FormData();
+            formData.append('image', file);
+            formData.append('user_id', CURRENT_USER_ID);
+
+            try {
+                // NOTE: We will create this /analyze-image endpoint in the backend next!
+                const response = await fetch(`${API_BASE}/analyze-image`, {
+                    method: "POST",
+                    body: formData 
+                });
+                const data = await response.json();
+                document.getElementById("typingIndicator").style.display = "none";
+                
+                // Show AI Analysis
+                addMessage(data.chat, 'bot-message', true);
+
+            } catch (error) {
+                console.error(error);
+                document.getElementById("typingIndicator").style.display = "none";
+                addMessage("❌ Error analyzing image. (Did you restart the backend?)", 'bot-message');
+            }
+            // Reset input
+            fileInput.value = "";
+        }
 
         async function sendMessage() {
             const inputField = document.getElementById("userInput");
             const message = inputField.value.trim();
             if (!message) return;
-
             addMessage(message, 'user-message');
             inputField.value = "";
             document.getElementById("typingIndicator").style.display = "block";
-
             try {
                 const response = await fetch(`${API_BASE}/chat`, {
                     method: "POST",
@@ -364,32 +224,15 @@
                 });
                 const data = await response.json();
                 document.getElementById("typingIndicator").style.display = "none";
-
                 let botHTML = "";
-                
                 if (data.chat) botHTML += `<p>${data.chat.replace(/\n/g, "<br>")}</p>`;
-
-                // CASE A - Direct Category Selection
-                if (data.type === "technical_category" && data.sub_areas) {
-                    botHTML += `<div class="drill-card">`;
-                    if (data.category_name) botHTML += `<h4>📂 ${data.category_name}</h4>`;
-                    botHTML += `<strong>Options:</strong><ul>`;
-                    data.sub_areas.forEach(sub => botHTML += renderListItem(sub));
-                    botHTML += `</ul></div>`;
-                }
-
-                // CASE B: Shortcuts (Drills)
                 if (data.technical_drills && data.technical_drills.returned) {
                     botHTML += `<div class="drill-card"><h4>🎯 Drills</h4><ul>`;
                     data.technical_drills.returned.forEach(drill => botHTML += renderListItem(drill));
                     botHTML += `</ul>`;
-                    if (data.technical_drills.remaining > 0) {
-                        botHTML += `<div class="more-hint">👇 ${data.technical_drills.remaining} more available. Type "more".</div>`;
-                    }
+                    if (data.technical_drills.remaining > 0) botHTML += `<div class="more-hint">👇 ${data.technical_drills.remaining} more available. Type "more".</div>`;
                     botHTML += `</div>`;
                 }
-
-                // CASE C: Standard Lists
                 if (data.ordered_responses && data.ordered_responses.length > 0) {
                     data.ordered_responses.forEach(item => {
                         botHTML += `<div class="drill-card">`;
@@ -405,7 +248,7 @@
                                  botHTML += `</ul>`;
                              }
                              if(item.low && item.low.length > 0) {
-                                 botHTML += `<h4>✅ Low Priority / Maintain</h4><ul>`;
+                                 botHTML += `<h4>✅ Low Priority</h4><ul>`;
                                  item.low.forEach(p => botHTML += renderListItem(p));
                                  botHTML += `</ul>`;
                              }
@@ -433,9 +276,7 @@
                         botHTML += `</div>`;
                     });
                 }
-
                 addMessage(botHTML, 'bot-message', true);
-
             } catch (error) {
                 console.error(error);
                 document.getElementById("typingIndicator").style.display = "none";
@@ -443,7 +284,6 @@
             }
         }
 
-        // --- 4. SMART RENDERER ---
         function renderListItem(item) {
             if (typeof item === 'string') return `<li>${item}</li>`;
             if (item.id && item.name) return `<li><span class="highlight">${item.id}:</span> ${item.name}</li>`;
