@@ -5,10 +5,178 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CrickMate AI Coach</title>
     <style>
-        :root { --primary: #008000; --primary-dark: #006400; --bg: #e5ddd5; --chat-bg: #ffffff; --user-msg-bg: #dcf8c6; --bot-msg-bg: #ffffff; --shadow: 0 1px 3px rgba(0,0,0,0.12); }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #d1d7db; display: flex; justify-content: center; height: 100vh; margin: 0; }
+        :root {
+            --primary: #00a884; /* Modern WhatsApp Green */
+            --primary-dark: #008f6f;
+            --bg-color: #efe7dd; /* Chat Wallpaper Color */
+            --user-msg-bg: #d9fdd3;
+            --bot-msg-bg: #ffffff;
+            --shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
         
-        /* Modal & Layout */
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+            background-color: #d1d7db; 
+            display: flex; 
+            justify-content: center; 
+            height: 100vh; 
+            margin: 0; 
+        }
+
+        /* --- LAYOUT --- */
+        .chat-container { 
+            width: 100%; 
+            max-width: 500px; 
+            background: var(--bg-color); 
+            display: none; 
+            flex-direction: column; 
+            height: 100%; 
+            position: relative; 
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        @media (min-width: 600px) { 
+            .chat-container { height: 95vh; margin-top: 2.5vh; border-radius: 18px; } 
+        }
+
+        .header { 
+            background: #008069; 
+            color: white; 
+            padding: 10px 16px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            box-shadow: 0 1px 3px rgba(0,0,0,0.2); 
+            z-index: 10;
+        }
+        .header-title { font-weight: bold; font-size: 17px; display: flex; align-items: center; gap: 10px; }
+        .user-badge { font-size: 11px; background: rgba(255,255,255,0.2); padding: 4px 8px; border-radius: 12px; }
+
+        /* --- CHAT AREA --- */
+        .chat-box { 
+            flex: 1; 
+            padding: 15px 20px; 
+            overflow-y: auto; 
+            display: flex; 
+            flex-direction: column; 
+            gap: 8px; 
+            background-image: url("https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png");
+            background-repeat: repeat;
+            background-size: 400px;
+        }
+
+        .message { 
+            max-width: 85%; 
+            padding: 8px 12px; 
+            border-radius: 8px; 
+            font-size: 14.5px; 
+            line-height: 1.5; 
+            position: relative; 
+            box-shadow: var(--shadow); 
+            word-wrap: break-word;
+            margin-bottom: 2px;
+        }
+        
+        .bot-message { 
+            background: var(--bot-msg-bg); 
+            color: #111;
+            align-self: flex-start; 
+            border-top-left-radius: 0; 
+        }
+        .bot-message::after { content: ""; position: absolute; left: -8px; top: 0; width: 0; height: 0; border: 8px solid transparent; border-top-color: var(--bot-msg-bg); border-right: 0; margin-top: 0; }
+        
+        .user-message { 
+            background: var(--user-msg-bg); 
+            color: #111; 
+            align-self: flex-end; 
+            border-top-right-radius: 0; 
+        }
+        .user-message::after { content: ""; position: absolute; right: -8px; top: 0; width: 0; height: 0; border: 8px solid transparent; border-top-color: var(--user-msg-bg); border-left: 0; margin-top: 0; }
+
+        /* --- CARDS & DRILLS (The Pretty Part) --- */
+        .drill-card {
+            background: #fdfdfd;
+            border-radius: 8px;
+            padding: 12px;
+            margin-top: 8px;
+            border-left: 5px solid var(--primary);
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+
+        h4 { margin: 0 0 10px 0; color: #008069; font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+        
+        /* Clean List Styling */
+        ul { margin: 0; padding: 0; list-style: none; }
+        
+        li { 
+            padding: 8px 0; 
+            border-bottom: 1px solid #f0f0f0; 
+            font-size: 14px; 
+            color: #333;
+        }
+        li:last-child { border-bottom: none; }
+
+        /* The ID badges (e.g., A1, B2) */
+        .highlight { 
+            background-color: #e8f5e9; 
+            color: #1b5e20; 
+            padding: 2px 8px; 
+            border-radius: 12px; 
+            font-weight: 600; 
+            font-size: 12px;
+            margin-right: 6px;
+            display: inline-block;
+            border: 1px solid #c8e6c9;
+        }
+        
+        .label {
+            color: #54656f;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        /* --- INPUT AREA --- */
+        .input-area { 
+            padding: 8px 10px; 
+            background: #f0f2f5; 
+            display: flex; 
+            gap: 8px; 
+            align-items: center; 
+        }
+        input.chat-input { 
+            flex: 1; 
+            padding: 10px 15px; 
+            border: none; 
+            border-radius: 8px; 
+            outline: none; 
+            font-size: 15px; 
+            background: white; 
+        }
+        button.send-btn { 
+            background: transparent; 
+            color: #54656f; 
+            border: none; 
+            font-size: 24px; 
+            cursor: pointer; 
+            padding: 0 10px;
+        }
+        button.send-btn:hover { color: var(--primary); }
+        
+        /* Camera Button */
+        button.icon-btn { background: none; border: none; font-size: 24px; cursor: pointer; color: #54656f; padding: 0 5px; transition: transform 0.2s; }
+        button.icon-btn:hover { transform: scale(1.2); color: var(--primary); }
+
+        /* --- UTILS --- */
+        .typing { margin-left: 20px; background: white; padding: 10px 15px; border-radius: 10px; display: none; width: fit-content; margin-bottom: 10px; box-shadow: var(--shadow); }
+        .dot { height: 7px; width: 7px; background-color: #999; border-radius: 50%; display: inline-block; animation: bounce 1.4s infinite ease-in-out both; }
+        .dot:nth-child(1) { animation-delay: -0.32s; }
+        .dot:nth-child(2) { animation-delay: -0.16s; }
+        @keyframes bounce { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1); } }
+
+        /* Modal Styles */
         .modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); display: flex; justify-content: center; align-items: center; z-index: 1000; backdrop-filter: blur(5px); }
         .modal-content { background: white; padding: 30px; border-radius: 20px; width: 90%; max-width: 400px; text-align: center; box-shadow: 0 20px 60px rgba(0,0,0,0.2); }
         .modal h2 { color: var(--primary); margin-top: 0; font-size: 24px; }
@@ -17,43 +185,6 @@
         .form-group input, .form-group select { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; font-size: 16px; transition: 0.3s; }
         .start-btn { width: 100%; background: var(--primary); color: white; padding: 14px; border: none; border-radius: 10px; cursor: pointer; font-size: 16px; font-weight: bold; transition: 0.2s; }
         .start-btn:hover { background: var(--primary-dark); transform: translateY(-2px); }
-
-        .chat-container { width: 100%; max-width: 500px; background: #efe7dd; display: none; flex-direction: column; box-shadow: 0 0 20px rgba(0,0,0,0.1); height: 100%; position: relative; }
-        @media (min-width: 600px) { .chat-container { height: 95vh; margin-top: 2.5vh; border-radius: 20px; overflow: hidden; } }
-
-        .header { background: #075e54; color: white; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.2); z-index: 10; }
-        .header-title { font-weight: bold; font-size: 18px; display: flex; align-items: center; gap: 10px; }
-        .user-badge { font-size: 11px; background: rgba(255,255,255,0.2); padding: 4px 8px; border-radius: 12px; }
-
-        .chat-box { flex: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; background-image: url("https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png"); background-blend-mode: soft-light; }
-
-        .message { max-width: 80%; padding: 10px 14px; border-radius: 8px; font-size: 15px; line-height: 1.4; position: relative; box-shadow: var(--shadow); word-wrap: break-word; }
-        .bot-message { background: white; color: #333; align-self: flex-start; border-top-left-radius: 0; }
-        .bot-message::after { content: ""; position: absolute; left: -10px; top: 0; width: 0; height: 0; border: 10px solid transparent; border-top-color: white; border-right: 0; margin-top: 0; margin-right: -10px; }
-        .user-message { background: var(--user-msg-bg); color: #303030; align-self: flex-end; border-top-right-radius: 0; }
-        .user-message::after { content: ""; position: absolute; right: -10px; top: 0; width: 0; height: 0; border: 10px solid transparent; border-top-color: var(--user-msg-bg); border-left: 0; margin-top: 0; margin-left: -10px; }
-
-        .drill-card { background: rgba(0,0,0,0.03); padding: 10px; margin-top: 5px; border-radius: 5px; border-left: 4px solid var(--primary); }
-        h4 { margin: 0 0 8px 0; color: #075e54; font-size: 14px; }
-        ul { margin: 0; padding-left: 20px; }
-        li { margin-bottom: 4px; font-size: 14px; }
-        .highlight { color: #d32f2f; font-weight: bold; }
-
-        .input-area { padding: 10px; background: #f0f0f0; display: flex; gap: 10px; align-items: center; }
-        input.chat-input { flex: 1; padding: 12px 15px; border: none; border-radius: 25px; outline: none; font-size: 16px; background: white; }
-        
-        button.send-btn { background: #075e54; color: white; border: none; width: 45px; height: 45px; border-radius: 50%; cursor: pointer; display: flex; justify-content: center; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.2); transition: 0.2s; }
-        button.send-btn:hover { background: #128c7e; transform: scale(1.05); }
-        
-        /* NEW: Camera Button */
-        button.icon-btn { background: none; border: none; font-size: 24px; cursor: pointer; color: #555; padding: 0 5px; transition: transform 0.2s; }
-        button.icon-btn:hover { transform: scale(1.2); color: #075e54; }
-
-        .typing { align-self: flex-start; background: white; padding: 10px 15px; border-radius: 20px; border-bottom-left-radius: 0; margin-bottom: 10px; display: none; width: fit-content; box-shadow: var(--shadow); }
-        .dot { height: 8px; width: 8px; background-color: #bbb; border-radius: 50%; display: inline-block; animation: bounce 1.4s infinite ease-in-out both; }
-        .dot:nth-child(1) { animation-delay: -0.32s; }
-        .dot:nth-child(2) { animation-delay: -0.16s; }
-        @keyframes bounce { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1); } }
     </style>
 </head>
 <body>
@@ -174,7 +305,6 @@
 
         function handleEnter(e) { if (e.key === 'Enter') sendMessage(); }
 
-        // --- NEW: SEND IMAGE FUNCTION ---
         async function sendImage() {
             const fileInput = document.getElementById('imageInput');
             const file = fileInput.files[0];
@@ -183,7 +313,6 @@
             addMessage("📷 Analyzing image...", 'user-message');
             document.getElementById("typingIndicator").style.display = "block";
 
-            // Create Form Data for file upload
             const formData = new FormData();
             formData.append('image', file);
             formData.append('user_id', CURRENT_USER_ID);
@@ -223,24 +352,17 @@
                 let botHTML = "";
                 if (data.chat) botHTML += `<p>${data.chat.replace(/\n/g, "<br>")}</p>`;
                 
-                // --- FIX FOR CATEGORIES ---
                 if (data.ordered_responses && data.ordered_responses.length > 0) {
                     data.ordered_responses.forEach(item => {
                         botHTML += `<div class="drill-card">`;
                         
-                        // 1. SPECIFIC LOGIC FOR CATEGORIES (Power Hitting, etc.)
                         if (item.type === "technical_category") {
-                            // Display the Category Name (e.g., "📂 Power Hitting")
                             if (item.category) botHTML += `<h4>📂 ${item.category}</h4>`;
                             else if (item.category_name) botHTML += `<h4>📂 ${item.category_name}</h4>`;
-                            
                             botHTML += `<strong>Options:</strong><ul>`;
-                            if (item.sub_areas) {
-                                item.sub_areas.forEach(sub => botHTML += renderListItem(sub));
-                            }
+                            if (item.sub_areas) item.sub_areas.forEach(sub => botHTML += renderListItem(sub));
                             botHTML += `</ul>`;
                         }
-                        // 2. PRIORITY LIST
                         else if (item.type === "batting_role_priority") {
                              if(item.priority && item.priority.length > 0) {
                                  botHTML += `<h4>🔥 High Priority</h4><ul>`;
@@ -258,13 +380,37 @@
                                  botHTML += `</ul>`;
                              }
                         }
-                        // 3. GENERIC SUB AREAS FALLBACK
                         else if (item.sub_areas) {
                             botHTML += `<strong>Options:</strong><ul>`;
                             item.sub_areas.forEach(sub => botHTML += renderListItem(sub));
                             botHTML += `</ul>`;
                         }
-                        // 4. COMPLEX OBJECTS (Drills, Exercises)
+                        // --- NEW: HANDLE EXERCISE LIST ---
+                        else if (item.type === "exercise_list") {
+                            // 1. The Title
+                            botHTML += `<h4>🏋️ ${item.result.title}</h4>`;
+                            
+                            // 2. The Cards
+                            if (item.result.exercises && item.result.exercises.length > 0) {
+                                item.result.exercises.forEach(ex => {
+                                    botHTML += `<div style="background:white; padding:12px; margin-bottom:10px; border-radius:8px; border-left:4px solid #008069; box-shadow:0 1px 2px rgba(0,0,0,0.1);">`;
+                                    
+                                    // Header
+                                    botHTML += `<div style="font-weight:bold; color:#008069; font-size:15px; margin-bottom:6px;">${ex.name}</div>`;
+                                    
+                                    // The Stats Grid
+                                    botHTML += `<div style="display:grid; grid-template-columns: 1fr 1fr; gap:8px; font-size:13px; color:#444; margin-bottom:8px;">`;
+                                    botHTML += `<span>📋 <b>Plan:</b> ${ex.your_plan}</span>`;
+                                    botHTML += `<span>⏱️ <b>Rest:</b> ${ex.rest}</span>`;
+                                    botHTML += `</div>`;
+                                    
+                                    // Benefit
+                                    botHTML += `<div style="font-size:12px; color:#666; font-style:italic;">Benefit: ${ex.key_benefit}</div>`;
+                                    botHTML += `</div>`;
+                                });
+                            }
+                        }
+                        // ---------------------------------
                         else if (item.result && typeof item.result === 'object') {
                             if (item.result.name) botHTML += `<h4>🎯 ${item.result.name}</h4>`;
                             if (item.result.goal) botHTML += `<em>Goal: ${item.result.goal}</em><hr>`;
@@ -277,7 +423,6 @@
                                 }
                             });
                         } 
-                        // 5. SIMPLE TEXT
                         else if (typeof item.result === 'string') {
                             botHTML += `<p>${item.result}</p>`;
                         }
@@ -285,7 +430,6 @@
                     });
                 }
                 
-                // Handle "More" results
                 if (data.technical_drills && data.technical_drills.returned) {
                     botHTML += `<div class="drill-card"><h4>🎯 Drills</h4><ul>`;
                     data.technical_drills.returned.forEach(drill => botHTML += renderListItem(drill));
@@ -302,16 +446,34 @@
             }
         }
 
+        // --- NEW PRETTY LIST RENDERER ---
         function renderListItem(item) {
-            if (typeof item === 'string') return `<li>${item}</li>`;
-            if (item.id && item.name) return `<li><span class="highlight">${item.id}:</span> ${item.name}</li>`;
-            let html = `<li>`;
+            // 1. Simple text items
+            if (typeof item === 'string') {
+                return `<li>${item}</li>`;
+            }
+            
+            // 2. ID items (e.g. "A1: Driving")
+            if (item.id && item.name) {
+                return `<li>
+                    <span class="highlight">${item.id}</span>
+                    <span style="font-weight:500">${item.name}</span>
+                </li>`;
+            }
+            
+            // 3. Complex Object (Detailed Breakdown)
+            let html = `<li><div style="display:flex; flex-direction:column; gap:4px;">`;
             Object.keys(item).forEach(key => {
                 let val = item[key];
-                let label = key.replace(/_/g, " ").replace(/\b\w/g, l => l.toUpperCase());
-                html += `<span class="label">${label}:</span> ${val} <br>`; 
+                let label = key.replace(/_/g, " ").toUpperCase();
+                
+                // Make keys look like mini-titles
+                html += `<div style="font-size:13px;">
+                    <span class="label">${label}</span>
+                    ${val}
+                </div>`;
             });
-            html += `</li>`;
+            html += `</div></li>`;
             return html;
         }
 

@@ -29,7 +29,8 @@ class ConversationRouter:
                 "last_area": None,
                 "tech_last_category": None,
                 "tech_last_area": None,
-                "tech_drill_index": 0
+                "tech_drill_index": 0,
+                
             }
         memory = self.sessions[user_id]
 
@@ -118,16 +119,30 @@ class ConversationRouter:
         # ============================================================
 
         # --- CASE: EXERCISES ---
+        # --- CASE: EXERCISES ---
         if intent == "EXERCISE":
-            result = self.exercise.get_batting_exercises(user, part)
-            memory["last_exercise_goal"] = part.upper()
-            ordered_output.append({
-                "type": "exercise",
-                "input": part,
-                "result": result
-            })
-            return {"chat": f"Here is a plan for {part}:", "ordered_responses": ordered_output}
+            # 1. Get the simplified list from the new Engine
+            # Note: passing 'part' (the subject, e.g. 'power hitting')
+            exercise_list = self.exercise.get_batting_exercises(user, part)
+            
+            if not exercise_list:
+                return {
+                    "chat": f"I couldn't find specific exercises for '{part}' matching your profile. Try asking for 'fitness' or 'bat speed'."
+                }
 
+            # 2. Add to output
+            ordered_output.append({
+                "type": "exercise_list", # Special type for the frontend
+                "result": {
+                    "title": f"Training Plan: {part.title()}",
+                    "exercises": exercise_list
+                }
+            })
+            
+            return {
+                "chat": f"Based on your profile (Age: {user.age}, Role: {user.playing_role}), here is your personalized plan:", 
+                "ordered_responses": ordered_output
+            }
         # --- CASE: TECHNICAL DRILLS (Your Original Flow) ---
         if intent == "TECHNICAL_DRILL":
             
