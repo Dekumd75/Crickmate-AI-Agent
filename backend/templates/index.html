@@ -189,15 +189,12 @@
             formData.append('user_id', CURRENT_USER_ID);
 
             try {
-                // NOTE: We will create this /analyze-image endpoint in the backend next!
                 const response = await fetch(`${API_BASE}/analyze-image`, {
                     method: "POST",
                     body: formData 
                 });
                 const data = await response.json();
                 document.getElementById("typingIndicator").style.display = "none";
-                
-                // Show AI Analysis
                 addMessage(data.chat, 'bot-message', true);
 
             } catch (error) {
@@ -205,7 +202,6 @@
                 document.getElementById("typingIndicator").style.display = "none";
                 addMessage("❌ Error analyzing image. (Did you restart the backend?)", 'bot-message');
             }
-            // Reset input
             fileInput.value = "";
         }
 
@@ -226,17 +222,26 @@
                 document.getElementById("typingIndicator").style.display = "none";
                 let botHTML = "";
                 if (data.chat) botHTML += `<p>${data.chat.replace(/\n/g, "<br>")}</p>`;
-                if (data.technical_drills && data.technical_drills.returned) {
-                    botHTML += `<div class="drill-card"><h4>🎯 Drills</h4><ul>`;
-                    data.technical_drills.returned.forEach(drill => botHTML += renderListItem(drill));
-                    botHTML += `</ul>`;
-                    if (data.technical_drills.remaining > 0) botHTML += `<div class="more-hint">👇 ${data.technical_drills.remaining} more available. Type "more".</div>`;
-                    botHTML += `</div>`;
-                }
+                
+                // --- FIX FOR CATEGORIES ---
                 if (data.ordered_responses && data.ordered_responses.length > 0) {
                     data.ordered_responses.forEach(item => {
                         botHTML += `<div class="drill-card">`;
-                        if (item.type === "batting_role_priority") {
+                        
+                        // 1. SPECIFIC LOGIC FOR CATEGORIES (Power Hitting, etc.)
+                        if (item.type === "technical_category") {
+                            // Display the Category Name (e.g., "📂 Power Hitting")
+                            if (item.category) botHTML += `<h4>📂 ${item.category}</h4>`;
+                            else if (item.category_name) botHTML += `<h4>📂 ${item.category_name}</h4>`;
+                            
+                            botHTML += `<strong>Options:</strong><ul>`;
+                            if (item.sub_areas) {
+                                item.sub_areas.forEach(sub => botHTML += renderListItem(sub));
+                            }
+                            botHTML += `</ul>`;
+                        }
+                        // 2. PRIORITY LIST
+                        else if (item.type === "batting_role_priority") {
                              if(item.priority && item.priority.length > 0) {
                                  botHTML += `<h4>🔥 High Priority</h4><ul>`;
                                  item.priority.forEach(p => botHTML += renderListItem(p));
@@ -253,11 +258,13 @@
                                  botHTML += `</ul>`;
                              }
                         }
+                        // 3. GENERIC SUB AREAS FALLBACK
                         else if (item.sub_areas) {
                             botHTML += `<strong>Options:</strong><ul>`;
                             item.sub_areas.forEach(sub => botHTML += renderListItem(sub));
                             botHTML += `</ul>`;
                         }
+                        // 4. COMPLEX OBJECTS (Drills, Exercises)
                         else if (item.result && typeof item.result === 'object') {
                             if (item.result.name) botHTML += `<h4>🎯 ${item.result.name}</h4>`;
                             if (item.result.goal) botHTML += `<em>Goal: ${item.result.goal}</em><hr>`;
@@ -270,12 +277,23 @@
                                 }
                             });
                         } 
+                        // 5. SIMPLE TEXT
                         else if (typeof item.result === 'string') {
                             botHTML += `<p>${item.result}</p>`;
                         }
                         botHTML += `</div>`;
                     });
                 }
+                
+                // Handle "More" results
+                if (data.technical_drills && data.technical_drills.returned) {
+                    botHTML += `<div class="drill-card"><h4>🎯 Drills</h4><ul>`;
+                    data.technical_drills.returned.forEach(drill => botHTML += renderListItem(drill));
+                    botHTML += `</ul>`;
+                    if (data.technical_drills.remaining > 0) botHTML += `<div class="more-hint">👇 ${data.technical_drills.remaining} more available. Type "more".</div>`;
+                    botHTML += `</div>`;
+                }
+
                 addMessage(botHTML, 'bot-message', true);
             } catch (error) {
                 console.error(error);

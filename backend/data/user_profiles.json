@@ -265,6 +265,32 @@
             "skill_level": "beginner",
             "playing_role": "top order batsman",
             "weekly_days": 3
+        },
+        {
+            "user_id": "USER0022",
+            "name": "oshada",
+            "age": 22,
+            "height_cm": 160,
+            "weight_kg": 50,
+            "age_group": "Adult",
+            "bmi": 19.53,
+            "bmi_group": "Athletic Ideal",
+            "skill_level": "intermediate",
+            "playing_role": "finisher",
+            "weekly_days": 3
+        },
+        {
+            "user_id": "USER0023",
+            "name": "deneth",
+            "age": 24,
+            "height_cm": 155,
+            "weight_kg": 56,
+            "age_group": "Adult",
+            "bmi": 23.31,
+            "bmi_group": "Overweight",
+            "skill_level": "beginner",
+            "playing_role": "finisher",
+            "weekly_days": 3
         }
     ]
 }

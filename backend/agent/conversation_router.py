@@ -72,13 +72,17 @@ class ConversationRouter:
                 memory["tech_last_category"] = category["category_id"]
                 memory["tech_last_area"] = None
                 return {
+                    "chat": f"Here are the options for **{category['category_name']}**:",
+                    "ordered_responses" : [
+                        {
                     "type": "technical_category",
                     "category_id": category["category_id"],
                     "category_name": category["category_name"],
                     "instruction": "Choose sub-area ID (ex: A2)",
                     "sub_areas": subareas
+                       }
+                    ]
                 }
-
         # ============================================================
         # 3. ASK THE AI BRAIN (This replaces the SPLIT_KEYS loop)
         # ============================================================
@@ -161,7 +165,7 @@ class ConversationRouter:
                     "secondary": mapping["secondary"],
                     "low": mapping["low"]
                 })
-                return {"chat": "I couldn't find that exact drill, but here is your priority list:", "ordered_responses": ordered_output}
+                return {"chat": "Here is your priority list Select a Category:", "ordered_responses": ordered_output}
 
         # --- CASE: FUNDAMENTALS / SHOTS ---
         if intent in ["FUNDAMENTAL_INFO", "SHOT_INFO"]:
